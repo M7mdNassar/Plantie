@@ -3,15 +3,19 @@ import UIKit
 
 class SplashViewController: UIViewController {
 
+    // MARK: Outlets
+    
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+    
+    // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
-
-
+    
+    
 }
 
 // MARK: Private Methods

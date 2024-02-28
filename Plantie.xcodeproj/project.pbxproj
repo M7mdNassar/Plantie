@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043EF0282B8F3A91007F8E6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 043EF0272B8F3A91007F8E6C /* GoogleService-Info.plist */; };
+		043EF02A2B8F523D007F8E6C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043EF0292B8F523D007F8E6C /* LoginViewController.swift */; };
+		043EF02C2B8F5252007F8E6C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043EF02B2B8F5252007F8E6C /* RegisterViewController.swift */; };
 		044B148F2B8E25FF0087C094 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B148E2B8E25FF0087C094 /* ProfileViewController.swift */; };
 		044B14932B8E2B3E0087C094 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B14922B8E2B3E0087C094 /* UITableViewExtension.swift */; };
 		044B14952B8E2B590087C094 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B14942B8E2B590087C094 /* UIImageViewExtension.swift */; };
@@ -20,6 +23,8 @@
 		044B14A82B8E34AC0087C094 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B14A62B8E34AC0087C094 /* ProfileTableViewCell.swift */; };
 		044B14A92B8E34AC0087C094 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044B14A72B8E34AC0087C094 /* ProfileTableViewCell.xib */; };
 		044B14AC2B8E38AC0087C094 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B14AB2B8E38AC0087C094 /* EditProfile.swift */; };
+		0478492C2B8F375900562F68 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478492B2B8F375900562F68 /* LaunchScreenController.swift */; };
+		0478492E2B8F388E00562F68 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0478492D2B8F388E00562F68 /* Lottie */; };
 		04F8158C2B8DF0C5000D2DAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8158B2B8DF0C5000D2DAD /* AppDelegate.swift */; };
 		04F8158E2B8DF0C5000D2DAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8158D2B8DF0C5000D2DAD /* SceneDelegate.swift */; };
 		04F815932B8DF0C5000D2DAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F815912B8DF0C5000D2DAD /* Main.storyboard */; };
@@ -42,7 +47,6 @@
 		04F815D32B8DF863000D2DAD /* FirebaseMLModelDownloader in Frameworks */ = {isa = PBXBuildFile; productRef = 04F815D22B8DF863000D2DAD /* FirebaseMLModelDownloader */; };
 		04F815D52B8DF863000D2DAD /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 04F815D42B8DF863000D2DAD /* FirebaseMessaging */; };
 		04F815D72B8DF863000D2DAD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 04F815D62B8DF863000D2DAD /* FirebaseStorage */; };
-		04F815D92B8DF8D1000D2DAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04F815D82B8DF8D1000D2DAD /* GoogleService-Info.plist */; };
 		04F815DB2B8DF98C000D2DAD /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F815DA2B8DF98C000D2DAD /* CustomTabBarController.swift */; };
 		04F815E22B8E0011000D2DAD /* PlantLottieLoading.json in Resources */ = {isa = PBXBuildFile; fileRef = 04F815E12B8E0011000D2DAD /* PlantLottieLoading.json */; };
 		04F815E42B8E0025000D2DAD /* Harmattan-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04F815E32B8E0025000D2DAD /* Harmattan-Bold.ttf */; };
@@ -71,6 +75,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		043EF0272B8F3A91007F8E6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		043EF0292B8F523D007F8E6C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		043EF02B2B8F5252007F8E6C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		044B148E2B8E25FF0087C094 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		044B14922B8E2B3E0087C094 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		044B14942B8E2B590087C094 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
@@ -84,6 +91,7 @@
 		044B14A62B8E34AC0087C094 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		044B14A72B8E34AC0087C094 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		044B14AB2B8E38AC0087C094 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
+		0478492B2B8F375900562F68 /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
 		04F815882B8DF0C5000D2DAD /* Plantie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plantie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F8158B2B8DF0C5000D2DAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F8158D2B8DF0C5000D2DAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,7 +104,6 @@
 		04F815A82B8DF0C8000D2DAD /* PlantieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlantieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F815AC2B8DF0C8000D2DAD /* PlantieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantieUITests.swift; sourceTree = "<group>"; };
 		04F815AE2B8DF0C8000D2DAD /* PlantieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantieUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		04F815D82B8DF8D1000D2DAD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04F815DA2B8DF98C000D2DAD /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		04F815E12B8E0011000D2DAD /* PlantLottieLoading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PlantLottieLoading.json; sourceTree = "<group>"; };
 		04F815E32B8E0025000D2DAD /* Harmattan-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Harmattan-Bold.ttf"; sourceTree = "<group>"; };
@@ -125,6 +132,7 @@
 				04F815C12B8DF863000D2DAD /* FirebaseAppCheck in Frameworks */,
 				04F815BD2B8DF862000D2DAD /* FirebaseAnalytics in Frameworks */,
 				04F815CB2B8DF863000D2DAD /* FirebaseFirestore in Frameworks */,
+				0478492E2B8F388E00562F68 /* Lottie in Frameworks */,
 				04F815D12B8DF863000D2DAD /* FirebaseInAppMessaging-Beta in Frameworks */,
 				04F815D52B8DF863000D2DAD /* FirebaseMessaging in Frameworks */,
 				04F815C92B8DF863000D2DAD /* FirebaseDynamicLinks in Frameworks */,
@@ -237,7 +245,7 @@
 				04F815942B8DF0C8000D2DAD /* Assets.xcassets */,
 				04F815DE2B8DFFD3000D2DAD /* Resorces */,
 				04F815992B8DF0C8000D2DAD /* Info.plist */,
-				04F815D82B8DF8D1000D2DAD /* GoogleService-Info.plist */,
+				043EF0272B8F3A91007F8E6C /* GoogleService-Info.plist */,
 			);
 			path = Plantie;
 			sourceTree = "<group>";
@@ -293,6 +301,9 @@
 				04F8158D2B8DF0C5000D2DAD /* SceneDelegate.swift */,
 				04F815E72B8E006F000D2DAD /* SplashViewController.swift */,
 				04F815DA2B8DF98C000D2DAD /* CustomTabBarController.swift */,
+				0478492B2B8F375900562F68 /* LaunchScreenController.swift */,
+				043EF0292B8F523D007F8E6C /* LoginViewController.swift */,
+				043EF02B2B8F5252007F8E6C /* RegisterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -370,6 +381,7 @@
 				04F815D22B8DF863000D2DAD /* FirebaseMLModelDownloader */,
 				04F815D42B8DF863000D2DAD /* FirebaseMessaging */,
 				04F815D62B8DF863000D2DAD /* FirebaseStorage */,
+				0478492D2B8F388E00562F68 /* Lottie */,
 			);
 			productName = Plantie;
 			productReference = 04F815882B8DF0C5000D2DAD /* Plantie.app */;
@@ -467,10 +479,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F815E42B8E0025000D2DAD /* Harmattan-Bold.ttf in Resources */,
+				043EF0282B8F3A91007F8E6C /* GoogleService-Info.plist in Resources */,
 				04F815982B8DF0C8000D2DAD /* LaunchScreen.storyboard in Resources */,
 				04F815E62B8E002E000D2DAD /* Harmattan-Regular.ttf in Resources */,
 				04F815E22B8E0011000D2DAD /* PlantLottieLoading.json in Resources */,
-				04F815D92B8DF8D1000D2DAD /* GoogleService-Info.plist in Resources */,
 				044B14A92B8E34AC0087C094 /* ProfileTableViewCell.xib in Resources */,
 				04F815952B8DF0C8000D2DAD /* Assets.xcassets in Resources */,
 				04F815932B8DF0C5000D2DAD /* Main.storyboard in Resources */,
@@ -601,9 +613,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043EF02A2B8F523D007F8E6C /* LoginViewController.swift in Sources */,
 				04F8158C2B8DF0C5000D2DAD /* AppDelegate.swift in Sources */,
 				044B14952B8E2B590087C094 /* UIImageViewExtension.swift in Sources */,
 				04F815DB2B8DF98C000D2DAD /* CustomTabBarController.swift in Sources */,
+				043EF02C2B8F5252007F8E6C /* RegisterViewController.swift in Sources */,
 				044B14AC2B8E38AC0087C094 /* EditProfile.swift in Sources */,
 				044B14A82B8E34AC0087C094 /* ProfileTableViewCell.swift in Sources */,
 				044B148F2B8E25FF0087C094 /* ProfileViewController.swift in Sources */,
@@ -616,6 +630,7 @@
 				044B14932B8E2B3E0087C094 /* UITableViewExtension.swift in Sources */,
 				044B149E2B8E30180087C094 /* FUserListener.swift in Sources */,
 				04F8158E2B8DF0C5000D2DAD /* SceneDelegate.swift in Sources */,
+				0478492C2B8F375900562F68 /* LaunchScreenController.swift in Sources */,
 				04F815E82B8E006F000D2DAD /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -984,6 +999,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0478492D2B8F388E00562F68 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 044B14AD2B8E5FB90087C094 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		04F815BC2B8DF862000D2DAD /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 04F815BB2B8DF862000D2DAD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

@@ -155,7 +155,7 @@ extension ProfileViewController : UITableViewDataSource {
             performSegue(withIdentifier: "goToEdit", sender: self)
         }
 
-        else if selectedOption == 5 {
+        else if selectedOption == 1 {
             logout()
         }
        
