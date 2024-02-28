@@ -1,0 +1,6 @@
+framework module Pods_Plantie_PlantieUITests {
+  umbrella header "Pods-Plantie-PlantieUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

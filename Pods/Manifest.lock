@@ -1,0 +1,24 @@
+PODS:
+  - Gallery (2.4.0)
+  - IQKeyboardManagerSwift (7.0.0)
+  - ProgressHUD (14.1.1)
+
+DEPENDENCIES:
+  - Gallery
+  - IQKeyboardManagerSwift
+  - ProgressHUD
+
+SPEC REPOS:
+  trunk:
+    - Gallery
+    - IQKeyboardManagerSwift
+    - ProgressHUD
+
+SPEC CHECKSUMS:
+  Gallery: b7fc1aeb68a39ad6d2c423574750196bf9b25e5c
+  IQKeyboardManagerSwift: bd69f3a49f6ead9cb6ce17723cf0c6c9b948d83e
+  ProgressHUD: abb9136ae23c85204236828562cb9a8ec98efb44
+
+PODFILE CHECKSUM: 5c1666ac53040cf5f0ff4889a35aeee49cfd6e6d
+
+COCOAPODS: 1.14.2
