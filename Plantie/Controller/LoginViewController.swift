@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         setUpBackground()
         setupLabels()
+        configureLeftBarButton()
         configureTextFields()
         setupBackgroundGesture()
     }
@@ -149,6 +150,15 @@ class LoginViewController: UIViewController {
         emailLabel.text = ""
         passwordLabel.text = ""
     }
+    
+    private func configureLeftBarButton(){
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector (backButtonPressed))
+    }
+    
+     @objc func backButtonPressed(){
+        navigationController?.popViewController(animated: true)
+    }
+    
     
     func configureTextFields(){
         emailTextField.delegate = self

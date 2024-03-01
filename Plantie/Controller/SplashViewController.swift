@@ -27,5 +27,3 @@ private extension SplashViewController{
         loginButton.layer.cornerRadius = 20
     }
 }
-
-

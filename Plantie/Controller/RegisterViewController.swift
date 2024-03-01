@@ -24,6 +24,7 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         setUpBackground()
         setupLabels()
+        configureLeftBarButton()
         configureTextFields()
         setupBackgroundGesture()
     }
@@ -67,6 +68,14 @@ class RegisterViewController: UIViewController {
         emailLabel.text = ""
         passwordLabel.text = ""
         confirmPasswordLabel.text = ""
+    }
+    
+    private func configureLeftBarButton(){
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector (backButtonPressed))
+    }
+    
+     @objc func backButtonPressed(){
+        navigationController?.popViewController(animated: true)
     }
     
     func configureTextFields(){
