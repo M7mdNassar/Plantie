@@ -63,7 +63,6 @@ class EditProfile: UIViewController {
         }
     }
 
-    
     // MARK: - Private Methods
     
     private func showUserInformation(){
