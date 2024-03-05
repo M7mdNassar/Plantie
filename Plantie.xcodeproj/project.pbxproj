@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043989CB2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043989C92B97244F00FA0FF7 /* ImagesPostCollectionViewCell.swift */; };
+		043989CC2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043989CA2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.xib */; };
+		043989CE2B972C0500FA0FF7 /* ExpandableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043989CD2B972C0500FA0FF7 /* ExpandableLabel.swift */; };
+		043989D12B9736F800FA0FF7 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 043989D02B9736F800FA0FF7 /* SDWebImage */; };
+		043989D42B9742D100FA0FF7 /* SKPhotoBrowser in Frameworks */ = {isa = PBXBuildFile; productRef = 043989D32B9742D100FA0FF7 /* SKPhotoBrowser */; };
+		043989D62B975A4800FA0FF7 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043989D52B975A4800FA0FF7 /* ShadowView.swift */; };
 		043EF0282B8F3A91007F8E6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 043EF0272B8F3A91007F8E6C /* GoogleService-Info.plist */; };
 		043EF02A2B8F523D007F8E6C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043EF0292B8F523D007F8E6C /* LoginViewController.swift */; };
 		043EF02C2B8F5252007F8E6C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043EF02B2B8F5252007F8E6C /* RegisterViewController.swift */; };
@@ -24,9 +30,15 @@
 		044B14A92B8E34AC0087C094 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044B14A72B8E34AC0087C094 /* ProfileTableViewCell.xib */; };
 		044B14AC2B8E38AC0087C094 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B14AB2B8E38AC0087C094 /* EditProfile.swift */; };
 		04519DAB2B9679E900D190AE /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04519DAA2B9679E900D190AE /* AddPostViewController.swift */; };
-		04519DAD2B967C8500D190AE /* ShowPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04519DAC2B967C8500D190AE /* ShowPostViewController.swift */; };
+		046537872B9713AE001880C1 /* TextWithImagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046537852B9713AE001880C1 /* TextWithImagesTableViewCell.swift */; };
+		046537882B9713AE001880C1 /* TextWithImagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046537862B9713AE001880C1 /* TextWithImagesTableViewCell.xib */; };
+		0465378C2B97140A001880C1 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465378A2B97140A001880C1 /* TextTableViewCell.swift */; };
+		0465378D2B97140A001880C1 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0465378B2B97140A001880C1 /* TextTableViewCell.xib */; };
 		0478492C2B8F375900562F68 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478492B2B8F375900562F68 /* LaunchScreenController.swift */; };
 		0478492E2B8F388E00562F68 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0478492D2B8F388E00562F68 /* Lottie */; };
+		049F77BC2B97952C00D65123 /* ShowPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F77BB2B97952C00D65123 /* ShowPostViewController.swift */; };
+		049F77BF2B97959400D65123 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F77BD2B97959400D65123 /* CollectionViewCell.swift */; };
+		049F77C02B97959400D65123 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049F77BE2B97959400D65123 /* CollectionViewCell.xib */; };
 		04F8158C2B8DF0C5000D2DAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8158B2B8DF0C5000D2DAD /* AppDelegate.swift */; };
 		04F8158E2B8DF0C5000D2DAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8158D2B8DF0C5000D2DAD /* SceneDelegate.swift */; };
 		04F815932B8DF0C5000D2DAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F815912B8DF0C5000D2DAD /* Main.storyboard */; };
@@ -79,6 +91,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		043989C92B97244F00FA0FF7 /* ImagesPostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesPostCollectionViewCell.swift; sourceTree = "<group>"; };
+		043989CA2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagesPostCollectionViewCell.xib; sourceTree = "<group>"; };
+		043989CD2B972C0500FA0FF7 /* ExpandableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableLabel.swift; sourceTree = "<group>"; };
+		043989D52B975A4800FA0FF7 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		043EF0272B8F3A91007F8E6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		043EF0292B8F523D007F8E6C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		043EF02B2B8F5252007F8E6C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -96,8 +112,14 @@
 		044B14A72B8E34AC0087C094 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		044B14AB2B8E38AC0087C094 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
 		04519DAA2B9679E900D190AE /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
-		04519DAC2B967C8500D190AE /* ShowPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPostViewController.swift; sourceTree = "<group>"; };
+		046537852B9713AE001880C1 /* TextWithImagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWithImagesTableViewCell.swift; sourceTree = "<group>"; };
+		046537862B9713AE001880C1 /* TextWithImagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextWithImagesTableViewCell.xib; sourceTree = "<group>"; };
+		0465378A2B97140A001880C1 /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
+		0465378B2B97140A001880C1 /* TextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
 		0478492B2B8F375900562F68 /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
+		049F77BB2B97952C00D65123 /* ShowPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPostViewController.swift; sourceTree = "<group>"; };
+		049F77BD2B97959400D65123 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		049F77BE2B97959400D65123 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		04F815882B8DF0C5000D2DAD /* Plantie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plantie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F8158B2B8DF0C5000D2DAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F8158D2B8DF0C5000D2DAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +171,8 @@
 				04F815C32B8DF863000D2DAD /* FirebaseAuth in Frameworks */,
 				04F815CD2B8DF863000D2DAD /* FirebaseFirestoreSwift in Frameworks */,
 				4A905A9D694F9B29BA495CAD /* Pods_Plantie.framework in Frameworks */,
+				043989D42B9742D100FA0FF7 /* SKPhotoBrowser in Frameworks */,
+				043989D12B9736F800FA0FF7 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,12 +195,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		043989DB2B978C5C00FA0FF7 /* Show Post */ = {
+			isa = PBXGroup;
+			children = (
+				049F77BB2B97952C00D65123 /* ShowPostViewController.swift */,
+				049F77BD2B97959400D65123 /* CollectionViewCell.swift */,
+				049F77BE2B97959400D65123 /* CollectionViewCell.xib */,
+			);
+			path = "Show Post";
+			sourceTree = "<group>";
+		};
 		044B14902B8E27890087C094 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				044B14912B8E2B170087C094 /* Extentions */,
 				044B14982B8E2B990087C094 /* Constents.swift */,
 				044B149A2B8E2BDA0087C094 /* Global Functions.swift */,
+				043989CD2B972C0500FA0FF7 /* ExpandableLabel.swift */,
+				043989D52B975A4800FA0FF7 /* ShadowView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -218,6 +254,35 @@
 				044B14AB2B8E38AC0087C094 /* EditProfile.swift */,
 			);
 			path = "Edit Profile";
+			sourceTree = "<group>";
+		};
+		046537842B97134B001880C1 /* Table Cells */ = {
+			isa = PBXGroup;
+			children = (
+				046537892B9713C8001880C1 /* TextWithImages */,
+				0465378E2B971413001880C1 /* OnlyText */,
+			);
+			path = "Table Cells";
+			sourceTree = "<group>";
+		};
+		046537892B9713C8001880C1 /* TextWithImages */ = {
+			isa = PBXGroup;
+			children = (
+				046537852B9713AE001880C1 /* TextWithImagesTableViewCell.swift */,
+				046537862B9713AE001880C1 /* TextWithImagesTableViewCell.xib */,
+				043989C92B97244F00FA0FF7 /* ImagesPostCollectionViewCell.swift */,
+				043989CA2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.xib */,
+			);
+			path = TextWithImages;
+			sourceTree = "<group>";
+		};
+		0465378E2B971413001880C1 /* OnlyText */ = {
+			isa = PBXGroup;
+			children = (
+				0465378A2B97140A001880C1 /* TextTableViewCell.swift */,
+				0465378B2B97140A001880C1 /* TextTableViewCell.xib */,
+			);
+			path = OnlyText;
 			sourceTree = "<group>";
 		};
 		04F8157F2B8DF0C5000D2DAD = {
@@ -338,9 +403,10 @@
 		04FB2B392B9671C000650C86 /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				046537842B97134B001880C1 /* Table Cells */,
 				04FB2B3A2B9671EA00650C86 /* CommunityViewController.swift */,
 				04519DAA2B9679E900D190AE /* AddPostViewController.swift */,
-				04519DAC2B967C8500D190AE /* ShowPostViewController.swift */,
+				043989DB2B978C5C00FA0FF7 /* Show Post */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -402,6 +468,8 @@
 				04F815D42B8DF863000D2DAD /* FirebaseMessaging */,
 				04F815D62B8DF863000D2DAD /* FirebaseStorage */,
 				0478492D2B8F388E00562F68 /* Lottie */,
+				043989D02B9736F800FA0FF7 /* SDWebImage */,
+				043989D32B9742D100FA0FF7 /* SKPhotoBrowser */,
 			);
 			productName = Plantie;
 			productReference = 04F815882B8DF0C5000D2DAD /* Plantie.app */;
@@ -481,6 +549,8 @@
 			packageReferences = (
 				04F815BB2B8DF862000D2DAD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				044B14AD2B8E5FB90087C094 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				043989CF2B9736F700FA0FF7 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				043989D22B9742D100FA0FF7 /* XCRemoteSwiftPackageReference "SKPhotoBrowser" */,
 			);
 			productRefGroup = 04F815892B8DF0C5000D2DAD /* Products */;
 			projectDirPath = "";
@@ -500,9 +570,13 @@
 			files = (
 				04F815E42B8E0025000D2DAD /* Harmattan-Bold.ttf in Resources */,
 				043EF0282B8F3A91007F8E6C /* GoogleService-Info.plist in Resources */,
+				049F77C02B97959400D65123 /* CollectionViewCell.xib in Resources */,
+				043989CC2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.xib in Resources */,
 				04F815982B8DF0C8000D2DAD /* LaunchScreen.storyboard in Resources */,
+				046537882B9713AE001880C1 /* TextWithImagesTableViewCell.xib in Resources */,
 				04F815E62B8E002E000D2DAD /* Harmattan-Regular.ttf in Resources */,
 				04F815E22B8E0011000D2DAD /* PlantLottieLoading.json in Resources */,
+				0465378D2B97140A001880C1 /* TextTableViewCell.xib in Resources */,
 				044B14A92B8E34AC0087C094 /* ProfileTableViewCell.xib in Resources */,
 				04F815952B8DF0C8000D2DAD /* Assets.xcassets in Resources */,
 				04F815932B8DF0C5000D2DAD /* Main.storyboard in Resources */,
@@ -637,18 +711,24 @@
 				04F8158C2B8DF0C5000D2DAD /* AppDelegate.swift in Sources */,
 				044B14952B8E2B590087C094 /* UIImageViewExtension.swift in Sources */,
 				04F815DB2B8DF98C000D2DAD /* CustomTabBarController.swift in Sources */,
+				0465378C2B97140A001880C1 /* TextTableViewCell.swift in Sources */,
 				043EF02C2B8F5252007F8E6C /* RegisterViewController.swift in Sources */,
 				044B14AC2B8E38AC0087C094 /* EditProfile.swift in Sources */,
 				044B14A82B8E34AC0087C094 /* ProfileTableViewCell.swift in Sources */,
 				044B148F2B8E25FF0087C094 /* ProfileViewController.swift in Sources */,
 				044B14992B8E2B990087C094 /* Constents.swift in Sources */,
+				043989CB2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.swift in Sources */,
 				044B149B2B8E2BDA0087C094 /* Global Functions.swift in Sources */,
+				046537872B9713AE001880C1 /* TextWithImagesTableViewCell.swift in Sources */,
+				049F77BC2B97952C00D65123 /* ShowPostViewController.swift in Sources */,
 				044B14A42B8E320B0087C094 /* User.swift in Sources */,
 				044B14A22B8E307A0087C094 /* FileStorage.swift in Sources */,
-				04519DAD2B967C8500D190AE /* ShowPostViewController.swift in Sources */,
 				044B14A02B8E30650087C094 /* FCollectionReference.swift in Sources */,
+				043989CE2B972C0500FA0FF7 /* ExpandableLabel.swift in Sources */,
+				049F77BF2B97959400D65123 /* CollectionViewCell.swift in Sources */,
 				044B14972B8E2B770087C094 /* StringExtension.swift in Sources */,
 				044B14932B8E2B3E0087C094 /* UITableViewExtension.swift in Sources */,
+				043989D62B975A4800FA0FF7 /* ShadowView.swift in Sources */,
 				044B149E2B8E30180087C094 /* FUserListener.swift in Sources */,
 				04F8158E2B8DF0C5000D2DAD /* SceneDelegate.swift in Sources */,
 				0478492C2B8F375900562F68 /* LaunchScreenController.swift in Sources */,
@@ -1004,6 +1084,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		043989CF2B9736F700FA0FF7 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.0;
+			};
+		};
+		043989D22B9742D100FA0FF7 /* XCRemoteSwiftPackageReference "SKPhotoBrowser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/suzuki-0000/SKPhotoBrowser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.1.0;
+			};
+		};
 		044B14AD2B8E5FB90087C094 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
@@ -1023,6 +1119,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		043989D02B9736F800FA0FF7 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 043989CF2B9736F700FA0FF7 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		043989D32B9742D100FA0FF7 /* SKPhotoBrowser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 043989D22B9742D100FA0FF7 /* XCRemoteSwiftPackageReference "SKPhotoBrowser" */;
+			productName = SKPhotoBrowser;
+		};
 		0478492D2B8F388E00562F68 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 044B14AD2B8E5FB90087C094 /* XCRemoteSwiftPackageReference "lottie-ios" */;
