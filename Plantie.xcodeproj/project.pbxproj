@@ -38,8 +38,6 @@
 		0478492C2B8F375900562F68 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478492B2B8F375900562F68 /* LaunchScreenController.swift */; };
 		0478492E2B8F388E00562F68 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0478492D2B8F388E00562F68 /* Lottie */; };
 		049F77BC2B97952C00D65123 /* ShowPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F77BB2B97952C00D65123 /* ShowPostViewController.swift */; };
-		049F77BF2B97959400D65123 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F77BD2B97959400D65123 /* CollectionViewCell.swift */; };
-		049F77C02B97959400D65123 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049F77BE2B97959400D65123 /* CollectionViewCell.xib */; };
 		04F8158C2B8DF0C5000D2DAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8158B2B8DF0C5000D2DAD /* AppDelegate.swift */; };
 		04F8158E2B8DF0C5000D2DAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8158D2B8DF0C5000D2DAD /* SceneDelegate.swift */; };
 		04F815932B8DF0C5000D2DAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F815912B8DF0C5000D2DAD /* Main.storyboard */; };
@@ -120,8 +118,6 @@
 		0465378B2B97140A001880C1 /* TextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
 		0478492B2B8F375900562F68 /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
 		049F77BB2B97952C00D65123 /* ShowPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPostViewController.swift; sourceTree = "<group>"; };
-		049F77BD2B97959400D65123 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		049F77BE2B97959400D65123 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		04F815882B8DF0C5000D2DAD /* Plantie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plantie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F8158B2B8DF0C5000D2DAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F8158D2B8DF0C5000D2DAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,8 +197,6 @@
 			isa = PBXGroup;
 			children = (
 				049F77BB2B97952C00D65123 /* ShowPostViewController.swift */,
-				049F77BD2B97959400D65123 /* CollectionViewCell.swift */,
-				049F77BE2B97959400D65123 /* CollectionViewCell.xib */,
 			);
 			path = "Show Post";
 			sourceTree = "<group>";
@@ -573,7 +567,6 @@
 			files = (
 				04F815E42B8E0025000D2DAD /* Harmattan-Bold.ttf in Resources */,
 				043EF0282B8F3A91007F8E6C /* GoogleService-Info.plist in Resources */,
-				049F77C02B97959400D65123 /* CollectionViewCell.xib in Resources */,
 				043989CC2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.xib in Resources */,
 				04F815982B8DF0C8000D2DAD /* LaunchScreen.storyboard in Resources */,
 				046537882B9713AE001880C1 /* TextWithImagesTableViewCell.xib in Resources */,
@@ -729,7 +722,6 @@
 				044B14A22B8E307A0087C094 /* FileStorage.swift in Sources */,
 				044B14A02B8E30650087C094 /* FCollectionReference.swift in Sources */,
 				043989CE2B972C0500FA0FF7 /* ExpandableLabel.swift in Sources */,
-				049F77BF2B97959400D65123 /* CollectionViewCell.swift in Sources */,
 				044B14972B8E2B770087C094 /* StringExtension.swift in Sources */,
 				044B14932B8E2B3E0087C094 /* UITableViewExtension.swift in Sources */,
 				043989D62B975A4800FA0FF7 /* ShadowView.swift in Sources */,

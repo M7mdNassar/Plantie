@@ -4,9 +4,8 @@ import SKPhotoBrowser
 class ShowPostViewController: UIViewController {
     
     // MARK: Variables
-    let images = [UIImage(named: "one")! ,UIImage(named: "avatar")! ]
     
-//    var post:Post!
+    var post:Post!
     var skPhotoImages: [SKPhoto] = []
 
     // MARK: Outlets
@@ -16,7 +15,9 @@ class ShowPostViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var textViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +26,7 @@ class ShowPostViewController: UIViewController {
         setupTableView()
         addNotifications()
         setUpTextView()
-        //Move it
-        // Prepare SKPhoto array for SKPhotoBrowser
-             for image in images {
-                 skPhotoImages.append(SKPhoto.photoWithImage(image))
-             }
+        checkIfPostHaveImages()
         
         
     
@@ -51,8 +48,8 @@ class ShowPostViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        let nib = UINib(nibName: "CollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "CollectionViewCell")
+        let nib = UINib(nibName: "ImagesPostCollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "ImagesPostCollectionViewCell")
     }
     
     func setupTableView(){
@@ -67,6 +64,20 @@ class ShowPostViewController: UIViewController {
        textView.layer.borderWidth = 1.0
        textView.delegate = self
    }
+    
+    func checkIfPostHaveImages(){
+        
+        if !post.images.isEmpty{
+            for image in post.images{
+                skPhotoImages.append(SKPhoto.photoWithImageURL(image!))
+            }
+        }else{
+            let heightView = view.frame.height
+            
+            collectionViewHeightConstraint.constant = -heightView * 0.3
+            tableViewTopConstraint.constant = 100
+        }
+    }
    
 
 }
@@ -93,7 +104,7 @@ extension ShowPostViewController: UITextViewDelegate {
 // MARK: TableView Datasource
 extension ShowPostViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return post.countOfComments + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -116,12 +127,12 @@ extension ShowPostViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension ShowPostViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return post.images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
-        cell.postImageView?.image = images[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImagesPostCollectionViewCell", for: indexPath) as! ImagesPostCollectionViewCell
+        cell.configure(imageUrl: post.images[indexPath.row]!)
         return cell
     }
 }
@@ -162,8 +173,5 @@ extension ShowPostViewController {
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
-
-        
     }
-
 }

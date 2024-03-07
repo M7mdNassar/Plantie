@@ -28,7 +28,7 @@ class CommunityViewController: UIViewController {
     }
     
     @objc func commentButtonPresed(){
-        showPost()
+    
     }
     // MARK: Actions
     @IBAction func composeBarButton(_ sender: UIBarButtonItem) {
@@ -39,13 +39,6 @@ class CommunityViewController: UIViewController {
         present(vc, animated: true)
     }
     
-    
-    func showPost(){
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "showPostView") as! ShowPostViewController
-        
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
-    }
     
     
 }
@@ -80,7 +73,10 @@ extension CommunityViewController : UITableViewDataSource , UITableViewDelegate 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-      showPost()
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "showPostView") as! ShowPostViewController
+        vc.post = posts[indexPath.row]
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
        
     }
     

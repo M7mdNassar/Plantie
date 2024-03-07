@@ -1197,7 +1197,9 @@
                     <connections>
                         <outlet property="bottomConstraint" destination="m4k-9e-xBQ" id="o2r-Hq-rxj"/>
                         <outlet property="collectionView" destination="yEb-pD-D6M" id="ae7-8o-hE8"/>
+                        <outlet property="collectionViewHeightConstraint" destination="uZc-Um-xue" id="rKw-8J-SKM"/>
                         <outlet property="tableView" destination="0cf-tr-Iaf" id="JoL-H1-Sdu"/>
+                        <outlet property="tableViewTopConstraint" destination="nGl-or-BFy" id="fEs-ob-656"/>
                         <outlet property="textView" destination="MBZ-fN-aUN" id="6L5-BS-s2W"/>
                         <outlet property="textViewHeightConstraint" destination="MAX-21-ibm" id="wTO-Kr-c0G"/>
                     </connections>
