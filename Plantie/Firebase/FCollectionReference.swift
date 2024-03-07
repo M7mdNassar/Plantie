@@ -5,6 +5,7 @@ import FirebaseFirestoreInternal
 
 enum FCollectionReference : String{
     case User
+    case Post
 }
 
 // MARK: Get the refernce of specific collection

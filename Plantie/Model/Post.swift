@@ -2,20 +2,24 @@
 import Foundation
 import UIKit
 
+// Post struct representing a post in the community feed
 struct Post {
-    var postId: String
-    var owner: User
-    var content: String
-    var imageUrls: [String?]
-    var likes: Int
-    var comments: [Comment]
+    let id: String // Unique identifier for the post
+    let text: String? // Text content of the post
+    let images: [String?] // URLs of images attached to the post
+    let owner: [String: Any] // Dictionary representing the owner of the post
+    var likes: Int // Number of likes for the post
+    var dislikes: Int // Number of dislikes for the post
+    var countOfComments: Int
 }
 
+
+// Comment struct representing a comment on a post
 struct Comment {
-    var id: String
-    var postId: String
-    var owner: User
-    var message: String
-    
+    let id: String // Unique identifier for the comment
+    let text: String // Text content of the comment
+    let owner: [String: Any] // Dictionary representing the owner of the post
+    let postId: String // ID of the post the comment belongs to
 }
+
 

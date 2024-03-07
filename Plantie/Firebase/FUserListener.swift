@@ -45,7 +45,7 @@ class FUserListener{
     
     // MARK: Register
     
-    func registerUserWith(email: String , password:String , completion: @escaping (_ error : Error?) -> Void){
+    func registerUserWith(userName : String , email: String , password:String , completion: @escaping (_ error : Error?) -> Void){
         
         Auth.auth().createUser(withEmail: email, password: password) {(authResults , error) in
             
@@ -59,7 +59,7 @@ class FUserListener{
             }
             
             if authResults?.user != nil {
-                let user = User(id: authResults!.user.uid, userName: email, email: email, pushId: "" , avatarLink: "" ,bio: "" , country: "")
+                let user = User(id: authResults!.user.uid, userName: userName, email: email, pushId: "" , avatarLink: "" ,bio: "" , country: "")
                 
                 self.saveUserToFierbase(user: user)
                 saveUserLocally(user: user)

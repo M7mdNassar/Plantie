@@ -20,7 +20,6 @@ class TextWithImagesTableViewCell: UITableViewCell {
     // MARK: Variables
     
     var postImages: [String?] = []
-    weak var delegate: TextWithImagesTableViewCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,25 +37,33 @@ class TextWithImagesTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: Actions
+    
+    @IBAction func commentButton(_ sender: UIButton) {
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "commentButtonTapped")))
+    }
+    
+    
     // MARK: Methods
     
     func configure(post: Post ){
-        if post.owner.avatarLink != ""{
-            self.userImageView.sd_setImage(with: URL(string: post.owner.avatarLink))
+        if post.owner["avatarLink"] as? String != ""{
+            self.userImageView.sd_setImage(with: URL(string: post.owner["avatarLink"] as! String ))
             
             self.userImageView.layer.cornerRadius = self.userImageView.frame.height/2
             self.userImageView.clipsToBounds = true
         }
         
-        self.userNameLabel.text = post.owner.userName
-        self.contentPostLabel.text = post.content
+        self.userNameLabel.text = post.owner["userName"] as? String
+        self.contentPostLabel.text = post.text
 
         
-        self.commentsCountLabel.text = String(post.comments.count)
+        self.commentsCountLabel.text = String(post.countOfComments)
         
         self.likesCountLabel.text = String(post.likes)
-        
-        self.postImages = post.imageUrls.filter{$0 != ""}
+        self.dislikesCountLabel.text = String(post.dislikes)
+
+        self.postImages = post.images.filter{$0 != ""}
         self.PostsImagesCollectionView.reloadData()
     
     }
@@ -83,9 +90,11 @@ extension TextWithImagesTableViewCell: UICollectionViewDataSource, UICollectionV
         return cell
     }
     
-    //
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.mixedPostCell(self, didSelectImageAt: indexPath)
+        
+        // notify to show post like the notification in comment button
+        NotificationCenter.default.post(name: NSNotification.Name("commentButtonTapped"), object: nil)
     }
 
 
@@ -101,7 +110,3 @@ extension TextWithImagesTableViewCell: UICollectionViewDelegateFlowLayout{
     }
 }
 
-// MARK: Protocol to handle image selection events
-protocol TextWithImagesTableViewCellDelegate: AnyObject {
-    func mixedPostCell(_ cell: TextWithImagesTableViewCell, didSelectImageAt indexPath: IndexPath)
-}

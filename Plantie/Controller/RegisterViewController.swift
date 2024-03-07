@@ -6,11 +6,13 @@ class RegisterViewController: UIViewController {
 
     // MARK: Outlets
     //Labels
+    @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var confirmPasswordLabel: UILabel!
     
     //TextFields
+    @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
@@ -65,6 +67,7 @@ class RegisterViewController: UIViewController {
     // MARK: Methods
     
     func setupLabels(){
+        userNameLabel.text = ""
         emailLabel.text = ""
         passwordLabel.text = ""
         confirmPasswordLabel.text = ""
@@ -79,10 +82,13 @@ class RegisterViewController: UIViewController {
     }
     
     func configureTextFields(){
+        userNameTextField.delegate = self
         emailTextField.delegate = self
         passwordTextField.delegate = self
         confirmPasswordField.delegate = self
         
+        self.userNameTextField.layer.cornerRadius = 15
+        self.userNameTextField.layer.masksToBounds = true
         self.emailTextField.layer.cornerRadius = 15
         self.emailTextField.layer.masksToBounds = true
         self.passwordTextField.layer.cornerRadius = 15
@@ -112,7 +118,7 @@ class RegisterViewController: UIViewController {
         {
             
         case "register":
-            return emailTextField.hasText && passwordTextField.hasText && confirmPasswordField.hasText
+            return userNameTextField.hasText && emailTextField.hasText && passwordTextField.hasText && confirmPasswordField.hasText
             
 
         default :
@@ -136,7 +142,7 @@ class RegisterViewController: UIViewController {
     
     func registerUser(){
         if passwordTextField.text == confirmPasswordField.text{
-            FUserListener.shared.registerUserWith(email: emailTextField.text!, password: passwordTextField.text!) { error in
+            FUserListener.shared.registerUserWith(userName : userNameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!) { error in
                 
                 if error == nil{
                     ProgressHUD.success("Verification Email Sent , please check you email :)")
@@ -163,6 +169,8 @@ class RegisterViewController: UIViewController {
 extension RegisterViewController : UITextFieldDelegate{
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
+        
+        userNameLabel.text = userNameTextField.hasText ? "Email" : ""
         emailLabel.text = emailTextField.hasText ? "Email" : ""
         passwordLabel.text = passwordTextField.hasText ? "Password" : ""
         confirmPasswordLabel.text = confirmPasswordField.hasText ? "Confirm Password" : ""

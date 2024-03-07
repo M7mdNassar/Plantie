@@ -13,6 +13,7 @@
 		043989D12B9736F800FA0FF7 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 043989D02B9736F800FA0FF7 /* SDWebImage */; };
 		043989D42B9742D100FA0FF7 /* SKPhotoBrowser in Frameworks */ = {isa = PBXBuildFile; productRef = 043989D32B9742D100FA0FF7 /* SKPhotoBrowser */; };
 		043989D62B975A4800FA0FF7 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043989D52B975A4800FA0FF7 /* ShadowView.swift */; };
+		043ED8042B99D8E200832BB0 /* RealtimeDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043ED8032B99D8E200832BB0 /* RealtimeDatabaseManager.swift */; };
 		043EF0282B8F3A91007F8E6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 043EF0272B8F3A91007F8E6C /* GoogleService-Info.plist */; };
 		043EF02A2B8F523D007F8E6C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043EF0292B8F523D007F8E6C /* LoginViewController.swift */; };
 		043EF02C2B8F5252007F8E6C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043EF02B2B8F5252007F8E6C /* RegisterViewController.swift */; };
@@ -95,6 +96,7 @@
 		043989CA2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagesPostCollectionViewCell.xib; sourceTree = "<group>"; };
 		043989CD2B972C0500FA0FF7 /* ExpandableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableLabel.swift; sourceTree = "<group>"; };
 		043989D52B975A4800FA0FF7 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		043ED8032B99D8E200832BB0 /* RealtimeDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeDatabaseManager.swift; sourceTree = "<group>"; };
 		043EF0272B8F3A91007F8E6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		043EF0292B8F523D007F8E6C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		043EF02B2B8F5252007F8E6C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				044B149D2B8E30180087C094 /* FUserListener.swift */,
 				044B149F2B8E30650087C094 /* FCollectionReference.swift */,
 				044B14A12B8E307A0087C094 /* FileStorage.swift */,
+				043ED8032B99D8E200832BB0 /* RealtimeDatabaseManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -712,6 +715,7 @@
 				044B14952B8E2B590087C094 /* UIImageViewExtension.swift in Sources */,
 				04F815DB2B8DF98C000D2DAD /* CustomTabBarController.swift in Sources */,
 				0465378C2B97140A001880C1 /* TextTableViewCell.swift in Sources */,
+				043ED8042B99D8E200832BB0 /* RealtimeDatabaseManager.swift in Sources */,
 				043EF02C2B8F5252007F8E6C /* RegisterViewController.swift in Sources */,
 				044B14AC2B8E38AC0087C094 /* EditProfile.swift in Sources */,
 				044B14A82B8E34AC0087C094 /* ProfileTableViewCell.swift in Sources */,
@@ -920,11 +924,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Plantie/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(APP_NAME) need access to your camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(APP_NAME) need access to your library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -932,6 +938,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nassar.Plantie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -948,11 +958,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Plantie/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(APP_NAME) need access to your camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(APP_NAME) need access to your library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -960,6 +972,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nassar.Plantie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

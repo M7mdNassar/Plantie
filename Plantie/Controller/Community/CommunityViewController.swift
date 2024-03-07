@@ -1,14 +1,10 @@
 
 import UIKit
-import SKPhotoBrowser
 
 class CommunityViewController: UIViewController {
     
     // MARK: Variables
-    let posts: [Post] = [
-        Post(postId: "123", owner: User.currentUser!, content: "Hello Farmers !Hello Farmers !Hello Farmers !Hello Farmers !Hello Farmers !Hello Farmers !Hello Farmers !Hello Farmers !Hello Farmers !Hello Farmers !Hello Farmers !Hello Farmers !Hello Farmers !Hello Farmers !Hello Farmers !Hello Farmers !Hello Farmers !", imageUrls: [], likes: 0, comments: []),
-        Post(postId: "1234", owner: User.currentUser!, content: "بسم الله الرحمن الرحيم ", imageUrls: ["https://firebasestorage.googleapis.com:443/v0/b/foodie-b6084.appspot.com/o/PostImages%2F_596AF6FE-F40A-42F1-8471-CA9DEC0A99DA.jpg?alt=media&token=137435cc-e36b-4283-bcd5-0d6926097f01",""], likes: 0, comments: [])
-    ]
+    var posts: [Post] = []
     let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: Outlets
@@ -20,13 +16,35 @@ class CommunityViewController: UIViewController {
         super.viewDidLoad()
         setupSearchBar()
         setUpTable()
+        getPosts()
+        NotificationCenter.default.addObserver(self, selector: #selector(commentButtonPresed), name: Notification.Name(rawValue: "commentButtonTapped"), object: nil)
     }
     
+    func getPosts(){
+        RealtimeDatabaseManager.shared.getAllPosts { posts in
+            self.posts = posts
+            self.tableView.reloadData()
+        }
+    }
+    
+    @objc func commentButtonPresed(){
+        showPost()
+    }
     // MARK: Actions
     @IBAction func composeBarButton(_ sender: UIBarButtonItem) {
         
-        let userView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddPostView") as! AddPostViewController
-        self.navigationController?.pushViewController(userView, animated: true)
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddPostView") as! AddPostViewController
+//        self.navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+    
+    func showPost(){
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "showPostView") as! ShowPostViewController
+        
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
     
@@ -42,7 +60,7 @@ extension CommunityViewController : UITableViewDataSource , UITableViewDelegate 
         
         let post = posts[indexPath.row]
         
-        if post.imageUrls.isEmpty{
+        if post.images.isEmpty{
             
             let cell = tableView.dequeue() as TextTableViewCell
             cell.contentPostLabel.isExpaded = false
@@ -53,7 +71,6 @@ extension CommunityViewController : UITableViewDataSource , UITableViewDelegate 
         else
         {
             let cell = tableView.dequeue() as TextWithImagesTableViewCell
-            cell.delegate = self
             cell.contentPostLabel.isExpaded = false
             cell.configure(post: post)
             return cell
@@ -63,11 +80,8 @@ extension CommunityViewController : UITableViewDataSource , UITableViewDelegate 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "showPostView")
-//        navigationController?.pushViewController(vc, animated: true)
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
-        
+      showPost()
+       
     }
     
 }
@@ -107,24 +121,3 @@ private extension CommunityViewController{
     }
 }
 
-// MARK: Show the image from post cell
-
-extension CommunityViewController: TextWithImagesTableViewCellDelegate {
-    
-    func mixedPostCell(_ cell: TextWithImagesTableViewCell, didSelectImageAt indexPath: IndexPath) {
-        guard let imageUrl = cell.postImages[indexPath.item] else {
-            return
-        }
-        
-        var images = [SKPhoto]()
-        let photo = SKPhoto.photoWithImageURL(imageUrl)
-        photo.shouldCachePhotoURLImage = false
-        images.append(photo)
-        
-        let browser = SKPhotoBrowser(photos: images)
-        browser.initializePageIndex(0)
-        
-        // Here you can present the SKPhotoBrowser
-        present(browser, animated: true, completion: nil)
-    }
-}

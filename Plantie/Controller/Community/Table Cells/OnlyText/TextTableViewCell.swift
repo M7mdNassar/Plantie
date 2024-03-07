@@ -25,25 +25,33 @@ class TextTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
+    // MARK: Actions
+    
+    @IBAction func commentButtonTapped(_ sender: UIButton) {
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "commentButtonTapped")))
+    }
     
     // MARK: Methods
     
     func configure(post: Post ){
-        if post.owner.avatarLink != ""{
-            self.userImageView.sd_setImage(with: URL(string: post.owner.avatarLink))
+        
+        
+        if post.owner["avatarLink"] as? String != ""{
+            self.userImageView.sd_setImage(with: URL(string: post.owner["avatarLink"] as! String))
             
             self.userImageView.layer.cornerRadius = self.userImageView.frame.height/2
             self.userImageView.clipsToBounds = true
         }
         
-        self.userNameLabel.text = post.owner.userName
-        self.contentPostLabel.text = post.content
+        self.userNameLabel.text = post.owner["userName"] as? String
+        self.contentPostLabel.text = post.text
 
         
-        self.commentsCountLabel.text = String(post.comments.count)
+        self.commentsCountLabel.text = String(post.countOfComments)
         
         self.likesCountLabel.text = String(post.likes)
-        
+        self.dislikesCountLabel.text = String(post.dislikes)
+
     
     }
 }
