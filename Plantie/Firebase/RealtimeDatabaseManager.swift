@@ -74,7 +74,85 @@ class RealtimeDatabaseManager {
         }
         
     }
+    
+    func addComment(comment: Comment, completion: @escaping (Error?) -> Void) {
+            let commentData: [String: Any] = [
+                "id": comment.id,
+                "text": comment.text,
+                "owner": comment.owner,
+                "postId": comment.postId
+            ]
+
+            let commentRef = databaseRef.child("comments").childByAutoId()
+            commentRef.setValue(commentData) { error, _ in
+                completion(error)
+            }
+        }
+
+        func getAllComments(forPost postId: String, completion: @escaping ([Comment]) -> Void) {
+            databaseRef.child("comments")
+                .queryOrdered(byChild: "postId")
+                .queryEqual(toValue: postId)
+                .observeSingleEvent(of: .value, with: { snapshot in
+                    var comments: [Comment] = []
+
+                    for child in snapshot.children {
+                        guard let childSnapshot = child as? DataSnapshot,
+                            let commentData = childSnapshot.value as? [String: Any] else { continue }
+
+                        let comment = Comment(
+                            id: childSnapshot.key,
+                            text: commentData["text"] as? String ?? "",
+                            owner: commentData["owner"] as? [String: Any] ?? [:],
+                            postId: postId
+                        )
+                        comments.append(comment)
+                    }
+
+                    completion(comments)
+                }) { error in
+                    print("Error getting comments: \(error.localizedDescription)")
+                    completion([])
+                }
+        }
+
+    
+    func updateLikes(forPost postId: String, increment: Int, completion: @escaping (Error?) -> Void) {
+         let postRef = databaseRef.child("posts").child(postId)
+         postRef.child("likes").observeSingleEvent(of: .value) { snapshot in
+             if var likes = snapshot.value as? Int {
+                 likes += increment
+                 postRef.child("likes").setValue(likes) { error, _ in
+                     completion(error)
+                 }
+             } else {
+                 completion(NSError(domain: "RealtimeDatabaseManager", code: 0, userInfo: [NSLocalizedDescriptionKey: "Likes data not found"]))
+             }
+         }
+     }
+
+     func updateDislikes(forPost postId: String, increment: Int, completion: @escaping (Error?) -> Void) {
+         let postRef = databaseRef.child("posts").child(postId)
+         postRef.child("dislikes").observeSingleEvent(of: .value) { snapshot in
+             if var dislikes = snapshot.value as? Int {
+                 dislikes += increment
+                 postRef.child("dislikes").setValue(dislikes) { error, _ in
+                     completion(error)
+                 }
+             } else {
+                 completion(NSError(domain: "RealtimeDatabaseManager", code: 0, userInfo: [NSLocalizedDescriptionKey: "Dislikes data not found"]))
+             }
+         }
+     }
    
+    
+    func updateCommentCount(forPost postId: String, count: Int, completion: ((Error?) -> Void)?) {
+        let postRef = databaseRef.child("posts").child(postId)
+        postRef.updateChildValues(["countOfComments": count]) { error, _ in
+            completion?(error)
+        }
+    }
+
 }
 
 

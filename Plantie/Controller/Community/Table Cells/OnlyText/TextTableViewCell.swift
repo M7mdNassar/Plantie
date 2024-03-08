@@ -1,4 +1,3 @@
-
 import UIKit
 
 class TextTableViewCell: UITableViewCell {
@@ -15,7 +14,12 @@ class TextTableViewCell: UITableViewCell {
     @IBOutlet weak var dislikeButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
     
-
+    // MARK: Variables
+    var post: Post!
+    private var isLikeSelected = false
+    private var isDislikeSelected = false
+    
+    // MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,33 +29,209 @@ class TextTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
-    // MARK: Actions
     
+    // MARK: Actions
     @IBAction func commentButtonTapped(_ sender: UIButton) {
-        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "commentButtonTapped")))
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "commentButtonTapped"), object: nil , userInfo: ["cell" : self]))
     }
     
+    // MARK: Actions
+
+    @IBAction func makeLike(_ sender: UIButton) {
+        guard let postId = post?.id else { return }
+
+        let isAlreadyLiked = likeButton.tintColor == .blue
+
+        if isAlreadyLiked { // If already liked, remove the like
+            RealtimeDatabaseManager.shared.updateLikes(forPost: postId, increment: -1) { [weak self] error in
+                // Handle error and update UI as needed
+                if error == nil {
+                    self?.likeButton.tintColor = .white
+                    self?.updateLikeCountLabel(-1)
+                }
+            }
+        } else { // If not liked, add the like and deselect the dislike button
+            RealtimeDatabaseManager.shared.updateLikes(forPost: postId, increment: 1) { [weak self] error in
+                // Handle error and update UI as needed
+                if error == nil {
+                    self?.likeButton.tintColor = .blue
+                    self?.updateLikeCountLabel(1)
+                    self?.deselectDislikeButton()
+                }
+            }
+
+            // If the user had previously disliked the post, update the dislike count and UI
+            if dislikeButton.tintColor == .blue {
+                RealtimeDatabaseManager.shared.updateDislikes(forPost: postId, increment: -1) { [weak self] error in
+                    // Handle error and update UI as needed
+                    if error == nil {
+                        self?.dislikeButton.tintColor = .white
+                        self?.updateDislikeCountLabel(-1)
+                    }
+                }
+            }
+        }
+    }
+
+    @IBAction func makeDislike(_ sender: UIButton) {
+        guard let postId = post?.id else { return }
+
+        let isAlreadyDisliked = dislikeButton.tintColor == .blue
+
+        if isAlreadyDisliked { // If already disliked, remove the dislike
+            RealtimeDatabaseManager.shared.updateDislikes(forPost: postId, increment: -1) { [weak self] error in
+                // Handle error and update UI as needed
+                if error == nil {
+                    self?.dislikeButton.tintColor = .white
+                    self?.updateDislikeCountLabel(-1)
+                }
+            }
+        } else { // If not disliked, add the dislike and deselect the like button
+            RealtimeDatabaseManager.shared.updateDislikes(forPost: postId, increment: 1) { [weak self] error in
+                // Handle error and update UI as needed
+                if error == nil {
+                    self?.dislikeButton.tintColor = .blue
+                    self?.updateDislikeCountLabel(1)
+                    self?.deselectLikeButton()
+                }
+            }
+
+            // If the user had previously liked the post, update the like count and UI
+            if likeButton.tintColor == .blue {
+                RealtimeDatabaseManager.shared.updateLikes(forPost: postId, increment: -1) { [weak self] error in
+                    // Handle error and update UI as needed
+                    if error == nil {
+                        self?.likeButton.tintColor = .white
+                        self?.updateLikeCountLabel(-1)
+                    }
+                }
+            }
+        }
+    }
+
+
+
+     private func toggleLikeButton() {
+         guard let postId = post?.id else { return }
+         
+         if likeButton.tintColor == .blue {
+             isLikeSelected = false
+             RealtimeDatabaseManager.shared.updateLikes(forPost: postId, increment: -1) { [weak self] error in
+                 if let error = error {
+                     print("Error updating likes: \(error.localizedDescription)")
+                     return
+                 }
+                 self?.updateLikeCountLabel(-1)
+             }
+         } else {
+             isLikeSelected = true
+             RealtimeDatabaseManager.shared.updateLikes(forPost: postId, increment: 1) { [weak self] error in
+                 if let error = error {
+                     print("Error updating likes: \(error.localizedDescription)")
+                     return
+                 }
+                 self?.updateLikeCountLabel(1)
+                 self?.deselectDislikeButton()
+             }
+         }
+         
+         likeButton.tintColor = (likeButton.tintColor == .blue) ? .white : .blue
+     }
+
+     private func toggleDislikeButton() {
+         guard let postId = post?.id else { return }
+         
+         if dislikeButton.tintColor == .blue {
+             isDislikeSelected = false
+             RealtimeDatabaseManager.shared.updateDislikes(forPost: postId, increment: -1) { [weak self] error in
+                 if let error = error {
+                     print("Error updating dislikes: \(error.localizedDescription)")
+                     return
+                 }
+                 self?.updateDislikeCountLabel(-1)
+             }
+         } else {
+             isDislikeSelected = true
+             RealtimeDatabaseManager.shared.updateDislikes(forPost: postId, increment: 1) { [weak self] error in
+                 if let error = error {
+                     print("Error updating dislikes: \(error.localizedDescription)")
+                     return
+                 }
+                 self?.updateDislikeCountLabel(1)
+                 self?.deselectLikeButton()
+             }
+         }
+         
+         dislikeButton.tintColor = (dislikeButton.tintColor == .blue) ? .white : .blue
+     }
+     
+     // MARK: Helper Methods
+
+     private func updateLikeCountLabel(_ increment: Int) {
+         guard let currentLikes = Int(likesCountLabel.text ?? "0") else { return }
+         likesCountLabel.text = "\(currentLikes + increment)"
+     }
+
+     private func updateDislikeCountLabel(_ increment: Int) {
+         guard let currentDislikes = Int(dislikesCountLabel.text ?? "0") else { return }
+         dislikesCountLabel.text = "\(currentDislikes + increment)"
+     }
+     
+     private func deselectLikeButton() {
+         guard let postId = post?.id else { return }
+         
+         if isLikeSelected {
+             isLikeSelected = false
+             RealtimeDatabaseManager.shared.updateLikes(forPost: postId, increment: -1) { [weak self] error in
+                 if let error = error {
+                     print("Error updating likes: \(error.localizedDescription)")
+                     return
+                 }
+                 self?.updateLikeCountLabel(-1)
+             }
+         }
+         
+         likeButton.tintColor = .white
+     }
+
+     private func deselectDislikeButton() {
+         guard let postId = post?.id else { return }
+         
+         if isDislikeSelected {
+             isDislikeSelected = false
+             RealtimeDatabaseManager.shared.updateDislikes(forPost: postId, increment: -1) { [weak self] error in
+                 if let error = error {
+                     print("Error updating dislikes: \(error.localizedDescription)")
+                     return
+                 }
+                 self?.updateDislikeCountLabel(-1)
+             }
+         }
+         
+         dislikeButton.tintColor = .white
+     }
+
+
+
     // MARK: Methods
     
-    func configure(post: Post ){
-        
-        
-        if post.owner["avatarLink"] as? String != ""{
+    func configure(post: Post) {
+        self.post = post
+        if post.owner["avatarLink"] as? String != "" {
             self.userImageView.sd_setImage(with: URL(string: post.owner["avatarLink"] as! String))
-            
-            self.userImageView.layer.cornerRadius = self.userImageView.frame.height/2
+
+            self.userImageView.layer.cornerRadius = self.userImageView.frame.height / 2
             self.userImageView.clipsToBounds = true
         }
-        
+
         self.userNameLabel.text = post.owner["userName"] as? String
         self.contentPostLabel.text = post.text
 
-        
-        self.commentsCountLabel.text = String(post.countOfComments)
-        
-        self.likesCountLabel.text = String(post.likes)
-        self.dislikesCountLabel.text = String(post.dislikes)
+        // Update comments count label
+        self.commentsCountLabel.text = "\(post.countOfComments)"
 
-    
+        self.likesCountLabel.text = "\(post.likes)"
+        self.dislikesCountLabel.text = "\(post.dislikes)"
     }
+    
 }

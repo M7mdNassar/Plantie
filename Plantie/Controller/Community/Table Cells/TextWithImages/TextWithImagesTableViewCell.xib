@@ -83,6 +83,9 @@
                                         <buttonConfiguration key="configuration" style="plain" image="hand.thumbsup.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="14"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="makeLike:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="GXf-EI-dND"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cl-gQ-dJ2">
                                         <rect key="frame" x="44.333333333333314" y="8.3333333333333712" width="22.666666666666671" height="14.333333333333336"/>
@@ -102,6 +105,9 @@
                                         <buttonConfiguration key="configuration" style="plain" image="hand.thumbsdown.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="14"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="makeDislike:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xba-PG-dKh"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ah0-7J-Uiz">
                                         <rect key="frame" x="44.333333333333314" y="8.3333333333333712" width="22.666666666666671" height="14.333333333333336"/>
@@ -190,7 +196,7 @@
         <image name="hand.thumbsup.fill" catalog="system" width="128" height="121"/>
         <image name="profile" width="684" height="684"/>
         <namedColor name="PlantieGreen">
-            <color red="0.20299999415874481" green="0.46700000762939453" blue="0.41600000858306885" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.20399999618530273" green="0.46700000762939453" blue="0.41600000858306885" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

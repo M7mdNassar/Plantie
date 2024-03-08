@@ -1,11 +1,13 @@
 import UIKit
 import SKPhotoBrowser
+import ProgressHUD
 
 class ShowPostViewController: UIViewController {
     
     // MARK: Variables
     
     var post:Post!
+    var comments:[Comment] = []
     var skPhotoImages: [SKPhoto] = []
 
     // MARK: Outlets
@@ -28,9 +30,15 @@ class ShowPostViewController: UIViewController {
         setUpTextView()
         checkIfPostHaveImages()
         
-        
-    
 
+        
+        // Fetch comments for the current post ID
+           if let postId = post?.id {
+               RealtimeDatabaseManager.shared.getAllComments(forPost: postId) { [weak self] comments in
+                   self?.comments = comments
+                   self?.tableView.reloadData()
+               }
+           }
     }
     
     // MARK: Actions
@@ -40,7 +48,53 @@ class ShowPostViewController: UIViewController {
     }
     
     @IBAction func sendComment(_ sender: UIButton) {
+        guard let content = textView.text, !content.isEmpty else { return }
+        guard let currentUser = User.currentUser else { return }
+
+        let ownerDict: [String: Any] = [
+            "id": currentUser.id,
+            "userName": currentUser.userName,
+            "email": currentUser.email,
+            "pushId": currentUser.pushId,
+            "avatarLink": currentUser.avatarLink,
+            "bio": currentUser.bio,
+            "country": currentUser.country
+        ]
+
+        let comment = Comment(
+            id: UUID().uuidString,
+            text: content,
+            owner: ownerDict,
+            postId: post.id
+        )
+
+        RealtimeDatabaseManager.shared.addComment(comment: comment) { [weak self] error in
+            if let error = error {
+                ProgressHUD.error("Error adding comment: \(error.localizedDescription)")
+            } else {
+                // Update local comment count
+                self?.comments.append(comment)
+                self?.textView.text = ""
+                // Update comments count label in the TextTableViewCell
+                if let cell = self?.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? TextTableViewCell {
+                    cell.commentsCountLabel.text = "\(self?.comments.count ?? 0)"
+                }
+
+                ProgressHUD.success("Comment added successfully!")
+
+                // Update comment count in Firebase
+                if let postId = self?.post.id {
+                    let newCommentCount = self?.comments.count ?? 0
+                    RealtimeDatabaseManager.shared.updateCommentCount(forPost: postId, count: newCommentCount) { error in
+                        if let error = error {
+                            print("Error updating comment count: \(error.localizedDescription)")
+                        }
+                    }
+                }
+            }
+        }
     }
+
     
     // MARK: private Methods
     
@@ -56,6 +110,13 @@ class ShowPostViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        // This cell for first table cell
+        tableView.register(Cell: TextTableViewCell.self)
+        //This cell for other cells (contain the comments of post)
+        tableView.register(Cell: CommentTableViewCell.self)
+       
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 44
     }
     
     func setUpTextView() {
@@ -104,13 +165,22 @@ extension ShowPostViewController: UITextViewDelegate {
 // MARK: TableView Datasource
 extension ShowPostViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return post.countOfComments + 1
+        return comments.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "[\(indexPath.section),\(indexPath.row)]"
-        return cell
+        
+        if indexPath.row == 0 {
+            let cell = tableView.dequeue() as TextTableViewCell
+            cell.configure(post: post)
+            return cell
+        } else if indexPath.row - 1 < comments.count {
+            let cell = tableView.dequeue() as CommentTableViewCell
+            cell.configure(comment: comments[indexPath.row - 1])
+            return cell
+        }
+      
+       return UITableViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

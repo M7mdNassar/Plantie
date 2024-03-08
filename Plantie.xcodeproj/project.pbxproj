@@ -35,6 +35,8 @@
 		046537882B9713AE001880C1 /* TextWithImagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046537862B9713AE001880C1 /* TextWithImagesTableViewCell.xib */; };
 		0465378C2B97140A001880C1 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465378A2B97140A001880C1 /* TextTableViewCell.swift */; };
 		0465378D2B97140A001880C1 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0465378B2B97140A001880C1 /* TextTableViewCell.xib */; };
+		046D818A2B9B21920063EDB3 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D81882B9B21920063EDB3 /* CommentTableViewCell.swift */; };
+		046D818B2B9B21920063EDB3 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D81892B9B21920063EDB3 /* CommentTableViewCell.xib */; };
 		0478492C2B8F375900562F68 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478492B2B8F375900562F68 /* LaunchScreenController.swift */; };
 		0478492E2B8F388E00562F68 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0478492D2B8F388E00562F68 /* Lottie */; };
 		049F77BC2B97952C00D65123 /* ShowPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F77BB2B97952C00D65123 /* ShowPostViewController.swift */; };
@@ -116,6 +118,8 @@
 		046537862B9713AE001880C1 /* TextWithImagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextWithImagesTableViewCell.xib; sourceTree = "<group>"; };
 		0465378A2B97140A001880C1 /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
 		0465378B2B97140A001880C1 /* TextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
+		046D81882B9B21920063EDB3 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		046D81892B9B21920063EDB3 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		0478492B2B8F375900562F68 /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
 		049F77BB2B97952C00D65123 /* ShowPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPostViewController.swift; sourceTree = "<group>"; };
 		04F815882B8DF0C5000D2DAD /* Plantie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plantie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				049F77BB2B97952C00D65123 /* ShowPostViewController.swift */,
+				046D81882B9B21920063EDB3 /* CommentTableViewCell.swift */,
+				046D81892B9B21920063EDB3 /* CommentTableViewCell.xib */,
 			);
 			path = "Show Post";
 			sourceTree = "<group>";
@@ -572,6 +578,7 @@
 				046537882B9713AE001880C1 /* TextWithImagesTableViewCell.xib in Resources */,
 				04F815E62B8E002E000D2DAD /* Harmattan-Regular.ttf in Resources */,
 				04F815E22B8E0011000D2DAD /* PlantLottieLoading.json in Resources */,
+				046D818B2B9B21920063EDB3 /* CommentTableViewCell.xib in Resources */,
 				0465378D2B97140A001880C1 /* TextTableViewCell.xib in Resources */,
 				044B14A92B8E34AC0087C094 /* ProfileTableViewCell.xib in Resources */,
 				04F815952B8DF0C8000D2DAD /* Assets.xcassets in Resources */,
@@ -710,6 +717,7 @@
 				0465378C2B97140A001880C1 /* TextTableViewCell.swift in Sources */,
 				043ED8042B99D8E200832BB0 /* RealtimeDatabaseManager.swift in Sources */,
 				043EF02C2B8F5252007F8E6C /* RegisterViewController.swift in Sources */,
+				046D818A2B9B21920063EDB3 /* CommentTableViewCell.swift in Sources */,
 				044B14AC2B8E38AC0087C094 /* EditProfile.swift in Sources */,
 				044B14A82B8E34AC0087C094 /* ProfileTableViewCell.swift in Sources */,
 				044B148F2B8E25FF0087C094 /* ProfileViewController.swift in Sources */,

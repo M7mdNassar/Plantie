@@ -27,14 +27,27 @@ class CommunityViewController: UIViewController {
         }
     }
     
-    @objc func commentButtonPresed(){
+    @objc func commentButtonPresed(notification : Notification){
     
+        if let cell = notification.userInfo?["cell"] as? UITableViewCell {
+            if let indexPath = tableView.indexPath(for: cell){
+                let post = posts[indexPath.row]
+                let vc = storyboard?.instantiateViewController(withIdentifier: "showPostView") as! ShowPostViewController
+                vc.post = post
+                present(vc, animated: true, completion: nil)
+
+            }
+            
+            
+        }
+        
+        
     }
     // MARK: Actions
     @IBAction func composeBarButton(_ sender: UIBarButtonItem) {
         
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddPostView") as! AddPostViewController
-//        self.navigationController?.pushViewController(vc, animated: true)
+
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
