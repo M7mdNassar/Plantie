@@ -139,6 +139,11 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="GvB-lM-jib">
+                                <rect key="frame" x="176.66666666666666" y="229.33333333333334" width="115.66666666666666" height="25.666666666666657"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" name="PlantieGreen"/>
                         <constraints>
@@ -146,6 +151,7 @@
                             <constraint firstItem="cBG-gi-r0E" firstAttribute="top" secondItem="K4L-lS-5cu" secondAttribute="bottom" constant="15" id="8hG-0m-4H3"/>
                             <constraint firstItem="YHh-Cq-SoS" firstAttribute="leading" secondItem="SqN-7J-rZl" secondAttribute="trailing" constant="20" id="8yC-ve-KWI"/>
                             <constraint firstAttribute="trailing" secondItem="cBG-gi-r0E" secondAttribute="trailing" constant="10" id="BCY-56-cw4"/>
+                            <constraint firstItem="GvB-lM-jib" firstAttribute="centerX" secondItem="K4L-lS-5cu" secondAttribute="centerX" id="DWf-HS-cEK"/>
                             <constraint firstItem="K4L-lS-5cu" firstAttribute="top" secondItem="Xrl-YL-jd0" secondAttribute="top" constant="15" id="EfK-h2-cqW"/>
                             <constraint firstAttribute="trailing" secondItem="yTw-8W-7ci" secondAttribute="trailing" constant="10" id="K9u-Lh-Z6u"/>
                             <constraint firstAttribute="trailing" secondItem="A6X-rw-vGP" secondAttribute="trailing" constant="15" id="M8T-9m-Kyl"/>
@@ -154,6 +160,7 @@
                             <constraint firstAttribute="bottom" secondItem="Qrs-yA-BBH" secondAttribute="bottom" constant="8" id="QD7-VV-6jg"/>
                             <constraint firstItem="A6X-rw-vGP" firstAttribute="top" secondItem="cBG-gi-r0E" secondAttribute="bottom" constant="8" id="S0L-Ut-Z2d"/>
                             <constraint firstItem="SqN-7J-rZl" firstAttribute="top" secondItem="yTw-8W-7ci" secondAttribute="bottom" constant="5" id="T4c-Mk-9iF"/>
+                            <constraint firstItem="GvB-lM-jib" firstAttribute="centerY" secondItem="K4L-lS-5cu" secondAttribute="centerY" constant="100" id="Ykh-SE-IGc"/>
                             <constraint firstAttribute="trailing" secondItem="YHh-Cq-SoS" secondAttribute="trailing" constant="15" id="Zhc-zG-Mww"/>
                             <constraint firstAttribute="trailing" secondItem="K4L-lS-5cu" secondAttribute="trailing" constant="15" id="a7P-bs-JUz"/>
                             <constraint firstItem="YHh-Cq-SoS" firstAttribute="top" secondItem="yTw-8W-7ci" secondAttribute="bottom" constant="5" id="nFd-3B-3FF"/>
@@ -184,6 +191,7 @@
                 <outlet property="dislikesCountLabel" destination="ah0-7J-Uiz" id="w2W-qy-gwI"/>
                 <outlet property="likeButton" destination="dvw-Sh-fO6" id="mNK-6G-Ksm"/>
                 <outlet property="likesCountLabel" destination="9cl-gQ-dJ2" id="egg-rh-X5j"/>
+                <outlet property="pageControl" destination="GvB-lM-jib" id="Keu-NW-gdV"/>
                 <outlet property="userImageView" destination="Ial-vG-eeE" id="stp-kL-2XG"/>
                 <outlet property="userNameLabel" destination="yiZ-vw-15g" id="E7f-rR-d1f"/>
             </connections>

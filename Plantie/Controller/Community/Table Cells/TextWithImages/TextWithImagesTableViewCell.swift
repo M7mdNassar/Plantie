@@ -16,9 +16,9 @@ class TextWithImagesTableViewCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var dislikeButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     // MARK: Variables
-    
     var postImages: [String?] = []
     var post:Post!
     private var isLikeSelected = false
@@ -32,6 +32,7 @@ class TextWithImagesTableViewCell: UITableViewCell {
         
        let nib = UINib(nibName: "ImagesPostCollectionViewCell", bundle: nil)
         PostsImagesCollectionView.register(nib, forCellWithReuseIdentifier: "ImagesPostCollectionViewCell")
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -230,6 +231,9 @@ class TextWithImagesTableViewCell: UITableViewCell {
     func configure(post: Post ){
         
         self.post = post
+        
+        pageControl.numberOfPages = post.images.count
+        
         if post.owner["avatarLink"] as? String != ""{
             self.userImageView.sd_setImage(with: URL(string: post.owner["avatarLink"] as! String ))
             
@@ -294,5 +298,9 @@ extension TextWithImagesTableViewCell: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+          let currentIndex = Int(scrollView.contentOffset.x / scrollView.bounds.width)
+          pageControl.currentPage = currentIndex
+      }
 }
 

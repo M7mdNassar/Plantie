@@ -75,6 +75,7 @@ class ShowPostViewController: UIViewController {
                 // Update local comment count
                 self?.comments.append(comment)
                 self?.textView.text = ""
+                self?.tableView.reloadData()
                 // Update comments count label in the TextTableViewCell
                 if let cell = self?.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? TextTableViewCell {
                     cell.commentsCountLabel.text = "\(self?.comments.count ?? 0)"
