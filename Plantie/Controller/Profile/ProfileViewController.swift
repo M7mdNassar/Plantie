@@ -1,12 +1,6 @@
 import UIKit
 import ProgressHUD
 
-   // MARK: - Option Struct
-
-struct Option {
-    let title: String
-    let icon: UIImage
-}
 
 class ProfileViewController: UIViewController {
     
@@ -15,27 +9,23 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var contentView: ShadowView!
+    @IBOutlet weak var headertView: ShadowView!
+    @IBOutlet weak var updateProfileButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     
     // MARK: - Variables
     
     let backButton = UIBarButtonItem()
-    
-    let options:[Option] = [
-        Option(title: "تعديل الملف الشخصي", icon: UIImage(systemName: "person.crop.circle.fill")!),
-        Option(title: "تسجيل الخروج", icon: UIImage(systemName: "rectangle.portrait.and.arrow.forward.fill")!)
-    ]
     
     // MARK: - Life Cycle Controller
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTabBar()
-        configureTable()
         PlaceholderForImage()
         configureNavigationBar()
-      
+        setupView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +33,17 @@ class ProfileViewController: UIViewController {
         setupUI()
     }
     
+    
+    // MARK: Actions
+    
+    @IBAction func updateUserInfoButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToEdit", sender: self)
+
+    }
+    
+    @IBAction func logoutButton(_ sender: UIButton) {
+        logout()
+    }
     func setupUI(){
         setUpFont()
         setShadowAroundImage()
@@ -63,16 +64,6 @@ class ProfileViewController: UIViewController {
   
     
     // MARK: - Methods
-    
-    func configureTable() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        let cellNib = UINib(nibName: "ProfileTableViewCell", bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: "ProfileTableViewCell")
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 100
-        contentView.layer.cornerRadius = 15 //make corner around the table content
-    }
     
     func configureNavigationBar() {
         backButton.title = NSLocalizedString("رجوع", comment: "")
@@ -123,45 +114,10 @@ class ProfileViewController: UIViewController {
     }
     
     
-}
-
-// MARK: - TableView Delegate
-
-extension ProfileViewController: UITableViewDelegate {
     
 }
 
-// MARK: - TableView Data Source
 
-extension ProfileViewController : UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        options.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
-        let option = options[indexPath.row]
-        cell.setUpCell(optionTitle: option.title, optionIcon: option.icon)
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedOption = indexPath.row
-        if selectedOption == 0 {
-            performSegue(withIdentifier: "goToEdit", sender: self)
-        }
-
-        else if selectedOption == 1 {
-            logout()
-        }
-       
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
 
 // MARK: - Private Methods For UI
 
@@ -187,10 +143,15 @@ private extension ProfileViewController {
     
     func setUpFont() {
         let maximumFontSize: CGFloat = 40.0
-        if let customFont = UIFont(name: "Harmattan-Regular", size: 19.0) {
+        if let customFont = UIFont(name: "Harmattan-Bold", size: 28.0) {
             let scaledFont = UIFontMetrics.default.scaledFont(for: customFont)
             userNameLabel.font = scaledFont.withSize(min(scaledFont.pointSize, maximumFontSize))
         }
+    }
+    
+    func setupView(){
+        updateProfileButton.layer.cornerRadius = 15
+        logoutButton.layer.cornerRadius = 15
     }
 }
 

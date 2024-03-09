@@ -27,8 +27,6 @@
 		044B14A02B8E30650087C094 /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B149F2B8E30650087C094 /* FCollectionReference.swift */; };
 		044B14A22B8E307A0087C094 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B14A12B8E307A0087C094 /* FileStorage.swift */; };
 		044B14A42B8E320B0087C094 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B14A32B8E320B0087C094 /* User.swift */; };
-		044B14A82B8E34AC0087C094 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B14A62B8E34AC0087C094 /* ProfileTableViewCell.swift */; };
-		044B14A92B8E34AC0087C094 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044B14A72B8E34AC0087C094 /* ProfileTableViewCell.xib */; };
 		044B14AC2B8E38AC0087C094 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B14AB2B8E38AC0087C094 /* EditProfile.swift */; };
 		04519DAB2B9679E900D190AE /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04519DAA2B9679E900D190AE /* AddPostViewController.swift */; };
 		046537872B9713AE001880C1 /* TextWithImagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046537852B9713AE001880C1 /* TextWithImagesTableViewCell.swift */; };
@@ -111,8 +109,6 @@
 		044B149F2B8E30650087C094 /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
 		044B14A12B8E307A0087C094 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		044B14A32B8E320B0087C094 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		044B14A62B8E34AC0087C094 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
-		044B14A72B8E34AC0087C094 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		044B14AB2B8E38AC0087C094 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
 		04519DAA2B9679E900D190AE /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		046537852B9713AE001880C1 /* TextWithImagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWithImagesTableViewCell.swift; sourceTree = "<group>"; };
@@ -246,8 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				044B148E2B8E25FF0087C094 /* ProfileViewController.swift */,
-				044B14A62B8E34AC0087C094 /* ProfileTableViewCell.swift */,
-				044B14A72B8E34AC0087C094 /* ProfileTableViewCell.xib */,
 				044B14AA2B8E386F0087C094 /* Edit Profile */,
 			);
 			path = Profile;
@@ -584,7 +578,6 @@
 				04F815E22B8E0011000D2DAD /* PlantLottieLoading.json in Resources */,
 				046D818B2B9B21920063EDB3 /* CommentTableViewCell.xib in Resources */,
 				0465378D2B97140A001880C1 /* TextTableViewCell.xib in Resources */,
-				044B14A92B8E34AC0087C094 /* ProfileTableViewCell.xib in Resources */,
 				04F815952B8DF0C8000D2DAD /* Assets.xcassets in Resources */,
 				04F815932B8DF0C5000D2DAD /* Main.storyboard in Resources */,
 			);
@@ -723,7 +716,6 @@
 				043EF02C2B8F5252007F8E6C /* RegisterViewController.swift in Sources */,
 				046D818A2B9B21920063EDB3 /* CommentTableViewCell.swift in Sources */,
 				044B14AC2B8E38AC0087C094 /* EditProfile.swift in Sources */,
-				044B14A82B8E34AC0087C094 /* ProfileTableViewCell.swift in Sources */,
 				044B148F2B8E25FF0087C094 /* ProfileViewController.swift in Sources */,
 				044B14992B8E2B990087C094 /* Constents.swift in Sources */,
 				043989CB2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.swift in Sources */,
