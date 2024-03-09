@@ -1,5 +1,6 @@
 
 import UIKit
+import NVActivityIndicatorView
 
 class CommunityViewController: UIViewController {
     
@@ -10,6 +11,7 @@ class CommunityViewController: UIViewController {
     // MARK: Outlets
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicatorView: NVActivityIndicatorView!
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -91,6 +93,58 @@ extension CommunityViewController : UITableViewDataSource , UITableViewDelegate 
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
        
+    }
+    
+    // MARK: Pagination
+    
+//    private func createSpinnerFooter() -> UIView{
+//           let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 100))
+//           let spinner = UIActivityIndicatorView()
+//           spinner.center = footerView.center
+//           footerView.addSubview(spinner)
+//           spinner.startAnimating()
+//           return footerView
+//       }
+//    
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let position = scrollView.contentOffset.y
+        let contentHeight = tableView.contentSize.height
+        let screenHeight = scrollView.frame.size.height
+
+        // Load more data when the user reaches near the bottom
+        if position > (contentHeight - screenHeight) {
+            guard !RealtimeDatabaseManager.isPagination else {
+                // We are already fetching more data
+                return
+            }
+//            self.tableView.tableFooterView = createSpinnerFooter()
+            activityIndicatorView.startAnimating()
+            // Start fetching more data
+            RealtimeDatabaseManager.isPagination = true
+            let lastPostId = posts.last?.id // Retrieve the last post ID from the current posts
+            RealtimeDatabaseManager.shared.getAllPosts(startingAfter: lastPostId) { [weak self] additionalPosts in
+                guard let self = self else { return }
+
+                // Check if there are additional posts
+                if additionalPosts.isEmpty {
+                    // No more posts to fetch
+                    RealtimeDatabaseManager.isPagination = false
+                    self.activityIndicatorView.stopAnimating()
+                    return
+                }
+
+                // Append the additional posts to the existing array
+                self.posts.append(contentsOf: additionalPosts)
+
+                DispatchQueue.main.async {
+                    self.activityIndicatorView.stopAnimating()
+                    // Reload the table view with the new data
+                    self.tableView.reloadData()
+                    RealtimeDatabaseManager.isPagination = false
+                }
+            }
+        }
     }
     
 }

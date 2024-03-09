@@ -11,6 +11,8 @@ struct Post {
     var likes: Int // Number of likes for the post
     var dislikes: Int // Number of dislikes for the post
     var countOfComments: Int
+    var isLiked: Bool = false
+    var isDisliked: Bool = false
 }
 
 

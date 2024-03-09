@@ -40,6 +40,7 @@
 		0478492C2B8F375900562F68 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478492B2B8F375900562F68 /* LaunchScreenController.swift */; };
 		0478492E2B8F388E00562F68 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0478492D2B8F388E00562F68 /* Lottie */; };
 		049F77BC2B97952C00D65123 /* ShowPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F77BB2B97952C00D65123 /* ShowPostViewController.swift */; };
+		04DB1C6C2B9C6AD900D02DF7 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 04DB1C6B2B9C6AD900D02DF7 /* NVActivityIndicatorView */; };
 		04F8158C2B8DF0C5000D2DAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8158B2B8DF0C5000D2DAD /* AppDelegate.swift */; };
 		04F8158E2B8DF0C5000D2DAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8158D2B8DF0C5000D2DAD /* SceneDelegate.swift */; };
 		04F815932B8DF0C5000D2DAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F815912B8DF0C5000D2DAD /* Main.storyboard */; };
@@ -168,6 +169,7 @@
 				04F815D12B8DF863000D2DAD /* FirebaseInAppMessaging-Beta in Frameworks */,
 				04F815D52B8DF863000D2DAD /* FirebaseMessaging in Frameworks */,
 				04F815C92B8DF863000D2DAD /* FirebaseDynamicLinks in Frameworks */,
+				04DB1C6C2B9C6AD900D02DF7 /* NVActivityIndicatorView in Frameworks */,
 				04F815CF2B8DF863000D2DAD /* FirebaseFunctions in Frameworks */,
 				04F815D72B8DF863000D2DAD /* FirebaseStorage in Frameworks */,
 				04F815C32B8DF863000D2DAD /* FirebaseAuth in Frameworks */,
@@ -473,6 +475,7 @@
 				0478492D2B8F388E00562F68 /* Lottie */,
 				043989D02B9736F800FA0FF7 /* SDWebImage */,
 				043989D32B9742D100FA0FF7 /* SKPhotoBrowser */,
+				04DB1C6B2B9C6AD900D02DF7 /* NVActivityIndicatorView */,
 			);
 			productName = Plantie;
 			productReference = 04F815882B8DF0C5000D2DAD /* Plantie.app */;
@@ -554,6 +557,7 @@
 				044B14AD2B8E5FB90087C094 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				043989CF2B9736F700FA0FF7 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				043989D22B9742D100FA0FF7 /* XCRemoteSwiftPackageReference "SKPhotoBrowser" */,
+				04DB1C6A2B9C6AD900D02DF7 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			productRefGroup = 04F815892B8DF0C5000D2DAD /* Products */;
 			projectDirPath = "";
@@ -1124,6 +1128,14 @@
 				version = 4.4.1;
 			};
 		};
+		04DB1C6A2B9C6AD900D02DF7 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
 		04F815BB2B8DF862000D2DAD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1149,6 +1161,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 044B14AD2B8E5FB90087C094 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		04DB1C6B2B9C6AD900D02DF7 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04DB1C6A2B9C6AD900D02DF7 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
 		};
 		04F815BC2B8DF862000D2DAD /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

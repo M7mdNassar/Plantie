@@ -302,6 +302,20 @@
                                 <rect key="frame" x="13.666666666666657" y="155" width="365.66666666666674" height="624"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aY9-yf-Aij" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="146.66666666666666" y="442" width="100" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="MBw-wN-8HF"/>
+                                    <constraint firstAttribute="height" constant="50" id="gXL-4w-4Nv"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" name="PlantieGreen"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="ballPulseSync"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="j0E-6w-Z9G"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -309,6 +323,8 @@
                             <constraint firstItem="plq-Tm-ekE" firstAttribute="centerX" secondItem="j0E-6w-Z9G" secondAttribute="centerX" id="489-OO-fCk"/>
                             <constraint firstItem="j0E-6w-Z9G" firstAttribute="bottom" secondItem="plq-Tm-ekE" secondAttribute="bottom" constant="-10" id="Gvm-NG-opc"/>
                             <constraint firstItem="plq-Tm-ekE" firstAttribute="top" secondItem="j0E-6w-Z9G" secondAttribute="top" id="JN0-ma-L2r"/>
+                            <constraint firstItem="aY9-yf-Aij" firstAttribute="centerX" secondItem="plq-Tm-ekE" secondAttribute="centerX" id="Mkh-ol-oF2"/>
+                            <constraint firstItem="aY9-yf-Aij" firstAttribute="centerY" secondItem="plq-Tm-ekE" secondAttribute="centerY" id="Oaq-yF-qkT"/>
                             <constraint firstItem="plq-Tm-ekE" firstAttribute="width" secondItem="5ve-qb-0Bp" secondAttribute="width" multiplier="0.93" id="xFJ-RA-apx"/>
                         </constraints>
                     </view>
@@ -322,6 +338,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="aY9-yf-Aij" id="NQ3-TH-6wh"/>
                         <outlet property="tableView" destination="plq-Tm-ekE" id="vUh-0w-HEp"/>
                     </connections>
                 </viewController>
@@ -1103,6 +1120,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxM-hu-VaV">
+                                <rect key="frame" x="309" y="55" width="68" height="48.666666666666657"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="DxM-hu-VaV" secondAttribute="height" multiplier="67:48" id="O5C-PP-10E"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.right.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="29"/>
+                                    <color key="baseForegroundColor" name="PlantieGreen"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="closeButton:" destination="3Yh-Qj-bQZ" eventType="touchUpInside" id="HhW-bR-eSn"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDT-rt-Exv">
                                 <rect key="frame" x="0.0" y="752" width="393" height="100"/>
                                 <subviews>
@@ -1158,20 +1189,6 @@
                                     <constraint firstItem="tg2-dJ-b4x" firstAttribute="top" secondItem="XDT-rt-Exv" secondAttribute="top" constant="33" id="qSp-eC-WaR"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxM-hu-VaV">
-                                <rect key="frame" x="309" y="55" width="68" height="48.666666666666657"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="DxM-hu-VaV" secondAttribute="height" multiplier="67:48" id="O5C-PP-10E"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="arrow.right.circle.fill" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="29"/>
-                                    <color key="baseForegroundColor" name="PlantieGreen"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="closeButton:" destination="3Yh-Qj-bQZ" eventType="touchUpInside" id="HhW-bR-eSn"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RxF-vT-oYe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
