@@ -34,10 +34,10 @@ class CommunityViewController: UIViewController {
                 let post = posts[indexPath.row]
                 let vc = storyboard?.instantiateViewController(withIdentifier: "showPostView") as! ShowPostViewController
                 vc.post = post
+                vc.modalPresentationStyle = .fullScreen
                 present(vc, animated: true, completion: nil)
 
             }
-            
             
         }
         

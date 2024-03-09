@@ -20,6 +20,9 @@ class ShowPostViewController: UIViewController {
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var sendCommentButton: UIButton!
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +33,6 @@ class ShowPostViewController: UIViewController {
         setUpTextView()
         checkIfPostHaveImages()
         
-
         
         // Fetch comments for the current post ID
            if let postId = post?.id {
@@ -75,6 +77,7 @@ class ShowPostViewController: UIViewController {
                 // Update local comment count
                 self?.comments.append(comment)
                 self?.textView.text = ""
+                self?.sendCommentButton.tintColor = .gray
                 self?.tableView.reloadData()
                 // Update comments count label in the TextTableViewCell
                 if let cell = self?.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? TextTableViewCell {
@@ -150,6 +153,14 @@ class ShowPostViewController: UIViewController {
 extension ShowPostViewController: UITextViewDelegate {
 
     func textViewDidChange(_ textView: UITextView) {
+      
+        if textView.text.isEmpty {
+             // Set button tint color to gray when text is empty
+             sendCommentButton.tintColor = .gray
+         } else {
+             // Set button tint color to green when there is text
+             sendCommentButton.tintColor = .plantieGreen
+         }
 
         updateTextViewHeight()
     }
