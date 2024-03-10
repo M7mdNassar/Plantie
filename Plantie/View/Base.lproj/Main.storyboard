@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="155" width="393" height="663"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3hH-4S-Ka5">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="704.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="728.66666666666663"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="PCL-ER-4gg">
                                                 <rect key="frame" x="20" y="30" width="353" height="488"/>
@@ -213,22 +213,31 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="JgE-7W-nR4">
-                                                <rect key="frame" x="143" y="644.33333333333337" width="107" height="40"/>
+                                                <rect key="frame" x="127" y="644.33333333333337" width="139" height="64.333333333333371"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google" translatesAutoresizingMaskIntoConstraints="NO" id="Ec3-2E-QLj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgR-tU-sDw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="56" height="64.333333333333329"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="LcN-9r-ezq"/>
-                                                            <constraint firstAttribute="width" constant="40" id="Tu3-VQ-baT"/>
+                                                            <constraint firstAttribute="width" secondItem="fgR-tU-sDw" secondAttribute="height" multiplier="20:23" id="hy9-Te-qhQ"/>
                                                         </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="yGf-f8-Q1m">
-                                                        <rect key="frame" x="67" y="0.0" width="40" height="40"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="google"/>
+                                                        <connections>
+                                                            <action selector="googleSignButton:" destination="T1F-oG-h1X" eventType="touchUpInside" id="yf9-gc-UxQ"/>
+                                                            <action selector="googleSignUpButton:" destination="3lp-8Z-t62" eventType="touchUpInside" id="QUx-Fi-ief"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAq-Ts-oMC">
+                                                        <rect key="frame" x="83" y="0.0" width="56" height="64.333333333333329"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="40" id="Krq-hp-hpE"/>
-                                                            <constraint firstAttribute="height" constant="40" id="r7m-Hk-LcJ"/>
+                                                            <constraint firstAttribute="width" secondItem="lAq-Ts-oMC" secondAttribute="height" multiplier="20:23" id="qx9-g2-I0e"/>
                                                         </constraints>
-                                                    </imageView>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="facebook"/>
+                                                        <connections>
+                                                            <action selector="facebookSignupButton:" destination="3lp-8Z-t62" eventType="touchUpInside" id="Z8p-7Y-TJG"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -754,7 +763,7 @@
                                 <rect key="frame" x="0.0" y="155" width="393" height="663"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0L-m3-JoC">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="523.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="548"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="JZe-BK-W1R">
                                                 <rect key="frame" x="20" y="30" width="353" height="307.33333333333331"/>
@@ -894,23 +903,31 @@
                                                     <constraint firstAttribute="height" constant="2" id="PZl-Ag-pjb"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="qJt-Bu-9yi">
-                                                <rect key="frame" x="143" y="463.66666666666663" width="107" height="40"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="qJt-Bu-9yi">
+                                                <rect key="frame" x="134" y="463.66666666666663" width="125" height="64.333333333333371"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google" translatesAutoresizingMaskIntoConstraints="NO" id="QLU-83-Cpr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgT-ST-M37">
+                                                        <rect key="frame" x="0.0" y="0.0" width="56" height="64.333333333333329"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="EvC-aD-lsg"/>
-                                                            <constraint firstAttribute="width" constant="40" id="G67-k8-K5M"/>
+                                                            <constraint firstAttribute="width" secondItem="TgT-ST-M37" secondAttribute="height" multiplier="20:23" id="Fxb-40-Cdb"/>
                                                         </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="uvi-Um-P6I">
-                                                        <rect key="frame" x="67" y="0.0" width="40" height="40"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="google"/>
+                                                        <connections>
+                                                            <action selector="googleSignButton:" destination="T1F-oG-h1X" eventType="touchUpInside" id="68l-xM-reg"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGt-DL-xbi">
+                                                        <rect key="frame" x="69" y="0.0" width="56" height="64.333333333333329"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="40" id="Dra-jk-9OK"/>
-                                                            <constraint firstAttribute="height" constant="40" id="qke-Ce-bUT"/>
+                                                            <constraint firstAttribute="width" secondItem="gGt-DL-xbi" secondAttribute="height" multiplier="20:23" id="HEo-km-bqD"/>
                                                         </constraints>
-                                                    </imageView>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="facebook"/>
+                                                        <connections>
+                                                            <action selector="facebookSigninButton:" destination="T1F-oG-h1X" eventType="touchUpInside" id="bo1-SN-48u"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -1413,8 +1430,8 @@
         <image name="arrow.right.circle.fill" catalog="system" width="128" height="123"/>
         <image name="camera.circle.fill" catalog="system" width="128" height="123"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
-        <image name="facebook" width="512" height="512"/>
-        <image name="google" width="512" height="512"/>
+        <image name="facebook" width="32" height="32"/>
+        <image name="google" width="32" height="32"/>
         <image name="leaf.circle.fill" catalog="system" width="128" height="123"/>
         <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="123"/>
         <image name="message.circle.fill" catalog="system" width="128" height="123"/>

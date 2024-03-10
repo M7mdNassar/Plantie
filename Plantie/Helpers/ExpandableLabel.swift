@@ -36,7 +36,7 @@ class ExpandableLabel :UILabel {
             button.setTitle("إقرأ المزيد", for: .normal)
             button.titleLabel?.font = button.titleLabel?.font.withSize(15)
             button.backgroundColor = .clear
-            button.setTitleColor(UIColor.white, for: .normal)
+            button.setTitleColor(UIColor.systemOrange, for: .normal)
             button.addTarget(self, action: #selector(ExpandableLabel.buttonTapped(sender:)), for: .touchUpInside)
             self.superview?.addSubview(button)
             self.superview?.bringSubviewToFront(button)

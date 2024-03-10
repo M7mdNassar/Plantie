@@ -1,9 +1,14 @@
 import UIKit
-import IQKeyboardManagerSwift
+import FirebaseCore
+import FirebaseAuth
+import GoogleSignIn
+import FBSDKCoreKit
+import FBSDKLoginKit
 import ProgressHUD
 
-class RegisterViewController: UIViewController {
 
+class RegisterViewController: UIViewController {
+    
     // MARK: Outlets
     //Labels
     @IBOutlet weak var userNameLabel: UILabel!
@@ -37,7 +42,7 @@ class RegisterViewController: UIViewController {
         if isInputDataValid(mode: "register"){
             
             registerUser()
-           
+            
         }
         else{
             ProgressHUD.error("All Fields requierd")
@@ -54,15 +59,138 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func loginButton(_ sender: UIButton) {
-     
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-               if let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
-                   // Present the LoginViewController
-                   self.navigationController?.pushViewController(loginVC, animated: true)
-               }
+        if let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+            // Present the LoginViewController
+            self.navigationController?.pushViewController(loginVC, animated: true)
+        }
         
     }
+    
+    
+    @IBAction func googleSignUpButton(_ sender: UIButton) {
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
 
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+
+        // Start the sign in flow!
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { [unowned self] result, error in
+            guard error == nil else {
+                // Handle sign-in error
+                print("Google Sign-In Error: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
+
+            guard let user = result?.user,
+              let idToken = user.idToken?.tokenString
+            else {
+              return
+            }
+
+           
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                           accessToken: user.accessToken.tokenString)
+
+            // Use the credential to sign in with Firebase
+            Auth.auth().signIn(with: credential) { authResult, error in
+                if let error = error {
+                    print("Firebase Sign-In Error: \(error.localizedDescription)")
+                    return
+                }
+                
+                // Firebase sign-in successful, handle further actions if needed
+                
+                if let user = authResult?.user {
+                    if let user = authResult?.user {
+                        let newUser = User(
+                            id: user.uid,
+                            userName: user.displayName ?? "",
+                            email: user.email ?? "",
+                            pushId: "",
+                            avatarLink: user.photoURL?.absoluteString ?? "",
+                            bio: "",
+                            country: ""
+                        )
+                        
+                        FUserListener.shared.saveUserToFierbase(user: newUser)
+                        saveUserLocally(user: newUser)
+                        
+                        // Proceed to the main app interface
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+                        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+                        
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    
+    @IBAction func facebookSignupButton(_ sender: UIButton) {
+        let loginManager = LoginManager()
+              loginManager.logIn(permissions: ["public_profile"], from: self) { (result, error) in
+                  if let error = error {
+                      // Handle login error here
+                      print("Error: \(error.localizedDescription)")
+                  } else if let result = result, !result.isCancelled {
+                      // Login successful, you can access the user's Facebook data here
+                      self.fetchFacebookUserData()
+                  } else {
+                      // Login was canceled by the user
+                      print("Login was cancelled.")
+                  }
+              }
+        
+    }
+    
+    func fetchFacebookUserData() {
+        if AccessToken.current != nil {
+            // You can make a Graph API request here to fetch user data
+            GraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start { (connection, result, error) in
+                if let error = error {
+                    // Handle API request error here
+                    print("Error: \(error.localizedDescription)")
+                } else if let userData = result as? [String: Any] {
+                    // Access the user data here
+                    let userID = userData["id"] as? String
+                    let name = userData["name"] as? String
+                    let email = userData["email"] as? String
+                    
+                    // Create a new User object
+                    let newUser = User(
+                        id: userID ?? "",
+                        userName: name ?? "",
+                        email: email ?? "",
+                        pushId: "",
+                        avatarLink: "",
+                        bio: "",
+                        country: ""
+                    )
+                    
+                    // Save the user to Firebase
+                    FUserListener.shared.saveUserToFierbase(user: newUser)
+                    
+                    // Save the user locally
+                    saveUserLocally(user: newUser)
+                    
+                    // Proceed to the main app interface
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+                }
+            }
+        } else {
+            print("No active Facebook access token.")
+        }
+    }
+
+    
+ 
     
     // MARK: Methods
     
@@ -77,7 +205,7 @@ class RegisterViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector (backButtonPressed))
     }
     
-     @objc func backButtonPressed(){
+    @objc func backButtonPressed(){
         navigationController?.popViewController(animated: true)
     }
     
@@ -120,7 +248,7 @@ class RegisterViewController: UIViewController {
         case "register":
             return userNameTextField.hasText && emailTextField.hasText && passwordTextField.hasText && confirmPasswordField.hasText
             
-
+            
         default :
             return false
             

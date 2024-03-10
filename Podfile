@@ -11,8 +11,6 @@ pod 'IQKeyboardManagerSwift'
 pod 'ProgressHUD'
 pod 'Gallery'
 
-pod 'lottie-ios'
-
 
   target 'PlantieTests' do
     inherit! :search_paths

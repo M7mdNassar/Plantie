@@ -14,7 +14,6 @@
 		043989D42B9742D100FA0FF7 /* SKPhotoBrowser in Frameworks */ = {isa = PBXBuildFile; productRef = 043989D32B9742D100FA0FF7 /* SKPhotoBrowser */; };
 		043989D62B975A4800FA0FF7 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043989D52B975A4800FA0FF7 /* ShadowView.swift */; };
 		043ED8042B99D8E200832BB0 /* RealtimeDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043ED8032B99D8E200832BB0 /* RealtimeDatabaseManager.swift */; };
-		043EF0282B8F3A91007F8E6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 043EF0272B8F3A91007F8E6C /* GoogleService-Info.plist */; };
 		043EF02A2B8F523D007F8E6C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043EF0292B8F523D007F8E6C /* LoginViewController.swift */; };
 		043EF02C2B8F5252007F8E6C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043EF02B2B8F5252007F8E6C /* RegisterViewController.swift */; };
 		044B148F2B8E25FF0087C094 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B148E2B8E25FF0087C094 /* ProfileViewController.swift */; };
@@ -37,8 +36,13 @@
 		046D818B2B9B21920063EDB3 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D81892B9B21920063EDB3 /* CommentTableViewCell.xib */; };
 		0478492C2B8F375900562F68 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478492B2B8F375900562F68 /* LaunchScreenController.swift */; };
 		0478492E2B8F388E00562F68 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0478492D2B8F388E00562F68 /* Lottie */; };
+		0499483E2B9DD17E008CC810 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0499483D2B9DD17E008CC810 /* GoogleService-Info.plist */; };
 		049F77BC2B97952C00D65123 /* ShowPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F77BB2B97952C00D65123 /* ShowPostViewController.swift */; };
+		04CA3AAB2B9E52ED00AE49C0 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = 04CA3AAA2B9E52ED00AE49C0 /* FacebookBasics */; };
+		04CA3AAD2B9E52ED00AE49C0 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 04CA3AAC2B9E52ED00AE49C0 /* FacebookCore */; };
+		04CA3AAF2B9E52ED00AE49C0 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 04CA3AAE2B9E52ED00AE49C0 /* FacebookLogin */; };
 		04DB1C6C2B9C6AD900D02DF7 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 04DB1C6B2B9C6AD900D02DF7 /* NVActivityIndicatorView */; };
+		04E1D1D52B9DEED200239C92 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 04E1D1D42B9DEED200239C92 /* GoogleSignIn */; };
 		04F8158C2B8DF0C5000D2DAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8158B2B8DF0C5000D2DAD /* AppDelegate.swift */; };
 		04F8158E2B8DF0C5000D2DAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8158D2B8DF0C5000D2DAD /* SceneDelegate.swift */; };
 		04F815932B8DF0C5000D2DAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F815912B8DF0C5000D2DAD /* Main.storyboard */; };
@@ -96,7 +100,6 @@
 		043989CD2B972C0500FA0FF7 /* ExpandableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableLabel.swift; sourceTree = "<group>"; };
 		043989D52B975A4800FA0FF7 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		043ED8032B99D8E200832BB0 /* RealtimeDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeDatabaseManager.swift; sourceTree = "<group>"; };
-		043EF0272B8F3A91007F8E6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		043EF0292B8F523D007F8E6C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		043EF02B2B8F5252007F8E6C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		044B148E2B8E25FF0087C094 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +121,11 @@
 		046D81882B9B21920063EDB3 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		046D81892B9B21920063EDB3 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		0478492B2B8F375900562F68 /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
+		0499483D2B9DD17E008CC810 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		049F77BB2B97952C00D65123 /* ShowPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPostViewController.swift; sourceTree = "<group>"; };
+		04D531E72B9DE47C00889D7B /* GoogleSignIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D531EB2B9DE4AA00889D7B /* AppAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D531EE2B9DE4F100889D7B /* GTMAppAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMAppAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F815882B8DF0C5000D2DAD /* Plantie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plantie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F8158B2B8DF0C5000D2DAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F8158D2B8DF0C5000D2DAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04CA3AAB2B9E52ED00AE49C0 /* FacebookBasics in Frameworks */,
 				04F815C72B8DF863000D2DAD /* FirebaseDatabaseSwift in Frameworks */,
 				04F815C52B8DF863000D2DAD /* FirebaseDatabase in Frameworks */,
 				04F815BF2B8DF863000D2DAD /* FirebaseAnalyticsSwift in Frameworks */,
@@ -168,11 +176,14 @@
 				04DB1C6C2B9C6AD900D02DF7 /* NVActivityIndicatorView in Frameworks */,
 				04F815CF2B8DF863000D2DAD /* FirebaseFunctions in Frameworks */,
 				04F815D72B8DF863000D2DAD /* FirebaseStorage in Frameworks */,
+				04CA3AAF2B9E52ED00AE49C0 /* FacebookLogin in Frameworks */,
+				04CA3AAD2B9E52ED00AE49C0 /* FacebookCore in Frameworks */,
 				04F815C32B8DF863000D2DAD /* FirebaseAuth in Frameworks */,
 				04F815CD2B8DF863000D2DAD /* FirebaseFirestoreSwift in Frameworks */,
 				4A905A9D694F9B29BA495CAD /* Pods_Plantie.framework in Frameworks */,
 				043989D42B9742D100FA0FF7 /* SKPhotoBrowser in Frameworks */,
 				043989D12B9736F800FA0FF7 /* SDWebImage in Frameworks */,
+				04E1D1D52B9DEED200239C92 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,26 +253,18 @@
 			isa = PBXGroup;
 			children = (
 				044B148E2B8E25FF0087C094 /* ProfileViewController.swift */,
-				044B14AA2B8E386F0087C094 /* Edit Profile */,
+				044B14AB2B8E38AC0087C094 /* EditProfile.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		044B14AA2B8E386F0087C094 /* Edit Profile */ = {
-			isa = PBXGroup;
-			children = (
-				044B14AB2B8E38AC0087C094 /* EditProfile.swift */,
-			);
-			path = "Edit Profile";
-			sourceTree = "<group>";
-		};
-		046537842B97134B001880C1 /* Table Cells */ = {
+		046537842B97134B001880C1 /* Table Community Cells */ = {
 			isa = PBXGroup;
 			children = (
 				046537892B9713C8001880C1 /* TextWithImages */,
 				0465378E2B971413001880C1 /* OnlyText */,
 			);
-			path = "Table Cells";
+			path = "Table Community Cells";
 			sourceTree = "<group>";
 		};
 		046537892B9713C8001880C1 /* TextWithImages */ = {
@@ -282,6 +285,20 @@
 				0465378B2B97140A001880C1 /* TextTableViewCell.xib */,
 			);
 			path = OnlyText;
+			sourceTree = "<group>";
+		};
+		04ED26F02B9CF3F70034D6BE /* Plants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Plants;
+			sourceTree = "<group>";
+		};
+		04ED26F12B9CF4040034D6BE /* Detection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detection;
 			sourceTree = "<group>";
 		};
 		04F8157F2B8DF0C5000D2DAD = {
@@ -317,7 +334,7 @@
 				04F815942B8DF0C8000D2DAD /* Assets.xcassets */,
 				04F815DE2B8DFFD3000D2DAD /* Resorces */,
 				04F815992B8DF0C8000D2DAD /* Info.plist */,
-				043EF0272B8F3A91007F8E6C /* GoogleService-Info.plist */,
+				0499483D2B9DD17E008CC810 /* GoogleService-Info.plist */,
 			);
 			path = Plantie;
 			sourceTree = "<group>";
@@ -368,7 +385,9 @@
 		04F815E92B8E01A4000D2DAD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				04ED26F02B9CF3F70034D6BE /* Plants */,
 				04FB2B392B9671C000650C86 /* Community */,
+				04ED26F12B9CF4040034D6BE /* Detection */,
 				044B14A52B8E33060087C094 /* Profile */,
 				04F8158B2B8DF0C5000D2DAD /* AppDelegate.swift */,
 				04F8158D2B8DF0C5000D2DAD /* SceneDelegate.swift */,
@@ -384,6 +403,7 @@
 		04F815EA2B8E01AD000D2DAD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				046537842B97134B001880C1 /* Table Community Cells */,
 				04F815912B8DF0C5000D2DAD /* Main.storyboard */,
 				04F815962B8DF0C8000D2DAD /* LaunchScreen.storyboard */,
 			);
@@ -402,7 +422,6 @@
 		04FB2B392B9671C000650C86 /* Community */ = {
 			isa = PBXGroup;
 			children = (
-				046537842B97134B001880C1 /* Table Cells */,
 				04FB2B3A2B9671EA00650C86 /* CommunityViewController.swift */,
 				04519DAA2B9679E900D190AE /* AddPostViewController.swift */,
 				043989DB2B978C5C00FA0FF7 /* Show Post */,
@@ -426,6 +445,9 @@
 		AA8192E3049A397379CC4FAB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04D531EE2B9DE4F100889D7B /* GTMAppAuth.framework */,
+				04D531EB2B9DE4AA00889D7B /* AppAuth.framework */,
+				04D531E72B9DE47C00889D7B /* GoogleSignIn.framework */,
 				B868222E754E4F032B8AFBFB /* Pods_Plantie.framework */,
 				5BAEC9ED2F70C21904ACBB6F /* Pods_Plantie_PlantieUITests.framework */,
 				E11064E872EC8B215C39FBF3 /* Pods_PlantieTests.framework */,
@@ -470,6 +492,10 @@
 				043989D02B9736F800FA0FF7 /* SDWebImage */,
 				043989D32B9742D100FA0FF7 /* SKPhotoBrowser */,
 				04DB1C6B2B9C6AD900D02DF7 /* NVActivityIndicatorView */,
+				04E1D1D42B9DEED200239C92 /* GoogleSignIn */,
+				04CA3AAA2B9E52ED00AE49C0 /* FacebookBasics */,
+				04CA3AAC2B9E52ED00AE49C0 /* FacebookCore */,
+				04CA3AAE2B9E52ED00AE49C0 /* FacebookLogin */,
 			);
 			productName = Plantie;
 			productReference = 04F815882B8DF0C5000D2DAD /* Plantie.app */;
@@ -552,6 +578,8 @@
 				043989CF2B9736F700FA0FF7 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				043989D22B9742D100FA0FF7 /* XCRemoteSwiftPackageReference "SKPhotoBrowser" */,
 				04DB1C6A2B9C6AD900D02DF7 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				04E1D1D32B9DEED200239C92 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				04CA3AA92B9E52ED00AE49C0 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = 04F815892B8DF0C5000D2DAD /* Products */;
 			projectDirPath = "";
@@ -570,7 +598,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F815E42B8E0025000D2DAD /* Harmattan-Bold.ttf in Resources */,
-				043EF0282B8F3A91007F8E6C /* GoogleService-Info.plist in Resources */,
 				043989CC2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.xib in Resources */,
 				04F815982B8DF0C8000D2DAD /* LaunchScreen.storyboard in Resources */,
 				046537882B9713AE001880C1 /* TextWithImagesTableViewCell.xib in Resources */,
@@ -578,6 +605,7 @@
 				04F815E22B8E0011000D2DAD /* PlantLottieLoading.json in Resources */,
 				046D818B2B9B21920063EDB3 /* CommentTableViewCell.xib in Resources */,
 				0465378D2B97140A001880C1 /* TextTableViewCell.xib in Resources */,
+				0499483E2B9DD17E008CC810 /* GoogleService-Info.plist in Resources */,
 				04F815952B8DF0C8000D2DAD /* Assets.xcassets in Resources */,
 				04F815932B8DF0C5000D2DAD /* Main.storyboard in Resources */,
 			);
@@ -920,8 +948,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Plantie/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "$(APP_NAME) need access to your camera";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(APP_NAME) need access to your library";
+				INFOPLIST_KEY_NSCameraUsageDescription = " need access to your camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = " need access to your library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -954,8 +982,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Plantie/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "$(APP_NAME) need access to your camera";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(APP_NAME) need access to your library";
+				INFOPLIST_KEY_NSCameraUsageDescription = " need access to your camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = " need access to your library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1120,12 +1148,28 @@
 				version = 4.4.1;
 			};
 		};
+		04CA3AA92B9E52ED00AE49C0 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.1.0;
+			};
+		};
 		04DB1C6A2B9C6AD900D02DF7 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.1.1;
+			};
+		};
+		04E1D1D32B9DEED200239C92 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
 			};
 		};
 		04F815BB2B8DF862000D2DAD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
@@ -1154,10 +1198,30 @@
 			package = 044B14AD2B8E5FB90087C094 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
 		};
+		04CA3AAA2B9E52ED00AE49C0 /* FacebookBasics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04CA3AA92B9E52ED00AE49C0 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookBasics;
+		};
+		04CA3AAC2B9E52ED00AE49C0 /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04CA3AA92B9E52ED00AE49C0 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
+		04CA3AAE2B9E52ED00AE49C0 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04CA3AA92B9E52ED00AE49C0 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
 		04DB1C6B2B9C6AD900D02DF7 /* NVActivityIndicatorView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 04DB1C6A2B9C6AD900D02DF7 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorView;
+		};
+		04E1D1D42B9DEED200239C92 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04E1D1D32B9DEED200239C92 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
 		};
 		04F815BC2B8DF862000D2DAD /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

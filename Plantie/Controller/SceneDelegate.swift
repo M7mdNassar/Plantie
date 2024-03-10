@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
+
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -25,6 +28,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
                 navigateTo()
+        
+        guard let url = URLContexts.first?.url else {
+                  return
+              }
+
+              ApplicationDelegate.shared.application(
+                  UIApplication.shared,
+                  open: url,
+                  sourceApplication: nil,
+                  annotation: [UIApplication.OpenURLOptionsKey.annotation]
+              )
     }
     
     // MARK: - Navigate To Specific Page - Deep Links

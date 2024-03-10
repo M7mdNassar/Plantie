@@ -1,14 +1,11 @@
-
 import UIKit
 
-class TextWithImagesTableViewCell: UITableViewCell {
+class TextTableViewCell: UITableViewCell {
 
     // MARK: Outlets
-    
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var contentPostLabel: ExpandableLabel!
-    @IBOutlet weak var PostsImagesCollectionView: UICollectionView!
     @IBOutlet weak var backgroundContentView: ShadowView!
     @IBOutlet weak var commentsCountLabel: UILabel!
     @IBOutlet weak var likesCountLabel: UILabel!
@@ -16,49 +13,39 @@ class TextWithImagesTableViewCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var dislikeButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
-    @IBOutlet weak var pageControl: UIPageControl!
     
     // MARK: Variables
-    var postImages: [String?] = []
-    var post:Post!
+    var post: Post!
     private var isLikeSelected = false
     private var isDislikeSelected = false
     
+    // MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        PostsImagesCollectionView.delegate = self
-        PostsImagesCollectionView.dataSource = self
-        
-       let nib = UINib(nibName: "ImagesPostCollectionViewCell", bundle: nil)
-        PostsImagesCollectionView.register(nib, forCellWithReuseIdentifier: "ImagesPostCollectionViewCell")
-        
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
     // MARK: Actions
-    
-    @IBAction func commentButton(_ sender: UIButton) {
+    @IBAction func commentButtonTapped(_ sender: UIButton) {
         NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "commentButtonTapped"), object: nil , userInfo: ["cell" : self]))
     }
     
-    // MARK: Actions
 
     @IBAction func makeLike(_ sender: UIButton) {
         guard let postId = post?.id else { return }
 
-        let isAlreadyLiked = likeButton.tintColor == .blue
+        let isAlreadyLiked = likeButton.tintColor == .plantieGreen
 
         if isAlreadyLiked { // If already liked, remove the like
             RealtimeDatabaseManager.shared.updateLikes(forPost: postId, increment: -1) { [weak self] error in
                 // Handle error and update UI as needed
                 if error == nil {
-                    self?.likeButton.tintColor = .white
+                    self?.likeButton.tintColor = .systemGray2
                     self?.updateLikeCountLabel(-1)
                 }
             }
@@ -66,18 +53,18 @@ class TextWithImagesTableViewCell: UITableViewCell {
             RealtimeDatabaseManager.shared.updateLikes(forPost: postId, increment: 1) { [weak self] error in
                 // Handle error and update UI as needed
                 if error == nil {
-                    self?.likeButton.tintColor = .blue
+                    self?.likeButton.tintColor = .plantieGreen
                     self?.updateLikeCountLabel(1)
                     self?.deselectDislikeButton()
                 }
             }
 
             // If the user had previously disliked the post, update the dislike count and UI
-            if dislikeButton.tintColor == .blue {
+            if dislikeButton.tintColor == .plantieGreen {
                 RealtimeDatabaseManager.shared.updateDislikes(forPost: postId, increment: -1) { [weak self] error in
                     // Handle error and update UI as needed
                     if error == nil {
-                        self?.dislikeButton.tintColor = .white
+                        self?.dislikeButton.tintColor = .systemGray2
                         self?.updateDislikeCountLabel(-1)
                     }
                 }
@@ -88,13 +75,13 @@ class TextWithImagesTableViewCell: UITableViewCell {
     @IBAction func makeDislike(_ sender: UIButton) {
         guard let postId = post?.id else { return }
 
-        let isAlreadyDisliked = dislikeButton.tintColor == .blue
+        let isAlreadyDisliked = dislikeButton.tintColor == .plantieGreen
 
         if isAlreadyDisliked { // If already disliked, remove the dislike
             RealtimeDatabaseManager.shared.updateDislikes(forPost: postId, increment: -1) { [weak self] error in
                 // Handle error and update UI as needed
                 if error == nil {
-                    self?.dislikeButton.tintColor = .white
+                    self?.dislikeButton.tintColor = .systemGray2
                     self?.updateDislikeCountLabel(-1)
                 }
             }
@@ -102,18 +89,18 @@ class TextWithImagesTableViewCell: UITableViewCell {
             RealtimeDatabaseManager.shared.updateDislikes(forPost: postId, increment: 1) { [weak self] error in
                 // Handle error and update UI as needed
                 if error == nil {
-                    self?.dislikeButton.tintColor = .blue
+                    self?.dislikeButton.tintColor = .plantieGreen
                     self?.updateDislikeCountLabel(1)
                     self?.deselectLikeButton()
                 }
             }
 
             // If the user had previously liked the post, update the like count and UI
-            if likeButton.tintColor == .blue {
+            if likeButton.tintColor == .plantieGreen {
                 RealtimeDatabaseManager.shared.updateLikes(forPost: postId, increment: -1) { [weak self] error in
                     // Handle error and update UI as needed
                     if error == nil {
-                        self?.likeButton.tintColor = .white
+                        self?.likeButton.tintColor = .systemGray2
                         self?.updateLikeCountLabel(-1)
                     }
                 }
@@ -126,7 +113,7 @@ class TextWithImagesTableViewCell: UITableViewCell {
      private func toggleLikeButton() {
          guard let postId = post?.id else { return }
          
-         if likeButton.tintColor == .blue {
+         if likeButton.tintColor == .plantieGreen {
              isLikeSelected = false
              RealtimeDatabaseManager.shared.updateLikes(forPost: postId, increment: -1) { [weak self] error in
                  if let error = error {
@@ -147,13 +134,13 @@ class TextWithImagesTableViewCell: UITableViewCell {
              }
          }
          
-         likeButton.tintColor = (likeButton.tintColor == .blue) ? .white : .blue
+         likeButton.tintColor = (likeButton.tintColor == .plantieGreen) ? .systemGray2 : .plantieGreen
      }
 
      private func toggleDislikeButton() {
          guard let postId = post?.id else { return }
          
-         if dislikeButton.tintColor == .blue {
+         if dislikeButton.tintColor == .plantieGreen {
              isDislikeSelected = false
              RealtimeDatabaseManager.shared.updateDislikes(forPost: postId, increment: -1) { [weak self] error in
                  if let error = error {
@@ -174,7 +161,7 @@ class TextWithImagesTableViewCell: UITableViewCell {
              }
          }
          
-         dislikeButton.tintColor = (dislikeButton.tintColor == .blue) ? .white : .blue
+         dislikeButton.tintColor = (dislikeButton.tintColor == .plantieGreen) ? .systemGray2 : .plantieGreen
      }
      
      // MARK: Helper Methods
@@ -203,7 +190,7 @@ class TextWithImagesTableViewCell: UITableViewCell {
              }
          }
          
-         likeButton.tintColor = .white
+         likeButton.tintColor = .systemGray2
      }
 
      private func deselectDislikeButton() {
@@ -220,87 +207,30 @@ class TextWithImagesTableViewCell: UITableViewCell {
              }
          }
          
-         dislikeButton.tintColor = .white
+         dislikeButton.tintColor = .systemGray2
      }
 
 
-    
 
     // MARK: Methods
     
-    func configure(post: Post ){
-        
+    func configure(post: Post) {
         self.post = post
-        
-        pageControl.numberOfPages = post.images.count
-        
-        if post.owner["avatarLink"] as? String != ""{
-            self.userImageView.sd_setImage(with: URL(string: post.owner["avatarLink"] as! String ))
-            
-            self.userImageView.layer.cornerRadius = self.userImageView.frame.height/2
+        if post.owner["avatarLink"] as? String != "" {
+            self.userImageView.sd_setImage(with: URL(string: post.owner["avatarLink"] as! String))
+
+            self.userImageView.layer.cornerRadius = self.userImageView.frame.height / 2
             self.userImageView.clipsToBounds = true
         }
-        
+
         self.userNameLabel.text = post.owner["userName"] as? String
         self.contentPostLabel.text = post.text
 
-        
-        self.commentsCountLabel.text = String(post.countOfComments)
-        
-        self.likesCountLabel.text = String(post.likes)
-        self.dislikesCountLabel.text = String(post.dislikes)
+        // Update comments count label
+        self.commentsCountLabel.text = "\(post.countOfComments)"
 
-        self.postImages = post.images.filter{$0 != ""}
-        self.PostsImagesCollectionView.reloadData()
-    
+        self.likesCountLabel.text = "\(post.likes)"
+        self.dislikesCountLabel.text = "\(post.dislikes)"
     }
-    
     
 }
-
-// MARK: ImagesPost Collection Data Source
-
-extension TextWithImagesTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return postImages.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImagesPostCollectionViewCell", for: indexPath) as! ImagesPostCollectionViewCell
-
-        
-        if let image = postImages[indexPath.item] {
-            cell.imageView.layer.cornerRadius = 20
-            cell.imageView.layer.masksToBounds = true
-            
-            cell.configure(imageUrl: image)
-        }
-
-        return cell
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        // notify to show post like the notification in comment button
-        NotificationCenter.default.post(name: NSNotification.Name("commentButtonTapped"), object: nil , userInfo: ["cell" : self])
-    }
-
-
-}
-
-extension TextWithImagesTableViewCell: UICollectionViewDelegateFlowLayout{
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-          let currentIndex = Int(scrollView.contentOffset.x / scrollView.bounds.width)
-          pageControl.currentPage = currentIndex
-      }
-}
-

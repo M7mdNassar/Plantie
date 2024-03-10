@@ -1,6 +1,10 @@
 import UIKit
+import FirebaseAuth
+import FirebaseCore
 import IQKeyboardManagerSwift
 import ProgressHUD
+import GoogleSignIn
+
 
 class LoginViewController: UIViewController {
 
@@ -15,6 +19,7 @@ class LoginViewController: UIViewController {
     
     //Buttons
     @IBOutlet weak var loginButtonOutlet: UIButton!
+    
     
     // MARK: Life Cycle
     
@@ -51,6 +56,73 @@ class LoginViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func googleSignButton(_ sender: UIButton) {
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+
+        // Start the sign in flow!
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { [unowned self] result, error in
+            guard error == nil else {
+                // Handle sign-in error
+                print("Google Sign-In Error: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
+
+            guard let user = result?.user,
+              let idToken = user.idToken?.tokenString
+            else {
+              return
+            }
+
+           
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                           accessToken: user.accessToken.tokenString)
+
+            // Use the credential to sign in with Firebase
+            Auth.auth().signIn(with: credential) { authResult, error in
+                if let error = error {
+                    print("Firebase Sign-In Error: \(error.localizedDescription)")
+                    return
+                }
+                
+                // Firebase sign-in successful, handle further actions if needed
+                
+                if let user = authResult?.user {
+                    if let user = authResult?.user {
+                        let newUser = User(
+                            id: user.uid,
+                            userName: user.displayName ?? "",
+                            email: user.email ?? "",
+                            pushId: "",
+                            avatarLink: user.photoURL?.absoluteString ?? "",
+                            bio: "",
+                            country: ""
+                        )
+                        
+                        FUserListener.shared.saveUserToFierbase(user: newUser)
+                        saveUserLocally(user: newUser)
+                        
+                        // Proceed to the main app interface
+                        self.goToApp()
+                        
+                    }
+                }
+            }
+        }
+    }
+
+    
+    
+    @IBAction func facebookSigninButton(_ sender: UIButton) {
+    }
+    
+    
+    
+    
     @IBAction func registerButton(_ sender: UIButton) {
      
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -60,6 +132,8 @@ class LoginViewController: UIViewController {
                }
         
     }
+    
+    
 
     // MARK: Helpers
     

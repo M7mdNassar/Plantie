@@ -1,6 +1,8 @@
 
 import Foundation
 import Firebase
+import GoogleSignIn
+import FBSDKLoginKit
 
 class FUserListener{
     
@@ -70,6 +72,41 @@ class FUserListener{
         
     }
     
+    func registerUserWithFacebook(userID: String, name: String, email: String, completion: @escaping (Error?) -> Void) {
+         Auth.auth().createUser(withEmail: email, password: "") { authResult, error in
+             guard let user = authResult?.user, error == nil else {
+                 completion(error)
+                 return
+             }
+             
+             // User registered successfully, proceed with additional actions
+             
+             // Create a User object or save user data to Firestore as needed
+             let newUser = User(id: user.uid, userName: name, email: email, pushId: "", avatarLink: "", bio: "", country: "")
+             
+             // Save user data to Firestore or perform additional actions as needed
+             self.saveUserToFierbase(user: newUser)
+             saveUserLocally(user: newUser)
+             completion(nil)
+         }
+     }
+    
+    func fetchFacebookUserData(completion: @escaping ([String: Any]?, Error?) -> Void) {
+        if let token = AccessToken.current, !token.isExpired {
+            GraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start { (connection, result, error) in
+                if let error = error {
+                    completion(nil, error)
+                } else if let userData = result as? [String: Any] {
+                    completion(userData, nil)
+                }
+            }
+        } else {
+            completion(nil, NSError(domain: "", code: 401, userInfo: [NSLocalizedDescriptionKey: "No active Facebook access token."]))
+        }
+    }
+    
+       
+    
     // MARK: Save To Firebase store
     
     func saveUserToFierbase(user : User){
@@ -135,5 +172,8 @@ class FUserListener{
         }
     
     }
+    
+
+
     
 }
