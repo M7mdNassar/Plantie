@@ -133,49 +133,40 @@ class RegisterViewController: UIViewController {
     
     @IBAction func facebookSignupButton(_ sender: UIButton) {
         let loginManager = LoginManager()
-              loginManager.logIn(permissions: ["public_profile"], from: self) { (result, error) in
-                  if let error = error {
-                      // Handle login error here
-                      print("Error: \(error.localizedDescription)")
-                  } else if let result = result, !result.isCancelled {
-                      // Login successful, you can access the user's Facebook data here
-                      self.fetchFacebookUserData()
-                  } else {
-                      // Login was canceled by the user
-                      print("Login was cancelled.")
-                  }
-              }
-        
-    }
-    
-    func fetchFacebookUserData() {
-        if AccessToken.current != nil {
-            // You can make a Graph API request here to fetch user data
-            GraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start { (connection, result, error) in
+        loginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, error) in
+            if let error = error {
+                print("Facebook login error: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let accessToken = AccessToken.current else {
+                print("Failed to get access token.")
+                return
+            }
+            
+            let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+            Auth.auth().signIn(with: credential) { (authResult, error) in
                 if let error = error {
-                    // Handle API request error here
-                    print("Error: \(error.localizedDescription)")
-                } else if let userData = result as? [String: Any] {
-                    // Access the user data here
-                    let userID = userData["id"] as? String
-                    let name = userData["name"] as? String
-                    let email = userData["email"] as? String
-                    
-                    // Create a new User object
+                    print("Facebook authentication with Firebase error: \(error.localizedDescription)")
+                    return
+                }
+                print("Facebook login success!")
+                
+                // Create user object
+                if let user = authResult?.user {
+                    let email = user.email ?? "" // Ensure email is not nil
                     let newUser = User(
-                        id: userID ?? "",
-                        userName: name ?? "",
-                        email: email ?? "",
+                        id: user.uid,
+                        userName: user.displayName ?? "",
+                        email: email,
                         pushId: "",
-                        avatarLink: "",
+                        avatarLink: user.photoURL?.absoluteString ?? "",
                         bio: "",
                         country: ""
                     )
                     
-                    // Save the user to Firebase
+                    // Save user to Firestore and locally
                     FUserListener.shared.saveUserToFierbase(user: newUser)
-                    
-                    // Save the user locally
                     saveUserLocally(user: newUser)
                     
                     // Proceed to the main app interface
@@ -184,10 +175,9 @@ class RegisterViewController: UIViewController {
                     (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
                 }
             }
-        } else {
-            print("No active Facebook access token.")
         }
     }
+
 
     
  

@@ -91,20 +91,6 @@ class FUserListener{
          }
      }
     
-    func fetchFacebookUserData(completion: @escaping ([String: Any]?, Error?) -> Void) {
-        if let token = AccessToken.current, !token.isExpired {
-            GraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start { (connection, result, error) in
-                if let error = error {
-                    completion(nil, error)
-                } else if let userData = result as? [String: Any] {
-                    completion(userData, nil)
-                }
-            }
-        } else {
-            completion(nil, NSError(domain: "", code: 401, userInfo: [NSLocalizedDescriptionKey: "No active Facebook access token."]))
-        }
-    }
-    
        
     
     // MARK: Save To Firebase store

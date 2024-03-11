@@ -4,7 +4,8 @@ import FirebaseCore
 import IQKeyboardManagerSwift
 import ProgressHUD
 import GoogleSignIn
-
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
 
@@ -118,6 +119,51 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func facebookSigninButton(_ sender: UIButton) {
+        
+        let loginManager = LoginManager()
+        loginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, error) in
+            if let error = error {
+                print("Facebook login error: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let accessToken = AccessToken.current else {
+                print("Failed to get access token.")
+                return
+            }
+            
+            let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+            Auth.auth().signIn(with: credential) { (authResult, error) in
+                if let error = error {
+                    print("Facebook authentication with Firebase error: \(error.localizedDescription)")
+                    return
+                }
+                print("Facebook login success!")
+                
+                // Create user object
+                if let user = authResult?.user {
+                    let email = user.email ?? "" // Ensure email is not nil
+                    let newUser = User(
+                        id: user.uid,
+                        userName: user.displayName ?? "",
+                        email: email,
+                        pushId: "",
+                        avatarLink: user.photoURL?.absoluteString ?? "",
+                        bio: "",
+                        country: ""
+                    )
+                    
+                    // Save user to Firestore and locally
+                    FUserListener.shared.saveUserToFierbase(user: newUser)
+                    saveUserLocally(user: newUser)
+                    
+                    // Proceed to the main app interface
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+                }
+            }
+        }
     }
     
     
