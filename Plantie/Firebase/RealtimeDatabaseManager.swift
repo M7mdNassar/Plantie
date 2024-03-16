@@ -82,6 +82,38 @@ class RealtimeDatabaseManager {
         
     }
     
+    
+    
+    func getPostsMatchingSearchQuery(_ query: String, completion: @escaping ([Post]) -> Void) {
+        let ref = Database.database().reference().child("posts")
+        let query = ref.queryOrdered(byChild: "text").queryStarting(atValue: query).queryEnding(atValue: query + "\u{f8ff}")
+        
+        query.observeSingleEvent(of: .value) { snapshot in
+            var matchingPosts: [Post] = []
+            
+            for child in snapshot.children {
+                if let childSnapshot = child as? DataSnapshot,
+                   let postData = childSnapshot.value as? [String: Any] {
+                    let post = Post(
+                        id: childSnapshot.key,
+                        text: postData["text"] as? String,
+                        images: postData["images"] as? [String] ?? [],
+                        owner: postData["owner"] as? [String: Any] ?? [:],
+                        likes: postData["likes"] as? Int ?? 0,
+                        dislikes: postData["dislikes"] as? Int ?? 0,
+                        countOfComments: postData["countOfComments"] as? Int ?? 0
+                    )
+                    matchingPosts.append(post)
+                }
+            }
+            
+            completion(matchingPosts)
+        }
+    }
+
+    
+    
+    
     func addComment(comment: Comment, completion: @escaping (Error?) -> Void) {
             let commentData: [String: Any] = [
                 "id": comment.id,

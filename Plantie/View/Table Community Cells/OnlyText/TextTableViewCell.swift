@@ -30,6 +30,24 @@ class TextTableViewCell: UITableViewCell {
 
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        // Reset label's content
+        contentPostLabel.text = nil
+        
+        // Remove the "Read more" button if it's added
+        removeReadMoreButtonIfNeeded()
+    }
+
+    private func removeReadMoreButtonIfNeeded() {
+        // Find and remove the "Read more" button if it's added
+        if let readMoreButton = self.contentView.viewWithTag(9090) {
+            readMoreButton.removeFromSuperview()
+        }
+    }
+
+    
     // MARK: Actions
     @IBAction func commentButtonTapped(_ sender: UIButton) {
         NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "commentButtonTapped"), object: nil , userInfo: ["cell" : self]))

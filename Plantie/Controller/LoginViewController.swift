@@ -1,7 +1,6 @@
 import UIKit
 import FirebaseAuth
 import FirebaseCore
-import IQKeyboardManagerSwift
 import ProgressHUD
 import GoogleSignIn
 import FBSDKCoreKit

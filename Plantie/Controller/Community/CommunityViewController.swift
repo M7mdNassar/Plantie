@@ -6,6 +6,7 @@ class CommunityViewController: UIViewController {
     
     // MARK: Variables
     var posts: [Post] = []
+    var filteredPosts: [Post] = []
     let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: Outlets
@@ -61,29 +62,33 @@ class CommunityViewController: UIViewController {
 // MARK: Table View Data Source
 extension CommunityViewController : UITableViewDataSource , UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.posts.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            if isSearchActive() {
+                return filteredPosts.count
+            } else {
+                return posts.count
+            }
+        }
         
-        let post = posts[indexPath.row]
-        
-        if post.images.isEmpty{
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let post: Post
+            if isSearchActive() {
+                post = filteredPosts[indexPath.row]
+            } else {
+                post = posts[indexPath.row]
+            }
             
-            let cell = tableView.dequeue() as TextTableViewCell
-            cell.contentPostLabel.isExpaded = false
-            cell.configure(post: post)
-            return cell
+            if post.images.isEmpty {
+                let cell = tableView.dequeue() as TextTableViewCell
+                cell.contentPostLabel.isExpaded = false
+                cell.configure(post: post)
+                return cell
+            } else {
+                let cell = tableView.dequeue() as TextWithImagesTableViewCell
+                cell.contentPostLabel.isExpaded = false
+                cell.configure(post: post)
+                return cell
+            }
         }
-        
-        else
-        {
-            let cell = tableView.dequeue() as TextWithImagesTableViewCell
-            cell.contentPostLabel.isExpaded = false
-            cell.configure(post: post)
-            return cell
-        }
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -96,17 +101,7 @@ extension CommunityViewController : UITableViewDataSource , UITableViewDelegate 
     }
     
     // MARK: Pagination
-    
-//    private func createSpinnerFooter() -> UIView{
-//           let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 100))
-//           let spinner = UIActivityIndicatorView()
-//           spinner.center = footerView.center
-//           footerView.addSubview(spinner)
-//           spinner.startAnimating()
-//           return footerView
-//       }
-//    
-    
+     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
         let contentHeight = tableView.contentSize.height
@@ -118,7 +113,6 @@ extension CommunityViewController : UITableViewDataSource , UITableViewDelegate 
                 // We are already fetching more data
                 return
             }
-//            self.tableView.tableFooterView = createSpinnerFooter()
             activityIndicatorView.startAnimating()
             // Start fetching more data
             RealtimeDatabaseManager.isPagination = true
@@ -154,9 +148,24 @@ extension CommunityViewController : UITableViewDataSource , UITableViewDelegate 
 extension CommunityViewController: UISearchResultsUpdating{
     
     func updateSearchResults(for searchController: UISearchController) {
-        return
+        guard let searchText = searchController.searchBar.text, !searchText.isEmpty else {
+            // If the search text is empty, show all posts
+            tableView.reloadData()
+            return
+        }
+
+        // Call the method to fetch posts matching the search query
+        RealtimeDatabaseManager.shared.getPostsMatchingSearchQuery(searchText) { [weak self] matchingPosts in
+            guard let self = self else { return }
+            
+            // Update the filtered posts array with the matching posts
+            self.filteredPosts = matchingPosts
+            
+            // Reload the table view with the filtered posts
+            self.tableView.reloadData()
+        }
     }
-    
+
     
 }
 
@@ -182,5 +191,9 @@ private extension CommunityViewController{
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44
     }
+    
+    private func isSearchActive() -> Bool {
+          return searchController.isActive && !searchController.searchBar.text!.isEmpty
+      }
 }
 
