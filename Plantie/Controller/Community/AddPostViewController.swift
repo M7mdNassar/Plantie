@@ -4,6 +4,7 @@ import FirebaseDatabase
 import FirebaseStorage
 import Gallery
 import ProgressHUD
+import IQKeyboardManagerSwift
 
 
 class AddPostViewController: UIViewController {
@@ -31,6 +32,8 @@ class AddPostViewController: UIViewController {
         setUpCollection()
         setUpTextView()
         setUpView()
+        
+        IQKeyboardManager.shared.enable = false
     }
     
     // MARK: Actions

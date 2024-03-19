@@ -338,7 +338,7 @@
 		98A2A883461F2FE8F0D8AB630705564F /* EditInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EditInfo.swift; path = Sources/Utils/VideoEditor/EditInfo.swift; sourceTree = "<group>"; };
 		9A2522D1BE02E8F3D53627A167B843CC /* IQBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQBarButtonItem.swift; sourceTree = "<group>"; };
 		9C314FEC85B7B2151BC4D0FCADEA722C /* IQInvocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQInvocation.swift; path = IQKeyboardManagerSwift/IQToolbar/IQInvocation.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EAC093571FD767764FA39600F270700 /* Fetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Fetcher.swift; path = Sources/Utils/Fetcher.swift; sourceTree = "<group>"; };
 		A223E896DDF13A1B46A138389CE383A5 /* VideosLibrary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideosLibrary.swift; path = Sources/Videos/VideosLibrary.swift; sourceTree = "<group>"; };
 		A29783BEE2BB6B6DE379146FD45E9E8A /* ProgressHUD+TriangleDotShift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+TriangleDotShift.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+TriangleDotShift.swift"; sourceTree = "<group>"; };
@@ -366,9 +366,9 @@
 		C44B402D66E58F1DBBBD7807847D5126 /* VideosController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideosController.swift; path = Sources/Videos/VideosController.swift; sourceTree = "<group>"; };
 		C492F429EAC299F8FDC5DA5D1EFAF6EF /* VideoBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoBox.swift; path = Sources/Videos/VideoBox.swift; sourceTree = "<group>"; };
 		C586D76700ABD55BC7C24F95A2D4A4B6 /* Pods-Plantie */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Plantie"; path = Pods_Plantie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C672811526EB10879FAA25858B018173 /* Gallery */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Gallery; path = Gallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C672811526EB10879FAA25858B018173 /* Gallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Gallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E3B935F3E7825BDD3E19582AC752BB /* Pods-PlantieTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PlantieTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C70B9B8F3F4BD5CBF52C4F6C301EC7C7 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = IQKeyboardManagerSwift/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		C70B9B8F3F4BD5CBF52C4F6C301EC7C7 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = IQKeyboardManagerSwift/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		C89FBD43A4A00C5A0E1EB81977C09AC0 /* Gallery-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Gallery-dummy.m"; sourceTree = "<group>"; };
 		C9CB0D7D266061F925E5C33F65B9A88F /* IQKeyboardManager+UITextFieldViewNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UITextFieldViewNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager/IQKeyboardManager+UITextFieldViewNotification.swift"; sourceTree = "<group>"; };
 		CAA605AEC8CE6DA8E31385E0380FDAC9 /* TripleButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TripleButton.swift; path = Sources/Camera/TripleButton.swift; sourceTree = "<group>"; };
@@ -487,7 +487,7 @@
 		0712736F4FAE81028241DC42B928692F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C672811526EB10879FAA25858B018173 /* Gallery */,
+				C672811526EB10879FAA25858B018173 /* Gallery.framework */,
 				A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */,
 				8D8069D3964814114ACEC3084C010B59 /* IQKeyboardManagerSwift-IQKeyboardManagerSwift */,
 				C586D76700ABD55BC7C24F95A2D4A4B6 /* Pods-Plantie */,
@@ -578,7 +578,6 @@
 				9768F32014DD13F789E16E5EB936EDCE /* Resources */,
 				43C626C47B02D1046752FD8E53F8D2F9 /* Support Files */,
 			);
-			name = IQKeyboardManagerSwift;
 			path = IQKeyboardManagerSwift;
 			sourceTree = "<group>";
 		};
@@ -674,7 +673,6 @@
 				97EB5E7FC5BEBB36D52E85E23844A91A /* Resources */,
 				5482980E2DBA92D244027A605097F7B0 /* Support Files */,
 			);
-			name = Gallery;
 			path = Gallery;
 			sourceTree = "<group>";
 		};
@@ -769,7 +767,6 @@
 				BC07D78D50FDAF2896BE56217795DE08 /* ProgressView.swift */,
 				E809CBFBD607C5FE80427032094AB79A /* Support Files */,
 			);
-			name = ProgressHUD;
 			path = ProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -893,7 +890,7 @@
 			);
 			name = Gallery;
 			productName = Gallery;
-			productReference = C672811526EB10879FAA25858B018173 /* Gallery */;
+			productReference = C672811526EB10879FAA25858B018173 /* Gallery.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		208645B31E9C21AB833082B2D53AF073 /* Pods-PlantieTests */ = {
@@ -1389,7 +1386,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Gallery/Gallery-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Gallery/Gallery-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1691,7 +1688,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Gallery/Gallery-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Gallery/Gallery-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
