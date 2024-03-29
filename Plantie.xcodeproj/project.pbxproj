@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0429105F2BB7484D0002B465 /* PlantsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0429105E2BB7484D0002B465 /* PlantsData.json */; };
+		042910612BB748B10002B465 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042910602BB748B10002B465 /* Plant.swift */; };
+		042910632BB753140002B465 /* PlantLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042910622BB753140002B465 /* PlantLoader.swift */; };
 		043989CB2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043989C92B97244F00FA0FF7 /* ImagesPostCollectionViewCell.swift */; };
 		043989CC2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043989CA2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.xib */; };
 		043989CE2B972C0500FA0FF7 /* ExpandableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043989CD2B972C0500FA0FF7 /* ExpandableLabel.swift */; };
@@ -38,6 +41,9 @@
 		0478492E2B8F388E00562F68 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0478492D2B8F388E00562F68 /* Lottie */; };
 		0499483E2B9DD17E008CC810 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0499483D2B9DD17E008CC810 /* GoogleService-Info.plist */; };
 		049F77BC2B97952C00D65123 /* ShowPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F77BB2B97952C00D65123 /* ShowPostViewController.swift */; };
+		04B5A9A02BB6397800E25710 /* PlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5A99F2BB6397800E25710 /* PlantsViewController.swift */; };
+		04B5A9A32BB63C4500E25710 /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5A9A12BB63C4500E25710 /* PlantTableViewCell.swift */; };
+		04B5A9A42BB63C4500E25710 /* PlantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B5A9A22BB63C4500E25710 /* PlantTableViewCell.xib */; };
 		04CA3AAB2B9E52ED00AE49C0 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = 04CA3AAA2B9E52ED00AE49C0 /* FacebookBasics */; };
 		04CA3AAD2B9E52ED00AE49C0 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 04CA3AAC2B9E52ED00AE49C0 /* FacebookCore */; };
 		04CA3AAF2B9E52ED00AE49C0 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 04CA3AAE2B9E52ED00AE49C0 /* FacebookLogin */; };
@@ -95,6 +101,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0429105E2BB7484D0002B465 /* PlantsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PlantsData.json; sourceTree = "<group>"; };
+		042910602BB748B10002B465 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		042910622BB753140002B465 /* PlantLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantLoader.swift; sourceTree = "<group>"; };
 		043989C92B97244F00FA0FF7 /* ImagesPostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesPostCollectionViewCell.swift; sourceTree = "<group>"; };
 		043989CA2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagesPostCollectionViewCell.xib; sourceTree = "<group>"; };
 		043989CD2B972C0500FA0FF7 /* ExpandableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableLabel.swift; sourceTree = "<group>"; };
@@ -123,6 +132,9 @@
 		0478492B2B8F375900562F68 /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
 		0499483D2B9DD17E008CC810 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		049F77BB2B97952C00D65123 /* ShowPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPostViewController.swift; sourceTree = "<group>"; };
+		04B5A99F2BB6397800E25710 /* PlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsViewController.swift; sourceTree = "<group>"; };
+		04B5A9A12BB63C4500E25710 /* PlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTableViewCell.swift; sourceTree = "<group>"; };
+		04B5A9A22BB63C4500E25710 /* PlantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlantTableViewCell.xib; sourceTree = "<group>"; };
 		04D531E72B9DE47C00889D7B /* GoogleSignIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D531EB2B9DE4AA00889D7B /* AppAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D531EE2B9DE4F100889D7B /* GTMAppAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMAppAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,6 +302,9 @@
 		04ED26F02B9CF3F70034D6BE /* Plants */ = {
 			isa = PBXGroup;
 			children = (
+				04B5A99F2BB6397800E25710 /* PlantsViewController.swift */,
+				04B5A9A12BB63C4500E25710 /* PlantTableViewCell.swift */,
+				04B5A9A22BB63C4500E25710 /* PlantTableViewCell.xib */,
 			);
 			path = Plants;
 			sourceTree = "<group>";
@@ -359,6 +374,7 @@
 		04F815DE2B8DFFD3000D2DAD /* Resorces */ = {
 			isa = PBXGroup;
 			children = (
+				0429105E2BB7484D0002B465 /* PlantsData.json */,
 				04F815E02B8DFFF9000D2DAD /* Animations Lottie */,
 				04F815DF2B8DFFEE000D2DAD /* Fonts */,
 			);
@@ -415,6 +431,8 @@
 			children = (
 				044B14A32B8E320B0087C094 /* User.swift */,
 				04FB2B372B966E2B00650C86 /* Post.swift */,
+				042910602BB748B10002B465 /* Plant.swift */,
+				042910622BB753140002B465 /* PlantLoader.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -598,12 +616,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F815E42B8E0025000D2DAD /* Harmattan-Bold.ttf in Resources */,
+				04B5A9A42BB63C4500E25710 /* PlantTableViewCell.xib in Resources */,
 				043989CC2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.xib in Resources */,
 				04F815982B8DF0C8000D2DAD /* LaunchScreen.storyboard in Resources */,
 				046537882B9713AE001880C1 /* TextWithImagesTableViewCell.xib in Resources */,
 				04F815E62B8E002E000D2DAD /* Harmattan-Regular.ttf in Resources */,
 				04F815E22B8E0011000D2DAD /* PlantLottieLoading.json in Resources */,
 				046D818B2B9B21920063EDB3 /* CommentTableViewCell.xib in Resources */,
+				0429105F2BB7484D0002B465 /* PlantsData.json in Resources */,
 				0465378D2B97140A001880C1 /* TextTableViewCell.xib in Resources */,
 				0499483E2B9DD17E008CC810 /* GoogleService-Info.plist in Resources */,
 				04F815952B8DF0C8000D2DAD /* Assets.xcassets in Resources */,
@@ -737,8 +757,10 @@
 			files = (
 				043EF02A2B8F523D007F8E6C /* LoginViewController.swift in Sources */,
 				04F8158C2B8DF0C5000D2DAD /* AppDelegate.swift in Sources */,
+				04B5A9A32BB63C4500E25710 /* PlantTableViewCell.swift in Sources */,
 				044B14952B8E2B590087C094 /* UIImageViewExtension.swift in Sources */,
 				04F815DB2B8DF98C000D2DAD /* CustomTabBarController.swift in Sources */,
+				042910612BB748B10002B465 /* Plant.swift in Sources */,
 				0465378C2B97140A001880C1 /* TextTableViewCell.swift in Sources */,
 				043ED8042B99D8E200832BB0 /* RealtimeDatabaseManager.swift in Sources */,
 				043EF02C2B8F5252007F8E6C /* RegisterViewController.swift in Sources */,
@@ -751,6 +773,7 @@
 				046537872B9713AE001880C1 /* TextWithImagesTableViewCell.swift in Sources */,
 				049F77BC2B97952C00D65123 /* ShowPostViewController.swift in Sources */,
 				044B14A42B8E320B0087C094 /* User.swift in Sources */,
+				04B5A9A02BB6397800E25710 /* PlantsViewController.swift in Sources */,
 				044B14A22B8E307A0087C094 /* FileStorage.swift in Sources */,
 				044B14A02B8E30650087C094 /* FCollectionReference.swift in Sources */,
 				043989CE2B972C0500FA0FF7 /* ExpandableLabel.swift in Sources */,
@@ -764,6 +787,7 @@
 				04FB2B382B966E2B00650C86 /* Post.swift in Sources */,
 				04519DAB2B9679E900D190AE /* AddPostViewController.swift in Sources */,
 				04FB2B3B2B9671EA00650C86 /* CommunityViewController.swift in Sources */,
+				042910632BB753140002B465 /* PlantLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

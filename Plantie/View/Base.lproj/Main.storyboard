@@ -390,18 +390,42 @@
         <!--Plants-->
         <scene sceneID="mks-05-U1D">
             <objects>
-                <viewController id="yHZ-Pj-VND" sceneMemberID="viewController">
+                <viewController id="yHZ-Pj-VND" customClass="PlantsViewController" customModule="Plantie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qMo-nj-5tN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nY-l0-ouM">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="255.66666666666666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="M2a-p4-Guu">
+                                <rect key="frame" x="0.0" y="255.66666666666669" width="393" height="513.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cAC-vk-164"/>
                         <color key="backgroundColor" name="colorTableView"/>
+                        <constraints>
+                            <constraint firstItem="cAC-vk-164" firstAttribute="top" secondItem="7nY-l0-ouM" secondAttribute="top" constant="59" id="5xX-LU-ROX"/>
+                            <constraint firstItem="7nY-l0-ouM" firstAttribute="leading" secondItem="cAC-vk-164" secondAttribute="leading" id="AMP-3Z-hy2"/>
+                            <constraint firstItem="M2a-p4-Guu" firstAttribute="top" secondItem="7nY-l0-ouM" secondAttribute="bottom" id="DjQ-Xw-YjJ"/>
+                            <constraint firstItem="M2a-p4-Guu" firstAttribute="leading" secondItem="cAC-vk-164" secondAttribute="leading" id="K6c-l7-EgI"/>
+                            <constraint firstItem="cAC-vk-164" firstAttribute="trailing" secondItem="7nY-l0-ouM" secondAttribute="trailing" id="aSe-dR-vTe"/>
+                            <constraint firstItem="7nY-l0-ouM" firstAttribute="height" secondItem="qMo-nj-5tN" secondAttribute="height" multiplier="0.3" id="eNW-2n-4o2"/>
+                            <constraint firstItem="M2a-p4-Guu" firstAttribute="trailing" secondItem="cAC-vk-164" secondAttribute="trailing" id="w5c-Kq-l5I"/>
+                            <constraint firstItem="cAC-vk-164" firstAttribute="bottom" secondItem="M2a-p4-Guu" secondAttribute="bottom" id="zXX-NJ-ltr"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Plants" image="leaf.circle.fill" catalog="system" id="FLa-IP-tXm"/>
+                    <connections>
+                        <outlet property="tableView" destination="M2a-p4-Guu" id="n5a-U2-0vM"/>
+                        <outlet property="weatherBackgroundView" destination="7nY-l0-ouM" id="053-za-DEN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lMu-6n-Fy4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5370.2290076335876" y="652.81690140845069"/>
+            <point key="canvasLocation" x="5370.2290076335876" y="652.11267605633805"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="4Jk-qR-sSA">
@@ -991,7 +1015,7 @@
                 <navigationController storyboardIdentifier="SplashView" automaticallyAdjustsScrollViewInsets="NO" id="1op-i8-mnh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="CGU-ga-pB8">
-                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="101.66666666666666"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="PlantieGreen"/>
                     </navigationBar>
@@ -1130,7 +1154,7 @@
                     <tabBarItem key="tabBarItem" title="Community" image="message.circle.fill" catalog="system" id="Awt-qq-4Nt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="AJF-Fl-Fnb">
-                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="101.66666666666666"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
