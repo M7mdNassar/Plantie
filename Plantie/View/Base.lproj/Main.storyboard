@@ -397,10 +397,67 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nY-l0-ouM">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="255.66666666666666"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اليوم والتاريخ" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgI-be-vwc">
+                                        <rect key="frame" x="163" y="117" width="222" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1sT-GD-1kL">
+                                        <rect key="frame" x="35" y="87.666666666666686" width="120" height="120"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="spY-3j-LEA">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="aVO-G2-EnF"/>
+                                                    <constraint firstAttribute="height" constant="120" id="vxR-al-HSx"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="PlantieLightGreenBlue"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="CzM-Wh-zpd"/>
+                                            <constraint firstItem="spY-3j-LEA" firstAttribute="top" secondItem="1sT-GD-1kL" secondAttribute="top" id="MzW-Jj-LZb"/>
+                                            <constraint firstAttribute="width" constant="120" id="Y3H-m1-wCb"/>
+                                            <constraint firstItem="spY-3j-LEA" firstAttribute="leading" secondItem="1sT-GD-1kL" secondAttribute="leading" id="bNl-Hx-VLv"/>
+                                            <constraint firstAttribute="bottom" secondItem="spY-3j-LEA" secondAttribute="bottom" id="l7B-ec-BG3"/>
+                                            <constraint firstAttribute="trailing" secondItem="spY-3j-LEA" secondAttribute="trailing" id="tBs-9T-Q0T"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0° C" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPb-Wv-HNb">
+                                        <rect key="frame" x="163" y="146" width="222" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtI-hc-EKH">
+                                        <rect key="frame" x="278" y="175" width="107" height="39"/>
+                                        <color key="tintColor" name="PlantieGreen"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="حالة الطقس"/>
+                                        <connections>
+                                            <action selector="getUserLocation:" destination="yHZ-Pj-VND" eventType="touchUpInside" id="Y8b-nm-k9e"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="PlantieLightGreenBlue"/>
+                                <constraints>
+                                    <constraint firstItem="1sT-GD-1kL" firstAttribute="centerY" secondItem="7nY-l0-ouM" secondAttribute="centerY" constant="20" id="2IS-xc-tQ7"/>
+                                    <constraint firstItem="EtI-hc-EKH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1sT-GD-1kL" secondAttribute="trailing" constant="8" symbolic="YES" id="6Ia-B3-cjA"/>
+                                    <constraint firstItem="jgI-be-vwc" firstAttribute="top" secondItem="7nY-l0-ouM" secondAttribute="top" constant="117" id="EdB-gm-Ll1"/>
+                                    <constraint firstItem="jgI-be-vwc" firstAttribute="leading" secondItem="1sT-GD-1kL" secondAttribute="trailing" constant="8" symbolic="YES" id="HnE-Ar-2h9"/>
+                                    <constraint firstItem="UPb-Wv-HNb" firstAttribute="leading" secondItem="1sT-GD-1kL" secondAttribute="trailing" constant="8" symbolic="YES" id="KJk-2v-HcL"/>
+                                    <constraint firstItem="UPb-Wv-HNb" firstAttribute="top" secondItem="jgI-be-vwc" secondAttribute="bottom" constant="8" symbolic="YES" id="YeW-th-6EX"/>
+                                    <constraint firstItem="1sT-GD-1kL" firstAttribute="leading" secondItem="7nY-l0-ouM" secondAttribute="leading" constant="35" id="Zpo-wb-Y6f"/>
+                                    <constraint firstAttribute="trailing" secondItem="EtI-hc-EKH" secondAttribute="trailing" constant="8" id="chY-ah-3y4"/>
+                                    <constraint firstAttribute="trailing" secondItem="jgI-be-vwc" secondAttribute="trailing" constant="8" id="jQ7-BA-DDB"/>
+                                    <constraint firstItem="EtI-hc-EKH" firstAttribute="top" secondItem="UPb-Wv-HNb" secondAttribute="bottom" constant="8" symbolic="YES" id="omF-Qc-nR8"/>
+                                    <constraint firstAttribute="trailing" secondItem="UPb-Wv-HNb" secondAttribute="trailing" constant="8" id="wVJ-aW-ZRp"/>
+                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="M2a-p4-Guu">
-                                <rect key="frame" x="0.0" y="255.66666666666669" width="393" height="513.33333333333326"/>
+                                <rect key="frame" x="0.0" y="255.66666666666669" width="393" height="527.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -414,12 +471,15 @@
                             <constraint firstItem="cAC-vk-164" firstAttribute="trailing" secondItem="7nY-l0-ouM" secondAttribute="trailing" id="aSe-dR-vTe"/>
                             <constraint firstItem="7nY-l0-ouM" firstAttribute="height" secondItem="qMo-nj-5tN" secondAttribute="height" multiplier="0.3" id="eNW-2n-4o2"/>
                             <constraint firstItem="M2a-p4-Guu" firstAttribute="trailing" secondItem="cAC-vk-164" secondAttribute="trailing" id="w5c-Kq-l5I"/>
-                            <constraint firstItem="cAC-vk-164" firstAttribute="bottom" secondItem="M2a-p4-Guu" secondAttribute="bottom" id="zXX-NJ-ltr"/>
+                            <constraint firstItem="cAC-vk-164" firstAttribute="bottom" secondItem="M2a-p4-Guu" secondAttribute="bottom" constant="-14" id="zXX-NJ-ltr"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Plants" image="leaf.circle.fill" catalog="system" id="FLa-IP-tXm"/>
                     <connections>
+                        <outlet property="getUserLocationButton" destination="EtI-hc-EKH" id="WvN-Sb-JVl"/>
+                        <outlet property="historyLabel" destination="jgI-be-vwc" id="pAP-WH-5gG"/>
                         <outlet property="tableView" destination="M2a-p4-Guu" id="n5a-U2-0vM"/>
+                        <outlet property="tempretureLabel" destination="UPb-Wv-HNb" id="pB9-fq-8Gv"/>
                         <outlet property="weatherBackgroundView" destination="7nY-l0-ouM" id="053-za-DEN"/>
                     </connections>
                 </viewController>
@@ -1015,7 +1075,7 @@
                 <navigationController storyboardIdentifier="SplashView" automaticallyAdjustsScrollViewInsets="NO" id="1op-i8-mnh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="CGU-ga-pB8">
-                        <rect key="frame" x="0.0" y="59" width="393" height="101.66666666666666"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="PlantieGreen"/>
                     </navigationBar>
@@ -1154,7 +1214,7 @@
                     <tabBarItem key="tabBarItem" title="Community" image="message.circle.fill" catalog="system" id="Awt-qq-4Nt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="AJF-Fl-Fnb">
-                        <rect key="frame" x="0.0" y="59" width="393" height="101.66666666666666"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1454,6 +1514,7 @@
         <image name="arrow.right.circle.fill" catalog="system" width="128" height="123"/>
         <image name="camera.circle.fill" catalog="system" width="128" height="123"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <image name="cloudy" width="128" height="128"/>
         <image name="facebook" width="32" height="32"/>
         <image name="google" width="32" height="32"/>
         <image name="leaf.circle.fill" catalog="system" width="128" height="123"/>
@@ -1476,6 +1537,9 @@
         </namedColor>
         <namedColor name="PlantieLightGreen">
             <color red="0.4050000011920929" green="0.71200001239776611" blue="0.55299997329711914" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="PlantieLightGreenBlue">
+            <color red="0.91399997472763062" green="0.98000001907348633" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="colorTableView">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.9649999737739563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

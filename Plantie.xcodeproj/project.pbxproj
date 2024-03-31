@@ -39,6 +39,7 @@
 		046D818B2B9B21920063EDB3 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D81892B9B21920063EDB3 /* CommentTableViewCell.xib */; };
 		0478492C2B8F375900562F68 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478492B2B8F375900562F68 /* LaunchScreenController.swift */; };
 		0478492E2B8F388E00562F68 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0478492D2B8F388E00562F68 /* Lottie */; };
+		04879C3C2BB78EF200A70746 /* SwiftLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 04879C3B2BB78EF200A70746 /* SwiftLocation */; };
 		0499483E2B9DD17E008CC810 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0499483D2B9DD17E008CC810 /* GoogleService-Info.plist */; };
 		049F77BC2B97952C00D65123 /* ShowPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F77BB2B97952C00D65123 /* ShowPostViewController.swift */; };
 		04B5A9A02BB6397800E25710 /* PlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5A99F2BB6397800E25710 /* PlantsViewController.swift */; };
@@ -192,6 +193,7 @@
 				04CA3AAD2B9E52ED00AE49C0 /* FacebookCore in Frameworks */,
 				04F815C32B8DF863000D2DAD /* FirebaseAuth in Frameworks */,
 				04F815CD2B8DF863000D2DAD /* FirebaseFirestoreSwift in Frameworks */,
+				04879C3C2BB78EF200A70746 /* SwiftLocation in Frameworks */,
 				4A905A9D694F9B29BA495CAD /* Pods_Plantie.framework in Frameworks */,
 				043989D42B9742D100FA0FF7 /* SKPhotoBrowser in Frameworks */,
 				043989D12B9736F800FA0FF7 /* SDWebImage in Frameworks */,
@@ -299,12 +301,19 @@
 			path = OnlyText;
 			sourceTree = "<group>";
 		};
+		04879C392BB777B000A70746 /* Table Plants Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04B5A9A12BB63C4500E25710 /* PlantTableViewCell.swift */,
+				04B5A9A22BB63C4500E25710 /* PlantTableViewCell.xib */,
+			);
+			path = "Table Plants Controller";
+			sourceTree = "<group>";
+		};
 		04ED26F02B9CF3F70034D6BE /* Plants */ = {
 			isa = PBXGroup;
 			children = (
 				04B5A99F2BB6397800E25710 /* PlantsViewController.swift */,
-				04B5A9A12BB63C4500E25710 /* PlantTableViewCell.swift */,
-				04B5A9A22BB63C4500E25710 /* PlantTableViewCell.xib */,
 			);
 			path = Plants;
 			sourceTree = "<group>";
@@ -419,6 +428,7 @@
 		04F815EA2B8E01AD000D2DAD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04879C392BB777B000A70746 /* Table Plants Controller */,
 				046537842B97134B001880C1 /* Table Community Cells */,
 				04F815912B8DF0C5000D2DAD /* Main.storyboard */,
 				04F815962B8DF0C8000D2DAD /* LaunchScreen.storyboard */,
@@ -514,6 +524,7 @@
 				04CA3AAA2B9E52ED00AE49C0 /* FacebookBasics */,
 				04CA3AAC2B9E52ED00AE49C0 /* FacebookCore */,
 				04CA3AAE2B9E52ED00AE49C0 /* FacebookLogin */,
+				04879C3B2BB78EF200A70746 /* SwiftLocation */,
 			);
 			productName = Plantie;
 			productReference = 04F815882B8DF0C5000D2DAD /* Plantie.app */;
@@ -598,6 +609,7 @@
 				04DB1C6A2B9C6AD900D02DF7 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				04E1D1D32B9DEED200239C92 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				04CA3AA92B9E52ED00AE49C0 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				04879C3A2BB78EF200A70746 /* XCRemoteSwiftPackageReference "SwiftLocation" */,
 			);
 			productRefGroup = 04F815892B8DF0C5000D2DAD /* Products */;
 			projectDirPath = "";
@@ -1172,6 +1184,14 @@
 				version = 4.4.1;
 			};
 		};
+		04879C3A2BB78EF200A70746 /* XCRemoteSwiftPackageReference "SwiftLocation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftLocation.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		04CA3AA92B9E52ED00AE49C0 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
@@ -1221,6 +1241,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 044B14AD2B8E5FB90087C094 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		04879C3B2BB78EF200A70746 /* SwiftLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04879C3A2BB78EF200A70746 /* XCRemoteSwiftPackageReference "SwiftLocation" */;
+			productName = SwiftLocation;
 		};
 		04CA3AAA2B9E52ED00AE49C0 /* FacebookBasics */ = {
 			isa = XCSwiftPackageProductDependency;
