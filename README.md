@@ -16,3 +16,4 @@ By utilizing a smartphone camera or a captured image, recommendations can be mad
 Overall, the system promises to enhance the process of detecting plant diseases and pests, while also providing farmers with information to enhance crop productivity, which will lead to a decrease in financial losses.
 </p>
 
+<a href='Plantie Documentation.pdf'>READ MORE....</a>
