@@ -34,7 +34,14 @@ class CommunityViewController: UIViewController {
     
         if let cell = notification.userInfo?["cell"] as? UITableViewCell {
             if let indexPath = tableView.indexPath(for: cell){
-                let post = posts[indexPath.row]
+                
+                var post:Post
+                if isSearchActive() {
+                    post = filteredPosts[indexPath.row]
+                } else {
+                    post = posts[indexPath.row]
+                }
+                
                 let vc = storyboard?.instantiateViewController(withIdentifier: "showPostView") as! ShowPostViewController
                 vc.post = post
                 vc.modalPresentationStyle = .fullScreen
@@ -93,12 +100,19 @@ extension CommunityViewController : UITableViewDataSource , UITableViewDelegate 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "showPostView") as! ShowPostViewController
-        vc.post = posts[indexPath.row]
+        let post: Post
+        if isSearchActive() {
+            post = filteredPosts[indexPath.row]
+        } else {
+            post = posts[indexPath.row]
+        }
+
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "showPostView") as! ShowPostViewController
+        vc.post = post
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
-       
     }
+
     
     // MARK: Pagination
      
