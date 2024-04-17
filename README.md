@@ -1,4 +1,4 @@
-# Plantie
+# Plantie (Smart Image Processing and Farmer Assistant)
 
 ## ABSTRACT
 
