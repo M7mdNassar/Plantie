@@ -25,6 +25,10 @@ class PlantsViewController: UIViewController {
         locationManager.delegate = self
         setupTableView()
         getPlants()
+        
+        // Add tap gesture recognizer to weatherBackgroundView
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(weatherBackgroundTapped))
+        weatherBackgroundView.addGestureRecognizer(tapGesture)
     }
     
     // MARK: Actions
@@ -36,6 +40,18 @@ class PlantsViewController: UIViewController {
     
     // MARK: Methods
     
+    @objc func weatherBackgroundTapped() {
+        // Request location permission
+        locationManager.requestWhenInUseAuthorization()
+    }
+    
+    func navigateToWeatherViewController() {
+        guard let weatherViewController = storyboard?.instantiateViewController(withIdentifier: "weatherController") else {
+            return
+        }
+        
+        present(weatherViewController, animated: true, completion: nil)
+    }
 }
 
 // MARK: Table Datasource
@@ -84,10 +100,14 @@ extension PlantsViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last
         print(location)
+        navigateToWeatherViewController()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription)
-        
+        // Show an alert if location access is denied
+        let alert = UIAlertController(title: "Location Access Denied", message: "You need to enable GPS to get weather data.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }

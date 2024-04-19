@@ -42,6 +42,10 @@
 		04879C3C2BB78EF200A70746 /* SwiftLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 04879C3B2BB78EF200A70746 /* SwiftLocation */; };
 		0499483E2B9DD17E008CC810 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0499483D2B9DD17E008CC810 /* GoogleService-Info.plist */; };
 		049F77BC2B97952C00D65123 /* ShowPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F77BB2B97952C00D65123 /* ShowPostViewController.swift */; };
+		04B14CDD2BD2B76900440034 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B14CDC2BD2B76900440034 /* WeatherData.swift */; };
+		04B14CDF2BD2B7D200440034 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B14CDE2BD2B7D200440034 /* WeatherAPI.swift */; };
+		04B14CE22BD2BE7600440034 /* HourlyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B14CE12BD2BE7600440034 /* HourlyCollectionViewCell.swift */; };
+		04B14CE42BD2BE8F00440034 /* DailyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B14CE32BD2BE8F00440034 /* DailyCollectionViewCell.swift */; };
 		04B5A9A02BB6397800E25710 /* PlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5A99F2BB6397800E25710 /* PlantsViewController.swift */; };
 		04B5A9A32BB63C4500E25710 /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5A9A12BB63C4500E25710 /* PlantTableViewCell.swift */; };
 		04B5A9A42BB63C4500E25710 /* PlantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B5A9A22BB63C4500E25710 /* PlantTableViewCell.xib */; };
@@ -134,6 +138,10 @@
 		0478492B2B8F375900562F68 /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
 		0499483D2B9DD17E008CC810 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		049F77BB2B97952C00D65123 /* ShowPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPostViewController.swift; sourceTree = "<group>"; };
+		04B14CDC2BD2B76900440034 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		04B14CDE2BD2B7D200440034 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		04B14CE12BD2BE7600440034 /* HourlyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCollectionViewCell.swift; sourceTree = "<group>"; };
+		04B14CE32BD2BE8F00440034 /* DailyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCollectionViewCell.swift; sourceTree = "<group>"; };
 		04B5A99F2BB6397800E25710 /* PlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsViewController.swift; sourceTree = "<group>"; };
 		04B5A9A12BB63C4500E25710 /* PlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTableViewCell.swift; sourceTree = "<group>"; };
 		04B5A9A22BB63C4500E25710 /* PlantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlantTableViewCell.xib; sourceTree = "<group>"; };
@@ -312,6 +320,15 @@
 			path = "Table Plants Controller";
 			sourceTree = "<group>";
 		};
+		04B14CE02BD2BDCC00440034 /* Weather Collections */ = {
+			isa = PBXGroup;
+			children = (
+				04B14CE12BD2BE7600440034 /* HourlyCollectionViewCell.swift */,
+				04B14CE32BD2BE8F00440034 /* DailyCollectionViewCell.swift */,
+			);
+			path = "Weather Collections";
+			sourceTree = "<group>";
+		};
 		04ED26F02B9CF3F70034D6BE /* Plants */ = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +448,7 @@
 		04F815EA2B8E01AD000D2DAD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04B14CE02BD2BDCC00440034 /* Weather Collections */,
 				04879C392BB777B000A70746 /* Table Plants Controller */,
 				046537842B97134B001880C1 /* Table Community Cells */,
 				04F815912B8DF0C5000D2DAD /* Main.storyboard */,
@@ -446,6 +464,8 @@
 				04FB2B372B966E2B00650C86 /* Post.swift */,
 				042910602BB748B10002B465 /* Plant.swift */,
 				042910622BB753140002B465 /* PlantLoader.swift */,
+				04B14CDC2BD2B76900440034 /* WeatherData.swift */,
+				04B14CDE2BD2B7D200440034 /* WeatherAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -779,13 +799,16 @@
 				042910612BB748B10002B465 /* Plant.swift in Sources */,
 				0465378C2B97140A001880C1 /* TextTableViewCell.swift in Sources */,
 				043ED8042B99D8E200832BB0 /* RealtimeDatabaseManager.swift in Sources */,
+				04B14CDF2BD2B7D200440034 /* WeatherAPI.swift in Sources */,
 				043EF02C2B8F5252007F8E6C /* RegisterViewController.swift in Sources */,
 				046D818A2B9B21920063EDB3 /* CommentTableViewCell.swift in Sources */,
 				044B14AC2B8E38AC0087C094 /* EditProfile.swift in Sources */,
 				044B148F2B8E25FF0087C094 /* ProfileViewController.swift in Sources */,
+				04B14CE42BD2BE8F00440034 /* DailyCollectionViewCell.swift in Sources */,
 				044B14992B8E2B990087C094 /* Constents.swift in Sources */,
 				043989CB2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.swift in Sources */,
 				044B149B2B8E2BDA0087C094 /* Global Functions.swift in Sources */,
+				04B14CDD2BD2B76900440034 /* WeatherData.swift in Sources */,
 				046537872B9713AE001880C1 /* TextWithImagesTableViewCell.swift in Sources */,
 				049F77BC2B97952C00D65123 /* ShowPostViewController.swift in Sources */,
 				044B14A42B8E320B0087C094 /* User.swift in Sources */,
@@ -800,6 +823,7 @@
 				04F8158E2B8DF0C5000D2DAD /* SceneDelegate.swift in Sources */,
 				0478492C2B8F375900562F68 /* LaunchScreenController.swift in Sources */,
 				04F815E82B8E006F000D2DAD /* SplashViewController.swift in Sources */,
+				04B14CE22BD2BE7600440034 /* HourlyCollectionViewCell.swift in Sources */,
 				04FB2B382B966E2B00650C86 /* Post.swift in Sources */,
 				04519DAB2B9679E900D190AE /* AddPostViewController.swift in Sources */,
 				04FB2B3B2B9671EA00650C86 /* CommunityViewController.swift in Sources */,
