@@ -27,7 +27,7 @@ struct Current: Codable {
     let temp, feelsLike: Double
     let pressure, humidity: Int
     let dewPoint, uvi: Double
-    let clouds, visibility: Int
+    let clouds: Int
     let windSpeed: Double
     let windDeg: Int
     let weather: [Weather]
@@ -39,7 +39,7 @@ struct Current: Codable {
         case feelsLike = "feels_like"
         case pressure, humidity
         case dewPoint = "dew_point"
-        case uvi, clouds, visibility
+        case uvi, clouds
         case windSpeed = "wind_speed"
         case windDeg = "wind_deg"
         case weather
