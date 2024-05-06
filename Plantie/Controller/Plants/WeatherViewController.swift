@@ -1,8 +1,8 @@
-
-
 import UIKit
 
 class WeatherViewController: UIViewController {
+    
+    var weatherData: WeatherData?
     
     var countryCityName: String?
     var currentWeather: Current?
@@ -13,7 +13,6 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var hourlyCollectionView: UICollectionView!
     @IBOutlet weak var dailyCollectionView: UICollectionView!
     //Current Weather UI
-    @IBOutlet weak var mainIconImageView: UIImageView!
     @IBOutlet weak var countryCityLabel: UILabel!
     @IBOutlet weak var updatedDateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -32,28 +31,20 @@ class WeatherViewController: UIViewController {
         hourlyCollectionView.delegate = self
         dailyCollectionView.dataSource = self
         dailyCollectionView.delegate = self
-        gettingWeatherData(lat: 33.44, lon: -94.04)
+        setupData()
     }
 
-    func gettingWeatherData(lat: Double, lon: Double) {
+    
+    func setupData(){
         dailyWeatherList.removeAll()
         hourlyWeatherList.removeAll()
-        WeatherAPI.getWeatherData(lat: lat, lon: lon) { data, response, error in
-            let decoder = JSONDecoder()
-            do {
-                let decoded = try decoder.decode(WeatherData.self, from: data!)
-                self.countryCityName = decoded.timezone
-                self.currentWeather = decoded.current
-                self.hourlyWeatherList = decoded.hourly
-                self.dailyWeatherList = decoded.daily
-                DispatchQueue.main.async { [self] in
-                    gettingWeatherIcons()
-                    setMainWeatherUI()
-                }
-            } catch {
-                print("Failed to decode JSON \(error)")
-            }
-        }
+        
+        self.countryCityName = weatherData!.timezone
+        self.currentWeather = weatherData!.current
+        self.hourlyWeatherList = weatherData!.hourly
+        self.dailyWeatherList = weatherData!.daily
+        gettingWeatherIcons()
+        setMainWeatherUI()
     }
     
     func gettingWeatherIcons() {
@@ -68,7 +59,7 @@ class WeatherViewController: UIViewController {
                     weatherIcons[key] = image
                     hourlyCollectionView.reloadData()
                     dailyCollectionView.reloadData()
-                    mainIconImageView.image = setWeatherIcon(key: currentWeather!.weather[0].icon)
+                   
                 }
             }
         }
@@ -103,15 +94,19 @@ class WeatherViewController: UIViewController {
         let currentTime = dateFormatter.string(from: Date(timeIntervalSince1970: Double(currentWeather!.dt)))
         updatedDateLabel.text = "Updated at: \(currentTime)"
         descriptionLabel.text = currentWeather?.weather[0].weatherDescription
-        tempLabel.text = "\(currentWeather!.temp) °F"
-        lowTempLabel.text = "Low: \(dailyWeatherList[0].temp.min) °F"
-        highTempLabel.text = "High: \(dailyWeatherList[0].temp.max) °F"
+        tempLabel.text = "\(fahrenheitToCelsius(currentWeather!.temp)) °C"
+        lowTempLabel.text = "Low: \(fahrenheitToCelsius(dailyWeatherList[0].temp.min)) °C"
+        highTempLabel.text = "High: \(fahrenheitToCelsius(dailyWeatherList[0].temp.max)) °C"
         dateFormatter.dateFormat = "hh:mm a"
         sunriseTimeLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: Double(currentWeather!.sunrise!)))
         sunsetLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: Double(currentWeather!.sunset!)))
         windLabel.text = "\(currentWeather!.windSpeed) miles"
         pressureLabel.text = String(currentWeather!.pressure)
         humidityLabel.text = String(currentWeather!.humidity)
+    }
+    
+    func fahrenheitToCelsius(_ fahrenheit: Double) -> Int {
+        return Int((fahrenheit - 32) * 5 / 9)
     }
 }
 
@@ -133,7 +128,7 @@ extension WeatherViewController: UICollectionViewDataSource, UICollectionViewDel
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HourCell", for: indexPath) as! HourlyCollectionViewCell
             cell.backgroundColor = .cyan
             cell.timeLabel.text = setTime(index: indexPath.row)
-            cell.tempLabel.text = "\(Int(hourlyWeatherList[indexPath.row].temp)) °F"
+            cell.tempLabel.text = "\(Int(fahrenheitToCelsius(hourlyWeatherList[indexPath.row].temp))) °C"
             return cell
         case dailyCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DayCell", for: indexPath) as! DailyCollectionViewCell
@@ -145,8 +140,8 @@ extension WeatherViewController: UICollectionViewDataSource, UICollectionViewDel
             cell.dayLabel.text = setDay(index: indexPath.row)
             cell.descriptionLabel.text = dailyWeatherList[indexPath.row].weather[0].weatherDescription
             cell.iconImageView.image = setWeatherIcon(key: dailyWeatherList[indexPath.row].weather[0].icon)
-            cell.highTempLabel.text = "\(Int(dailyWeatherList[indexPath.row].temp.max)) °F ↑"
-            cell.lowTempLabel.text = "\(Int(dailyWeatherList[indexPath.row].temp.min)) °F ↓"
+            cell.highTempLabel.text = "\(Int(fahrenheitToCelsius(dailyWeatherList[indexPath.row].temp.max))) °C ↑"
+            cell.lowTempLabel.text = "\(Int(fahrenheitToCelsius(dailyWeatherList[indexPath.row].temp.min))) °C ↓"
             return cell
         default:
             return UICollectionViewCell()

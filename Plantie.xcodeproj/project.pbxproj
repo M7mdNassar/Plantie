@@ -10,6 +10,7 @@
 		0429105F2BB7484D0002B465 /* PlantsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0429105E2BB7484D0002B465 /* PlantsData.json */; };
 		042910612BB748B10002B465 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042910602BB748B10002B465 /* Plant.swift */; };
 		042910632BB753140002B465 /* PlantLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042910622BB753140002B465 /* PlantLoader.swift */; };
+		042E16962BE774820066C585 /* UIViewExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042E16952BE774820066C585 /* UIViewExtenstion.swift */; };
 		043989CB2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043989C92B97244F00FA0FF7 /* ImagesPostCollectionViewCell.swift */; };
 		043989CC2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043989CA2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.xib */; };
 		043989CE2B972C0500FA0FF7 /* ExpandableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043989CD2B972C0500FA0FF7 /* ExpandableLabel.swift */; };
@@ -110,6 +111,7 @@
 		0429105E2BB7484D0002B465 /* PlantsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PlantsData.json; sourceTree = "<group>"; };
 		042910602BB748B10002B465 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		042910622BB753140002B465 /* PlantLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantLoader.swift; sourceTree = "<group>"; };
+		042E16952BE774820066C585 /* UIViewExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtenstion.swift; sourceTree = "<group>"; };
 		043989C92B97244F00FA0FF7 /* ImagesPostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesPostCollectionViewCell.swift; sourceTree = "<group>"; };
 		043989CA2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagesPostCollectionViewCell.xib; sourceTree = "<group>"; };
 		043989CD2B972C0500FA0FF7 /* ExpandableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableLabel.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				044B14922B8E2B3E0087C094 /* UITableViewExtension.swift */,
 				044B14942B8E2B590087C094 /* UIImageViewExtension.swift */,
 				044B14962B8E2B770087C094 /* StringExtension.swift */,
+				042E16952BE774820066C585 /* UIViewExtenstion.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -822,6 +825,7 @@
 				044B149E2B8E30180087C094 /* FUserListener.swift in Sources */,
 				04F8158E2B8DF0C5000D2DAD /* SceneDelegate.swift in Sources */,
 				0478492C2B8F375900562F68 /* LaunchScreenController.swift in Sources */,
+				042E16962BE774820066C585 /* UIViewExtenstion.swift in Sources */,
 				04F815E82B8E006F000D2DAD /* SplashViewController.swift in Sources */,
 				04B14CE22BD2BE7600440034 /* HourlyCollectionViewCell.swift in Sources */,
 				04FB2B382B966E2B00650C86 /* Post.swift in Sources */,

@@ -91,7 +91,7 @@ class LoginViewController: UIViewController {
                 
                 // Firebase sign-in successful, handle further actions if needed
                 
-                if let user = authResult?.user {
+                if (authResult?.user) != nil {
                     if let user = authResult?.user {
                         let newUser = User(
                             id: user.uid,

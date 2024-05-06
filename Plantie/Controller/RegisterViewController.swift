@@ -77,7 +77,7 @@ class RegisterViewController: UIViewController {
         GIDSignIn.sharedInstance.configuration = config
 
         // Start the sign in flow!
-        GIDSignIn.sharedInstance.signIn(withPresenting: self) { [unowned self] result, error in
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { result, error in
             guard error == nil else {
                 // Handle sign-in error
                 print("Google Sign-In Error: \(error?.localizedDescription ?? "Unknown error")")
@@ -103,7 +103,7 @@ class RegisterViewController: UIViewController {
                 
                 // Firebase sign-in successful, handle further actions if needed
                 
-                if let user = authResult?.user {
+                if (authResult?.user) != nil {
                     if let user = authResult?.user {
                         let newUser = User(
                             id: user.uid,
