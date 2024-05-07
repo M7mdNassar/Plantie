@@ -370,7 +370,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0OP-MG-0BT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7909" y="651"/>
+            <point key="canvasLocation" x="7908" y="651"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kq2-Xp-Ah7">
@@ -388,7 +388,7 @@
             </objects>
             <point key="canvasLocation" x="7152" y="651"/>
         </scene>
-        <!--Plants-->
+        <!--Plants View Controller-->
         <scene sceneID="mks-05-U1D">
             <objects>
                 <viewController id="yHZ-Pj-VND" customClass="PlantsViewController" customModule="Plantie" customModuleProvider="target" sceneMemberID="viewController">
@@ -452,7 +452,7 @@
                                                                 <rect key="frame" x="21.999999999999979" y="0.0" width="109.66666666666669" height="150"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-11" translatesAutoresizingMaskIntoConstraints="NO" id="RmT-Dk-pKG">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="52.666666666666664" height="68"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="52.666666666666664" height="88.666666666666671"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المدينة" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPb-Wv-HNb">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="52.666666666666664" height="39.333333333333336"/>
@@ -460,8 +460,8 @@
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اليوم" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgI-be-vwc">
-                                                                                <rect key="frame" x="0.0" y="28.333333333333325" width="52.666666666666664" height="39.666666666666657"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="اليوم" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgI-be-vwc">
+                                                                                <rect key="frame" x="0.0" y="28.333333333333332" width="52.666666666666664" height="60.333333333333343"/>
                                                                                 <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="23"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
@@ -469,10 +469,10 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="HPg-0Q-ov6">
-                                                                        <rect key="frame" x="0.0" y="85" width="107.66666666666667" height="65"/>
+                                                                        <rect key="frame" x="0.0" y="105.66666666666666" width="107.66666666666667" height="44.333333333333343"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="258" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text=" 00.0°C " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIC-Ko-H7Q">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="107.66666666666667" height="65"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="107.66666666666667" height="44.333333333333336"/>
                                                                                 <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="38"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
@@ -483,6 +483,7 @@
                                                                 <constraints>
                                                                     <constraint firstItem="HPg-0Q-ov6" firstAttribute="leading" secondItem="CcN-ge-OHR" secondAttribute="leading" id="bdc-cR-z6X"/>
                                                                     <constraint firstAttribute="trailing" secondItem="HPg-0Q-ov6" secondAttribute="trailing" constant="2" id="xAg-wb-HCY"/>
+                                                                    <constraint firstItem="HPg-0Q-ov6" firstAttribute="top" secondItem="CcN-ge-OHR" secondAttribute="top" constant="105.66666666666666" id="zM7-Sl-Ncz"/>
                                                                 </constraints>
                                                             </stackView>
                                                         </subviews>
@@ -541,7 +542,8 @@
                             <constraint firstItem="cAC-vk-164" firstAttribute="bottom" secondItem="M2a-p4-Guu" secondAttribute="bottom" constant="-14" id="zXX-NJ-ltr"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Plants" image="leaf.circle.fill" catalog="system" id="FLa-IP-tXm"/>
+                    <navigationItem key="navigationItem" id="CBX-EF-Qem"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="currentCityLabel" destination="UPb-Wv-HNb" id="pB9-fq-8Gv"/>
                         <outlet property="currentDateLabel" destination="jgI-be-vwc" id="pAP-WH-5gG"/>
@@ -550,11 +552,12 @@
                         <outlet property="tempretureLabel" destination="kIC-Ko-H7Q" id="5z7-bW-Jzf"/>
                         <outlet property="weatherBackgroundView" destination="7nY-l0-ouM" id="053-za-DEN"/>
                         <outlet property="weatherDescription" destination="Fw8-ru-Khp" id="et7-e9-hsU"/>
+                        <segue destination="Xbh-qC-QgT" kind="show" identifier="goToDetails" id="hBe-mM-509"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lMu-6n-Fy4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5183.9694656488546" y="650.70422535211276"/>
+            <point key="canvasLocation" x="5247" y="1418"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="4Jk-qR-sSA">
@@ -566,7 +569,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="yHZ-Pj-VND" kind="relationship" relationship="viewControllers" id="G6U-5m-x3D"/>
+                        <segue destination="hRd-xc-7TP" kind="relationship" relationship="viewControllers" id="G6U-5m-x3D"/>
                         <segue destination="LTD-WY-W46" kind="relationship" relationship="viewControllers" id="YnM-hh-BDi"/>
                         <segue destination="lOx-fG-fNv" kind="relationship" relationship="viewControllers" id="deH-wj-lrm"/>
                         <segue destination="mUM-EZ-HN9" kind="relationship" relationship="viewControllers" id="KWG-aX-rB4"/>
@@ -594,7 +597,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBk-ev-ZDo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9042" y="651"/>
+            <point key="canvasLocation" x="8772" y="651"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="zrX-Ur-HDj">
@@ -787,7 +790,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNt-5C-5cJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9042" y="2113"/>
+            <point key="canvasLocation" x="8772" y="2130"/>
         </scene>
         <!--Splash View Controller-->
         <scene sceneID="h8f-8m-agB">
@@ -1274,7 +1277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DTP-hT-QLX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9042" y="1372"/>
+            <point key="canvasLocation" x="8772" y="1373"/>
         </scene>
         <!--Community-->
         <scene sceneID="Oja-0e-NRR">
@@ -1433,7 +1436,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tRD-Cp-FN5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6389" y="2113"/>
+            <point key="canvasLocation" x="6389" y="2148"/>
         </scene>
         <!--Add Post View Controller-->
         <scene sceneID="ctE-nN-3ZB">
@@ -2021,7 +2024,73 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymC-qS-SMe" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5185" y="1418"/>
+            <point key="canvasLocation" x="4535" y="1418"/>
+        </scene>
+        <!--Plant Details View Controller-->
+        <scene sceneID="mvh-Hk-lsE">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="Xbh-qC-QgT" customClass="PlantDetailsViewController" customModule="Plantie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eKh-Bx-bP1">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="1200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2m-Wh-UOh">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="1200"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9yc-oP-2Vn">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1000" id="Vny-cS-pLf"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="9yc-oP-2Vn" firstAttribute="leading" secondItem="Lfn-My-6xk" secondAttribute="leading" id="AuF-Py-bPl"/>
+                                    <constraint firstItem="9yc-oP-2Vn" firstAttribute="bottom" secondItem="Lfn-My-6xk" secondAttribute="bottom" id="Pw3-01-jSM"/>
+                                    <constraint firstItem="9yc-oP-2Vn" firstAttribute="top" secondItem="Lfn-My-6xk" secondAttribute="top" id="TCZ-xw-rxK"/>
+                                    <constraint firstItem="9yc-oP-2Vn" firstAttribute="width" secondItem="YNW-qD-dKD" secondAttribute="width" id="eU2-Ns-xeJ"/>
+                                    <constraint firstItem="9yc-oP-2Vn" firstAttribute="trailing" secondItem="Lfn-My-6xk" secondAttribute="trailing" id="rKV-xQ-EM4"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Lfn-My-6xk"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="YNW-qD-dKD"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="slN-gf-bZM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="k2m-Wh-UOh" secondAttribute="bottom" id="GEq-YR-YcE"/>
+                            <constraint firstItem="k2m-Wh-UOh" firstAttribute="trailing" secondItem="slN-gf-bZM" secondAttribute="trailing" id="mQE-VS-cTe"/>
+                            <constraint firstItem="k2m-Wh-UOh" firstAttribute="top" secondItem="eKh-Bx-bP1" secondAttribute="top" id="w7w-vM-Yzi"/>
+                            <constraint firstItem="k2m-Wh-UOh" firstAttribute="leading" secondItem="slN-gf-bZM" secondAttribute="leading" id="xB7-YJ-a1d"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="EWg-44-pjM"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <size key="freeformSize" width="393" height="1200"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lEi-Wz-j2d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5248" y="2270"/>
+        </scene>
+        <!--Plants-->
+        <scene sceneID="ExZ-M3-CIN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hRd-xc-7TP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Plants" image="leaf.circle.fill" catalog="system" id="FLa-IP-tXm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZRP-fn-3Ex">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yHZ-Pj-VND" kind="relationship" relationship="rootViewController" id="8iJ-pb-8uL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GWA-Bc-0DQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5248" y="652"/>
         </scene>
     </scenes>
     <resources>

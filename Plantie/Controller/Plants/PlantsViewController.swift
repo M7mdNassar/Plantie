@@ -28,10 +28,14 @@ class PlantsViewController: UIViewController {
         configureLocationAccess()
         setupTableView()
         getPlants()
-        
-      
+        getWeatherData()
+        self.navigationController?.navigationBar.isHidden = true
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
     // MARK: Actions
     
     @IBAction func goToWeatherController(_ sender: UIButton) {
@@ -59,6 +63,7 @@ class PlantsViewController: UIViewController {
         weatherViewController.weatherData = self.weatherData
 
         present(weatherViewController, animated: true, completion: nil)
+        
     }
 }
 
@@ -73,6 +78,26 @@ extension PlantsViewController: UITableViewDelegate , UITableViewDataSource{
         let cell = tableView.dequeue() as PlantTableViewCell
         cell.configure(plant:plants[indexPath.row])
         return cell
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToDetails", let selectedIndex = tableView.indexPathForSelectedRow?.row {
+            let detail = segue.destination as! PlantDetailsViewController
+            detail.plant = plants[selectedIndex]
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Hide the Selection Highlight
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        //perform the segue
+        performSegue(withIdentifier: "goToDetails", sender: self)
+        
+        
+        
+        
     }
 }
 

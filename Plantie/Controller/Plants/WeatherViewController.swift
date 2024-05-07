@@ -92,11 +92,11 @@ class WeatherViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/mm/yyyy hh:mm a"
         let currentTime = dateFormatter.string(from: Date(timeIntervalSince1970: Double(currentWeather!.dt)))
-        updatedDateLabel.text = "Updated at: \(currentTime)"
+        updatedDateLabel.text = "آخر تحديث: \(currentTime)"
         descriptionLabel.text = currentWeather?.weather[0].weatherDescription
         tempLabel.text = "\(fahrenheitToCelsius(currentWeather!.temp)) °C"
-        lowTempLabel.text = "Low: \(fahrenheitToCelsius(dailyWeatherList[0].temp.min)) °C"
-        highTempLabel.text = "High: \(fahrenheitToCelsius(dailyWeatherList[0].temp.max)) °C"
+        lowTempLabel.text = "السفلى: °\(fahrenheitToCelsius(dailyWeatherList[0].temp.min))C"
+        highTempLabel.text = "العليا: °\(fahrenheitToCelsius(dailyWeatherList[0].temp.max))C"
         dateFormatter.dateFormat = "hh:mm a"
         sunriseTimeLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: Double(currentWeather!.sunrise!)))
         sunsetLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: Double(currentWeather!.sunset!)))
