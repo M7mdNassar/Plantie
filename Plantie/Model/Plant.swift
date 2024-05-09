@@ -1,4 +1,3 @@
-
 import Foundation
 
 struct Plant: Codable {
@@ -9,7 +8,7 @@ struct Plant: Codable {
     let plantingTime: String
     let fertilizer: String
     let storageInfo: StorageInfo
-//    let nutritionRecommendations: NutritionRecommendations
+    let nutritionRecommendations: NutritionRecommendations
     let marketingTips: [String]
     let diseaseAndPestControl: DiseaseAndPestControl
     let imageName: String
@@ -20,25 +19,18 @@ struct StorageInfo: Codable {
     let humidity: String
 }
 
-//struct NutritionRecommendations: Codable {
-//    let nitrogen: String
-//    let potassium: String
-//    let phosphorus: String 
-//}
-
-struct DiseaseAndPestControl: Codable {
-    let commonDiseases: [Disease]
-    let commonPests: [Pest]
+struct NutritionRecommendations: Codable {
+    let nitrogen: String
+    let phosphorus: String?
+    let potassium: String?
 }
 
-struct Disease: Codable {
+struct DiseaseAndPestControl: Codable {
+    let commonDiseases: [CommonDisease]
+}
+
+struct CommonDisease: Codable {
     let name: String
     let description: String
     let prevention: String
-}
-
-struct Pest: Codable {
-    let name: String
-    let description: String
-    let control: String
 }

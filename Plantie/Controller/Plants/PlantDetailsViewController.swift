@@ -8,15 +8,75 @@ class PlantDetailsViewController: UIViewController {
     
     var plant:Plant!
     
+    // MARK: Outlets
+    
+    @IBOutlet weak var circlerView: UIView!
+    @IBOutlet weak var plantImageView: UIImageView!
+    @IBOutlet weak var plantNameLabel: UILabel!
+    @IBOutlet weak var plantCategoryLabel: UILabel!
+    @IBOutlet weak var plantDescriptionLabel: UILabel!
+    @IBOutlet weak var plantingTimeLabel: UILabel!
+    @IBOutlet weak var fertilizerDescriptionLabel: UILabel!
+    @IBOutlet weak var fertalizerButton: UIButton!
+    @IBOutlet weak var plantStorageInfoLabel: UILabel!
+    @IBOutlet weak var plantDiasesCollectionView: UICollectionView!
+    
+    
+   // MARK: Life Cycle Controller
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
+        configurePlantInformations(plant: plant)
+        setupViews()
         
         
-        self.navigationController?.navigationBar.isHidden = false
     }
     
-
+    
+    // MARK: Actions
+    
+    @IBAction func fertalizerButtonTapped(_ sender: UIButton) {
+    }
+    
    
 
+}
+
+// MARK: Private Methods
+extension PlantDetailsViewController{
+    func setupNavigationBar(){
+        //Show the Navigation Bar
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.tintColor = UIColor.plantieGreen
+        
+    }
+    
+    
+    func configurePlantInformations(plant:Plant){
+        self.plantImageView.image = UIImage(named: plant.imageName)
+        self.plantNameLabel.text = plant.name
+        self.plantCategoryLabel.text = plant.category
+        self.plantDescriptionLabel.text = plant.description
+        self.plantingTimeLabel.text = plant.plantingTime
+        self.fertilizerDescriptionLabel.text = plant.fertilizer
+        self.plantStorageInfoLabel.text = "\(plant.storageInfo.humidity) \n \(plant.storageInfo.temperature)"
+    }
+    
+    func setupViews(){
+        
+        self.circlerView.layer.cornerRadius = self.circlerView.frame.width / 2
+        
+        self.circlerView.clipsToBounds = true
+        self.circlerView.layer.shadowColor = UIColor.black.cgColor
+        self.circlerView.layer.shadowOpacity = 1
+        self.circlerView.layer.shadowOffset = CGSize.zero
+        self.circlerView.layer.shadowRadius = 10
+        self.circlerView.clipsToBounds = false
+
+        
+        self.fertalizerButton.layer.cornerRadius = 15
+        
+        
+    }
 }

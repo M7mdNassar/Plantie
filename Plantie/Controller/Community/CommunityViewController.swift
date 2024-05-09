@@ -207,8 +207,10 @@ private extension CommunityViewController{
         tableView.estimatedRowHeight = 44
     }
     
-    private func isSearchActive() -> Bool {
+     func isSearchActive() -> Bool {
           return searchController.isActive && !searchController.searchBar.text!.isEmpty
       }
+    
+   
 }
 

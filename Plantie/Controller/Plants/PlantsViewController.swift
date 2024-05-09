@@ -17,19 +17,22 @@ class PlantsViewController: UIViewController {
     // MARK: Variables
     var plants:[Plant] = []
     var locationManager = CLLocationManager()
+    var data: Plant?
     
     var weatherData: WeatherData?
+    
+    let backButton = UIBarButtonItem()
+
     
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupNavigationBar()
         setupViews()
         configureLocationAccess()
         setupTableView()
         getPlants()
         getWeatherData()
-        self.navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,21 +85,20 @@ extension PlantsViewController: UITableViewDelegate , UITableViewDataSource{
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToDetails", let selectedIndex = tableView.indexPathForSelectedRow?.row {
-            let detail = segue.destination as! PlantDetailsViewController
-            detail.plant = plants[selectedIndex]
-        }
+        if segue.identifier == "plantDetails" {
+               let vc = segue.destination as! PlantDetailsViewController
+               vc.plant = self.data
+           }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Hide the Selection Highlight
         tableView.deselectRow(at: indexPath, animated: true)
         
-        //perform the segue
-        performSegue(withIdentifier: "goToDetails", sender: self)
-        
-        
-        
+
+        self.data = plants[indexPath.row]
+
+        self.performSegue(withIdentifier: "plantDetails", sender: self)
         
     }
 }
@@ -175,6 +177,12 @@ extension PlantsViewController: CLLocationManagerDelegate{
 
 extension PlantsViewController{
 
+    func setupNavigationBar(){
+        self.navigationController?.navigationBar.isHidden = true
+        backButton.title = "رجوع"
+        self.navigationItem.backBarButtonItem = backButton
+    }
+    
     func getWeatherData() {
       
         guard let location = locationManager.location else {
