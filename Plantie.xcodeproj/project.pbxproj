@@ -31,6 +31,8 @@
 		044B14A22B8E307A0087C094 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B14A12B8E307A0087C094 /* FileStorage.swift */; };
 		044B14A42B8E320B0087C094 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B14A32B8E320B0087C094 /* User.swift */; };
 		044B14AC2B8E38AC0087C094 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B14AB2B8E38AC0087C094 /* EditProfile.swift */; };
+		044D9F3C2BEEB40B008EA71A /* PlantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D9F3A2BEEB40B008EA71A /* PlantCollectionViewCell.swift */; };
+		044D9F3D2BEEB40B008EA71A /* PlantCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044D9F3B2BEEB40B008EA71A /* PlantCollectionViewCell.xib */; };
 		04519DAB2B9679E900D190AE /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04519DAA2B9679E900D190AE /* AddPostViewController.swift */; };
 		046537872B9713AE001880C1 /* TextWithImagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046537852B9713AE001880C1 /* TextWithImagesTableViewCell.swift */; };
 		046537882B9713AE001880C1 /* TextWithImagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046537862B9713AE001880C1 /* TextWithImagesTableViewCell.xib */; };
@@ -131,6 +133,8 @@
 		044B14A12B8E307A0087C094 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		044B14A32B8E320B0087C094 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		044B14AB2B8E38AC0087C094 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
+		044D9F3A2BEEB40B008EA71A /* PlantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCollectionViewCell.swift; sourceTree = "<group>"; };
+		044D9F3B2BEEB40B008EA71A /* PlantCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlantCollectionViewCell.xib; sourceTree = "<group>"; };
 		04519DAA2B9679E900D190AE /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		046537852B9713AE001880C1 /* TextWithImagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWithImagesTableViewCell.swift; sourceTree = "<group>"; };
 		046537862B9713AE001880C1 /* TextWithImagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextWithImagesTableViewCell.xib; sourceTree = "<group>"; };
@@ -285,6 +289,15 @@
 				044B14AB2B8E38AC0087C094 /* EditProfile.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		044D9F3E2BEEB5C9008EA71A /* Plant Collection */ = {
+			isa = PBXGroup;
+			children = (
+				044D9F3A2BEEB40B008EA71A /* PlantCollectionViewCell.swift */,
+				044D9F3B2BEEB40B008EA71A /* PlantCollectionViewCell.xib */,
+			);
+			path = "Plant Collection";
 			sourceTree = "<group>";
 		};
 		046537842B97134B001880C1 /* Table Community Cells */ = {
@@ -454,6 +467,7 @@
 		04F815EA2B8E01AD000D2DAD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				044D9F3E2BEEB5C9008EA71A /* Plant Collection */,
 				04B14CE02BD2BDCC00440034 /* Weather Collections */,
 				04879C392BB777B000A70746 /* Table Plants Controller */,
 				046537842B97134B001880C1 /* Table Community Cells */,
@@ -664,6 +678,7 @@
 				04F815E62B8E002E000D2DAD /* Harmattan-Regular.ttf in Resources */,
 				04F815E22B8E0011000D2DAD /* PlantLottieLoading.json in Resources */,
 				046D818B2B9B21920063EDB3 /* CommentTableViewCell.xib in Resources */,
+				044D9F3D2BEEB40B008EA71A /* PlantCollectionViewCell.xib in Resources */,
 				0429105F2BB7484D0002B465 /* PlantsData.json in Resources */,
 				0465378D2B97140A001880C1 /* TextTableViewCell.xib in Resources */,
 				0499483E2B9DD17E008CC810 /* GoogleService-Info.plist in Resources */,
@@ -811,6 +826,7 @@
 				044B14AC2B8E38AC0087C094 /* EditProfile.swift in Sources */,
 				044B148F2B8E25FF0087C094 /* ProfileViewController.swift in Sources */,
 				04B14CE42BD2BE8F00440034 /* DailyCollectionViewCell.swift in Sources */,
+				044D9F3C2BEEB40B008EA71A /* PlantCollectionViewCell.swift in Sources */,
 				044B14992B8E2B990087C094 /* Constents.swift in Sources */,
 				043989CB2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.swift in Sources */,
 				044B149B2B8E2BDA0087C094 /* Global Functions.swift in Sources */,

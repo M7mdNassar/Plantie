@@ -309,7 +309,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="plq-Tm-ekE">
-                                <rect key="frame" x="13.666666666666657" y="160.66666666666669" width="365.66666666666674" height="618.33333333333348"/>
+                                <rect key="frame" x="13.666666666666657" y="160.66666666666669" width="365.66666666666674" height="618.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aY9-yf-Aij" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">

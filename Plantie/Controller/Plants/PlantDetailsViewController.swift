@@ -29,6 +29,7 @@ class PlantDetailsViewController: UIViewController {
         setupNavigationBar()
         configurePlantInformations(plant: plant)
         setupViews()
+        setupCollectionView()
         
         
     }
@@ -78,5 +79,38 @@ extension PlantDetailsViewController{
         self.fertalizerButton.layer.cornerRadius = 15
         
         
+    }
+    
+    
+    func setupCollectionView(){
+        self.plantDiasesCollectionView.delegate = self
+        self.plantDiasesCollectionView.dataSource = self
+        let nib = UINib(nibName: "PlantCollectionViewCell", bundle: nil)
+        plantDiasesCollectionView.register(nib, forCellWithReuseIdentifier: "plantCell")
+    }
+}
+
+
+// MARK: Plant Disease Collection Protocols
+
+extension PlantDetailsViewController: UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        plant.diseaseAndPestControl.commonDiseases.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "plantCell", for: indexPath) as! PlantCollectionViewCell
+
+        
+        let data = plant.diseaseAndPestControl.commonDiseases[indexPath.row]
+        
+        cell.configureCell(imageName:plant.imageName  , diseaseName: data.name)
+        
+        return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 80, height: 100)
     }
 }
