@@ -2,6 +2,8 @@
 import UIKit
 import Foundation
 
+@IBDesignable
+
 class CustomTabBarController : UITabBarController {
     
     let btnMiddle : UIButton = {

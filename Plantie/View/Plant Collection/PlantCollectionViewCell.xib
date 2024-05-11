@@ -38,10 +38,10 @@
                             <constraint firstAttribute="trailing" secondItem="0qU-P7-Hnw" secondAttribute="trailing" constant="20" id="sHb-ok-sMQ"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAN-Eg-k06">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vAN-Eg-k06">
                         <rect key="frame" x="0.0" y="70" width="70" height="19"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="19" id="Fs9-AB-ZeW"/>
+                            <constraint firstAttribute="height" constant="19" id="yXf-a6-h6E"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="16"/>
                         <nil key="textColor"/>

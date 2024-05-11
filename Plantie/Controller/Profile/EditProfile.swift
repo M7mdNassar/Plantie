@@ -166,13 +166,13 @@ class EditProfile: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.plantieLightGreen
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
    
-        title = "Edit Profile".localized
+        title = "الملف الشخصي".localized
     }
     
     private func setUpButton() {
         saveButton.layer.cornerRadius = 18.0
         saveButton.clipsToBounds = true
-        saveButton.setTitle("save".localized , for: .normal)
+        saveButton.setTitle("حفظ" , for: .normal)
     }
 }
 
