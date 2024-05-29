@@ -34,6 +34,7 @@
 		044D9F3C2BEEB40B008EA71A /* PlantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D9F3A2BEEB40B008EA71A /* PlantCollectionViewCell.swift */; };
 		044D9F3D2BEEB40B008EA71A /* PlantCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044D9F3B2BEEB40B008EA71A /* PlantCollectionViewCell.xib */; };
 		04519DAB2B9679E900D190AE /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04519DAA2B9679E900D190AE /* AddPostViewController.swift */; };
+		045439562C07B93000C55542 /* PlantieML.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 045439552C07B93000C55542 /* PlantieML.mlpackage */; };
 		046537872B9713AE001880C1 /* TextWithImagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046537852B9713AE001880C1 /* TextWithImagesTableViewCell.swift */; };
 		046537882B9713AE001880C1 /* TextWithImagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046537862B9713AE001880C1 /* TextWithImagesTableViewCell.xib */; };
 		0465378C2B97140A001880C1 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465378A2B97140A001880C1 /* TextTableViewCell.swift */; };
@@ -136,6 +137,7 @@
 		044D9F3A2BEEB40B008EA71A /* PlantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCollectionViewCell.swift; sourceTree = "<group>"; };
 		044D9F3B2BEEB40B008EA71A /* PlantCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlantCollectionViewCell.xib; sourceTree = "<group>"; };
 		04519DAA2B9679E900D190AE /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		045439552C07B93000C55542 /* PlantieML.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = PlantieML.mlpackage; sourceTree = "<group>"; };
 		046537852B9713AE001880C1 /* TextWithImagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWithImagesTableViewCell.swift; sourceTree = "<group>"; };
 		046537862B9713AE001880C1 /* TextWithImagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextWithImagesTableViewCell.xib; sourceTree = "<group>"; };
 		0465378A2B97140A001880C1 /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 		04F8158A2B8DF0C5000D2DAD /* Plantie */ = {
 			isa = PBXGroup;
 			children = (
+				045439552C07B93000C55542 /* PlantieML.mlpackage */,
 				044B149C2B8E2FE90087C094 /* Firebase */,
 				044B14902B8E27890087C094 /* Helpers */,
 				04F815E92B8E01A4000D2DAD /* Controller */,
@@ -849,6 +852,7 @@
 				04F815E82B8E006F000D2DAD /* SplashViewController.swift in Sources */,
 				04B14CE22BD2BE7600440034 /* HourlyCollectionViewCell.swift in Sources */,
 				04FB2B382B966E2B00650C86 /* Post.swift in Sources */,
+				045439562C07B93000C55542 /* PlantieML.mlpackage in Sources */,
 				04519DAB2B9679E900D190AE /* AddPostViewController.swift in Sources */,
 				04FB2B3B2B9671EA00650C86 /* CommunityViewController.swift in Sources */,
 				042910632BB753140002B465 /* PlantLoader.swift in Sources */,
