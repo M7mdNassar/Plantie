@@ -359,18 +359,41 @@
         <!--Detection-->
         <scene sceneID="tYr-Lu-uYt">
             <objects>
-                <viewController id="mUM-EZ-HN9" sceneMemberID="viewController">
+                <viewController id="mUM-EZ-HN9" customClass="DetectionViewController" customModule="Plantie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Ss-3Y-Gu1">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L9E-j2-JUP">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="279"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxA-8z-v96">
+                                <rect key="frame" x="164.33333333333334" y="287" width="64.333333333333343" height="56.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Sew-ds-Ulp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="L9E-j2-JUP" firstAttribute="top" secondItem="1Ss-3Y-Gu1" secondAttribute="top" id="7VV-gK-bWS"/>
+                            <constraint firstItem="L9E-j2-JUP" firstAttribute="height" secondItem="1Ss-3Y-Gu1" secondAttribute="height" multiplier="0.327465" id="AUm-p0-nAm"/>
+                            <constraint firstItem="mxA-8z-v96" firstAttribute="top" secondItem="L9E-j2-JUP" secondAttribute="bottom" constant="8" symbolic="YES" id="BaK-i2-k5f"/>
+                            <constraint firstItem="mxA-8z-v96" firstAttribute="centerX" secondItem="L9E-j2-JUP" secondAttribute="centerX" id="QaO-rh-CgK"/>
+                            <constraint firstItem="L9E-j2-JUP" firstAttribute="leading" secondItem="Sew-ds-Ulp" secondAttribute="leading" id="Y4B-8H-5Xh"/>
+                            <constraint firstItem="L9E-j2-JUP" firstAttribute="trailing" secondItem="Sew-ds-Ulp" secondAttribute="trailing" id="j0A-15-udw"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Detection" image="magnifyingglass.circle.fill" catalog="system" id="QaF-5b-QsB"/>
+                    <connections>
+                        <outlet property="diseaseNameLabel" destination="mxA-8z-v96" id="way-4a-RdJ"/>
+                        <outlet property="plantImageView" destination="L9E-j2-JUP" id="Nb0-MI-FZb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0OP-MG-0BT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7908" y="651"/>
+            <point key="canvasLocation" x="8243.5114503816785" y="650.70422535211276"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kq2-Xp-Ah7">
@@ -598,7 +621,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBk-ev-ZDo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8772" y="651"/>
+            <point key="canvasLocation" x="9318" y="651"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="zrX-Ur-HDj">
@@ -791,7 +814,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNt-5C-5cJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8772" y="2130"/>
+            <point key="canvasLocation" x="9317" y="2135"/>
         </scene>
         <!--Splash View Controller-->
         <scene sceneID="h8f-8m-agB">
@@ -1148,7 +1171,7 @@
                 <navigationController storyboardIdentifier="SplashView" automaticallyAdjustsScrollViewInsets="NO" id="1op-i8-mnh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="CGU-ga-pB8">
-                        <rect key="frame" x="0.0" y="59" width="393" height="101.66666666666666"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="PlantieGreen"/>
                     </navigationBar>
@@ -1278,7 +1301,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DTP-hT-QLX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8772" y="1373"/>
+            <point key="canvasLocation" x="9318" y="1390"/>
         </scene>
         <!--Community-->
         <scene sceneID="Oja-0e-NRR">

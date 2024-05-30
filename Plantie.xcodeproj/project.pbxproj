@@ -35,6 +35,7 @@
 		044D9F3D2BEEB40B008EA71A /* PlantCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044D9F3B2BEEB40B008EA71A /* PlantCollectionViewCell.xib */; };
 		04519DAB2B9679E900D190AE /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04519DAA2B9679E900D190AE /* AddPostViewController.swift */; };
 		045439562C07B93000C55542 /* PlantieML.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 045439552C07B93000C55542 /* PlantieML.mlpackage */; };
+		0454395A2C07D54000C55542 /* DetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045439592C07D54000C55542 /* DetectionViewController.swift */; };
 		046537872B9713AE001880C1 /* TextWithImagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046537852B9713AE001880C1 /* TextWithImagesTableViewCell.swift */; };
 		046537882B9713AE001880C1 /* TextWithImagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046537862B9713AE001880C1 /* TextWithImagesTableViewCell.xib */; };
 		0465378C2B97140A001880C1 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465378A2B97140A001880C1 /* TextTableViewCell.swift */; };
@@ -138,6 +139,7 @@
 		044D9F3B2BEEB40B008EA71A /* PlantCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlantCollectionViewCell.xib; sourceTree = "<group>"; };
 		04519DAA2B9679E900D190AE /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		045439552C07B93000C55542 /* PlantieML.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = PlantieML.mlpackage; sourceTree = "<group>"; };
+		045439592C07D54000C55542 /* DetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionViewController.swift; sourceTree = "<group>"; };
 		046537852B9713AE001880C1 /* TextWithImagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWithImagesTableViewCell.swift; sourceTree = "<group>"; };
 		046537862B9713AE001880C1 /* TextWithImagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextWithImagesTableViewCell.xib; sourceTree = "<group>"; };
 		0465378A2B97140A001880C1 /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 		04ED26F12B9CF4040034D6BE /* Detection */ = {
 			isa = PBXGroup;
 			children = (
+				045439592C07D54000C55542 /* DetectionViewController.swift */,
 			);
 			path = Detection;
 			sourceTree = "<group>";
@@ -820,6 +823,7 @@
 				04B5A9A32BB63C4500E25710 /* PlantTableViewCell.swift in Sources */,
 				044B14952B8E2B590087C094 /* UIImageViewExtension.swift in Sources */,
 				04F815DB2B8DF98C000D2DAD /* CustomTabBarController.swift in Sources */,
+				0454395A2C07D54000C55542 /* DetectionViewController.swift in Sources */,
 				042910612BB748B10002B465 /* Plant.swift in Sources */,
 				0465378C2B97140A001880C1 /* TextTableViewCell.swift in Sources */,
 				043ED8042B99D8E200832BB0 /* RealtimeDatabaseManager.swift in Sources */,

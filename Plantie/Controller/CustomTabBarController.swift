@@ -4,7 +4,7 @@ import Foundation
 
 @IBDesignable
 
-class CustomTabBarController : UITabBarController {
+class CustomTabBarController : UITabBarController , UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     let btnMiddle : UIButton = {
        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
@@ -31,23 +31,47 @@ class CustomTabBarController : UITabBarController {
     }
     
     @objc func btnMiddleTapped() {
-//        // get the first tab , not new instance of community controller
-//        guard let communityViewController = viewControllers?[0] as? CommunityViewController else {
-//            return
-//        }
-//
-//        let addPostVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddPostViewController") as! AddPostViewController
-//
-//        // Pass the reference to CommunityViewController to AddPostViewController
-//        addPostVC.communityViewController = communityViewController
-//
-//
-//        // Present the AddPostViewController
-//        present(addPostVC, animated: true, completion: nil)
+
+        let alert = UIAlertController(title: "Choose Image Source", message: nil, preferredStyle: .actionSheet)
+            
+            alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+                self.presentImagePicker(sourceType: .camera)
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { _ in
+                self.presentImagePicker(sourceType: .photoLibrary)
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
         
-        print("camera clicked")
     }
 
+    func presentImagePicker(sourceType: UIImagePickerController.SourceType) {
+          let imagePickerController = UIImagePickerController()
+          imagePickerController.delegate = self
+          imagePickerController.sourceType = sourceType
+          self.present(imagePickerController, animated: true, completion: nil)
+      }
+      
+      func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+          if let image = info[.originalImage] as? UIImage {
+              picker.dismiss(animated: true) {
+                  if let DetectionVC = self.viewControllers?[3] as? DetectionViewController {
+                      DetectionVC.selectedImage = image
+                      self.selectedIndex = 3
+                  }
+              }
+          }
+      }
+
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+           picker.dismiss(animated: true, completion: nil)
+       }
+       
+    
     
     override func loadView() {
         super.loadView()
