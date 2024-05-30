@@ -364,31 +364,87 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="Od7-Nk-jYk">
+                                <rect key="frame" x="10" y="8" width="373" height="0.0"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="xHh-C7-76d">
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="0.0"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" اسم المرض" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxA-8z-v96">
+                                                <rect key="frame" x="0.0" y="0.0" width="272" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="33"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text=" المرض:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVa-Yp-sDk">
+                                                <rect key="frame" x="290" y="0.0" width="83" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="33"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="N3u-8U-ZoZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="0.0"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم العلاج" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2r-pJ-Bj9">
+                                                <rect key="frame" x="0.0" y="0.0" width="262" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="33"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text=" العلاج:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYh-Ib-CxU">
+                                                <rect key="frame" x="295" y="0.0" width="78" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="33"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="6L1-nc-7SO"/>
+                                </constraints>
+                            </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L9E-j2-JUP">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="279"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="gfk-j9-Bcn"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxA-8z-v96">
-                                <rect key="frame" x="164.33333333333334" y="287" width="64.333333333333343" height="56.333333333333314"/>
-                                <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="33"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOa-i2-cEO">
+                                <rect key="frame" x="30" y="58" width="333" height="38.333333333333343"/>
+                                <color key="backgroundColor" name="PlantieGreen"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=" احصل على اقرب متجر منك !"/>
+                                <connections>
+                                    <action selector="getPlantStoreButtonTapped:" destination="mUM-EZ-HN9" eventType="touchUpInside" id="iEh-P4-f4F"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Sew-ds-Ulp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="L9E-j2-JUP" firstAttribute="top" secondItem="1Ss-3Y-Gu1" secondAttribute="top" id="7VV-gK-bWS"/>
-                            <constraint firstItem="L9E-j2-JUP" firstAttribute="height" secondItem="1Ss-3Y-Gu1" secondAttribute="height" multiplier="0.327465" id="AUm-p0-nAm"/>
-                            <constraint firstItem="mxA-8z-v96" firstAttribute="top" secondItem="L9E-j2-JUP" secondAttribute="bottom" constant="8" symbolic="YES" id="BaK-i2-k5f"/>
-                            <constraint firstItem="mxA-8z-v96" firstAttribute="centerX" secondItem="L9E-j2-JUP" secondAttribute="centerX" id="QaO-rh-CgK"/>
-                            <constraint firstItem="L9E-j2-JUP" firstAttribute="leading" secondItem="Sew-ds-Ulp" secondAttribute="leading" id="Y4B-8H-5Xh"/>
-                            <constraint firstItem="L9E-j2-JUP" firstAttribute="trailing" secondItem="Sew-ds-Ulp" secondAttribute="trailing" id="j0A-15-udw"/>
+                            <constraint firstItem="Sew-ds-Ulp" firstAttribute="trailing" secondItem="cOa-i2-cEO" secondAttribute="trailing" constant="30" id="026-u0-j2H"/>
+                            <constraint firstItem="cOa-i2-cEO" firstAttribute="top" secondItem="Od7-Nk-jYk" secondAttribute="bottom" constant="50" id="3AF-iG-TB6"/>
+                            <constraint firstItem="Sew-ds-Ulp" firstAttribute="trailing" secondItem="Od7-Nk-jYk" secondAttribute="trailing" constant="10" id="ELm-pX-8pg"/>
+                            <constraint firstItem="L9E-j2-JUP" firstAttribute="trailing" secondItem="Sew-ds-Ulp" secondAttribute="trailing" id="G8G-Hu-6xZ"/>
+                            <constraint firstItem="L9E-j2-JUP" firstAttribute="top" secondItem="1Ss-3Y-Gu1" secondAttribute="top" id="LpD-dP-7S1"/>
+                            <constraint firstItem="L9E-j2-JUP" firstAttribute="leading" secondItem="Sew-ds-Ulp" secondAttribute="leading" id="NWT-Zd-cdO"/>
+                            <constraint firstItem="cOa-i2-cEO" firstAttribute="leading" secondItem="Sew-ds-Ulp" secondAttribute="leading" constant="30" id="fDm-DC-3Bq"/>
+                            <constraint firstItem="Od7-Nk-jYk" firstAttribute="leading" secondItem="Sew-ds-Ulp" secondAttribute="leading" constant="10" id="pnS-wi-zrr"/>
+                            <constraint firstItem="Od7-Nk-jYk" firstAttribute="top" secondItem="L9E-j2-JUP" secondAttribute="bottom" constant="8" symbolic="YES" id="qlm-nw-Xd8"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Detection" image="magnifyingglass.circle.fill" catalog="system" id="QaF-5b-QsB"/>
                     <connections>
                         <outlet property="diseaseNameLabel" destination="mxA-8z-v96" id="way-4a-RdJ"/>
+                        <outlet property="getPlantStoreButton" destination="cOa-i2-cEO" id="9bq-0l-ZzL"/>
                         <outlet property="plantImageView" destination="L9E-j2-JUP" id="Nb0-MI-FZb"/>
+                        <outlet property="plantImageViewHeightConstrain" destination="gfk-j9-Bcn" id="QQg-GA-Oeo"/>
+                        <outlet property="resultsStackLabelsConstrain" destination="6L1-nc-7SO" id="m2w-zY-yK9"/>
+                        <outlet property="treatmentNameLabel" destination="W2r-pJ-Bj9" id="Rxl-oZ-IbB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0OP-MG-0BT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -825,7 +881,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZeT-mA-pG1">
-                                <rect key="frame" x="0.0" y="75.000000000000014" width="393" height="743"/>
+                                <rect key="frame" x="0.0" y="75" width="393" height="743"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lk5-0z-aR9">
                                         <rect key="frame" x="0.0" y="-70" width="393" height="661.33333333333337"/>
@@ -1171,7 +1227,7 @@
                 <navigationController storyboardIdentifier="SplashView" automaticallyAdjustsScrollViewInsets="NO" id="1op-i8-mnh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="CGU-ga-pB8">
-                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="101.66666666666666"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="PlantieGreen"/>
                     </navigationBar>
@@ -2290,7 +2346,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEi-Wz-j2d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5246.5648854961828" y="2269.7183098591549"/>
+            <point key="canvasLocation" x="5247" y="2148"/>
         </scene>
         <!--Plants-->
         <scene sceneID="ExZ-M3-CIN">

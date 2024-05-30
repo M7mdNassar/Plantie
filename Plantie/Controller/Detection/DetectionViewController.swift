@@ -8,6 +8,11 @@ class DetectionViewController: UIViewController {
     
     @IBOutlet weak var plantImageView: UIImageView!
     @IBOutlet weak var diseaseNameLabel: UILabel!
+    @IBOutlet weak var treatmentNameLabel: UILabel!
+    @IBOutlet weak var getPlantStoreButton: UIButton!
+    @IBOutlet weak var plantImageViewHeightConstrain: NSLayoutConstraint!
+    @IBOutlet weak var resultsStackLabelsConstrain: NSLayoutConstraint!
+    
     
     // MARK: Variables
     let model = try! VNCoreMLModel(for: PlantieML().model)
@@ -22,7 +27,14 @@ class DetectionViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
     }
+    
+    // MARK: Actions
+    
+    @IBAction func getPlantStoreButtonTapped(_ sender: UIButton) {
+    }
+    
     
     func classifyImage(image: UIImage) {
         guard let ciImage = CIImage(image: image) else {
@@ -36,6 +48,9 @@ class DetectionViewController: UIViewController {
 
             if let firstResult = results.first {
                 DispatchQueue.main.async {
+                    self.plantImageViewHeightConstrain.constant = 250
+                    self.resultsStackLabelsConstrain.constant = 120
+                    
                     self.plantImageView.image = self.selectedImage
                     self.diseaseNameLabel.text = firstResult.identifier
                 }
@@ -52,6 +67,14 @@ class DetectionViewController: UIViewController {
                 print(error)
             }
         }
+    }
+    
+}
+
+extension DetectionViewController{
+    
+    func setupViews(){
+        self.getPlantStoreButton.layer.cornerRadius = 17
     }
     
 }

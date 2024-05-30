@@ -1,0 +1,10 @@
+{
+  "MLModelVersionStringKey" : "--",
+  "MLModelDescriptionKey" : "Plant Disease Detection",
+  "MLModelCreatorDefinedKey" : {
+    "com.github.apple.coremltools.version" : "7.2",
+    "com.github.apple.coremltools.source" : "tensorflow==2.15.0"
+  },
+  "MLModelAuthorKey" : "Mohammad Nassar",
+  "MLModelLicenseKey" : "--"
+}
