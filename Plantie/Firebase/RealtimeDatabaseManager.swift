@@ -8,7 +8,7 @@ class RealtimeDatabaseManager {
     static let shared = RealtimeDatabaseManager()
     private let databaseRef = Database.database().reference()
     var refHandle = DatabaseHandle()
-    static var isPagination = false
+    var isPagination = false
     
     // MARK: Add post to Realtime Database
     
@@ -45,7 +45,7 @@ class RealtimeDatabaseManager {
     
     // MARK: get posts from Firebase Realtime Database
     
-    func getAllPosts(startingAfter start : String? = nil , limit: UInt = 3 , completion: @escaping ([Post]) -> Void){
+    func getAllPosts(startingAfter start : String? = nil , limit: UInt = 10 , completion: @escaping ([Post]) -> Void){
         
         
         var query = databaseRef.child("posts").queryOrderedByKey().queryLimited(toFirst: limit)
