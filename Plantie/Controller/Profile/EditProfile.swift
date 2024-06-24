@@ -96,7 +96,6 @@ class EditProfile: UIViewController {
        }
 
 
-
     
     private func showAlert(message: String, title: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

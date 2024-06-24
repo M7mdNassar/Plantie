@@ -2,30 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string> $(APP_NAME)  يحتاج الوصول الى المعرض لاختيار الصوره</string>
-	<key>NSCameraUsageDescription</key>
-	<string> $(APP_NAME)  يحتاج الوصول الى الكاميرا لاتقاط الصوره</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>openweathermap.org</key>
-			<dict/>
-			<key>NSAllowsArbitraryLoads</key>
-			<true/>
-		</dict>
-	</dict>
-	<key>CFBundleIdentifier</key>
-	<string></string>
-	<key>NSLocationUsageDescription</key>
-	<string> $(APP_NAME)  يحتاج الوصول الى موقعك للحصول على حالة الطقس</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string> $(APP_NAME)  يحتاج الوصول الى موقعك للحصول على حالة الطقس</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>fbapi</string>
-	</array>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -34,7 +10,35 @@
 				<string>fb1065931501181956</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.424244454694-aua6mn2eelobitktbtsegdbu242mfb2n</string>
+			</array>
+		</dict>
 	</array>
+	<key>FacebookAppID</key>
+	<string>1065931501181956</string>
+	<key>FacebookClientToken</key>
+	<string>954b56d01493bc167ed9b6071d59fb0c</string>
+	<key>FacebookDisplayName</key>
+	<string>Plantie</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>NSAllowsArbitraryLoads</key>
+			<true/>
+			<key>openweathermap.org</key>
+			<dict/>
+		</dict>
+	</dict>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Harmattan-Regular.ttf</string>
@@ -59,11 +63,5 @@
 			</array>
 		</dict>
 	</dict>
-	<key>FacebookAppID</key>
-	<string>1065931501181956</string>
-	<key>FacebookClientToken</key>
-	<string>954b56d01493bc167ed9b6071d59fb0c</string>
-	<key>FacebookDisplayName</key>
-	<string>Plantie</string>
 </dict>
 </plist>
