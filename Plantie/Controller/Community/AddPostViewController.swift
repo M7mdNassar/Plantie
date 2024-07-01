@@ -99,7 +99,7 @@ class AddPostViewController: UIViewController {
             // Add the post to the Realtime Database
             RealtimeDatabaseManager.shared.addPost(post: post)
             self.dismiss(animated: true)
-            ProgressHUD.success("Post added successfully!")
+            ProgressHUD.success("تم النشر ")
 
         }
     }

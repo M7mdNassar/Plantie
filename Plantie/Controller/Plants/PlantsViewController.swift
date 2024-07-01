@@ -1,8 +1,11 @@
 import UIKit
+import NVActivityIndicatorViewExtended
 import SwiftLocation
 import CoreLocation
 import ProgressHUD
-class PlantsViewController: UIViewController {
+import NVActivityIndicatorView
+
+class PlantsViewController: UIViewController , NVActivityIndicatorViewable {
     
     // MARK: Outlets
     
@@ -12,7 +15,9 @@ class PlantsViewController: UIViewController {
     @IBOutlet weak var currentCityLabel: UILabel!
     @IBOutlet weak var tempretureLabel: UILabel!
     @IBOutlet weak var weatherDescription: UILabel!
+    @IBOutlet weak var adviceWeatherState: UILabel!
     @IBOutlet weak var goToWeatherControllerButton: UIButton!
+    @IBOutlet weak var adviceWeatherStateHightConstrain: NSLayoutConstraint!
     
     // MARK: Variables
     var plants:[Plant] = []
@@ -23,7 +28,16 @@ class PlantsViewController: UIViewController {
     
     let backButton = UIBarButtonItem()
 
-    
+    let weatherAdvice: [String: String] = [
+        "veryCold": "الجو متجمد! احمِ نباتاتك من الصقيع. قد تحتاج إلى نقل النباتات إلى الداخل.",
+        "cold": "الجو بارد. يفضل تغطية نباتاتك ليلاً. تأكد من مراقبة مستويات الرطوبة.",
+        "cool": "الجو بارد. تأكد من حصول نباتاتك على كمية كافية من ضوء الشمس. قد تحتاج إلى تقليل الري.",
+        "mild": "الجو معتدل. يجب أن تكون نباتاتك مزدهرة. حافظ على روتين الري المنتظم.",
+        "warm": "الجو دافئ. تأكد من ري نباتاتك جيداً. قد تحتاج إلى توفير بعض الظل خلال ساعات الظهيرة.",
+        "hot": "الجو حار. حافظ على رطوبة نباتاتك وقدم بعض الظل. تأكد من الري في الصباح الباكر أو المساء لتجنب التبخر السريع."
+    ]
+
+
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +81,26 @@ class PlantsViewController: UIViewController {
 
         present(weatherViewController, animated: true, completion: nil)
         
+    }
+    
+    
+    func getWeatherAdvice(for temperature: Double) -> String {
+        switch temperature {
+        case ..<0:
+            return weatherAdvice["veryCold"] ?? ""
+        case 0..<10:
+            return weatherAdvice["cold"] ?? ""
+        case 10..<20:
+            return weatherAdvice["cool"] ?? ""
+        case 20..<25:
+            return weatherAdvice["mild"] ?? ""
+        case 25..<30:
+            return weatherAdvice["warm"] ?? ""
+        case 30...:
+            return weatherAdvice["hot"] ?? ""
+        default:
+            return "No advice available."
+        }
     }
 }
 
@@ -189,7 +223,13 @@ extension PlantsViewController{
             return // Exit if location is not available
         }
         
+        startAnimating(type: .ballPulseSync, color: .plantieGreen, backgroundColor: .clear)
+
+        
         WeatherAPI.getWeatherData(lat: location.coordinate.latitude, lon: location.coordinate.longitude) { [weak self] data, response, error in
+            
+            self!.stopAnimating()
+            
             guard let self = self else { return }
             
             guard let data = data else {
@@ -204,8 +244,13 @@ extension PlantsViewController{
                 self.weatherData = weatherData
                 
                 DispatchQueue.main.async{
+                    
+                    let temperature = (weatherData.current.temp - 32) * 5 / 9
+                    self.adviceWeatherState.text = self.getWeatherAdvice(for: temperature)
+
+                    self.adviceWeatherStateHightConstrain.constant = 70
                     self.currentCityLabel.text = weatherData.timezone
-                    self.tempretureLabel.text = "\(Int((weatherData.current.temp - 32) * 5 / 9))°C"
+                    self.tempretureLabel.text = "\(Int(temperature))°C"
                     self.weatherDescription.text = weatherData.current.weather[0].weatherDescription
                 }
                 

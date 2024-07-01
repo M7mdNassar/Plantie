@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -31,7 +31,7 @@
                                 <rect key="frame" x="0.0" y="155" width="393" height="663"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3hH-4S-Ka5">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="728.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="725"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="PCL-ER-4gg">
                                                 <rect key="frame" x="20" y="30" width="353" height="488"/>
@@ -194,30 +194,30 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or register by" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igz-z7-NOX">
-                                                <rect key="frame" x="162.66666666666666" y="605.33333333333337" width="67.666666666666657" height="24"/>
+                                                <rect key="frame" x="154" y="609" width="85.333333333333314" height="16.333333333333371"/>
                                                 <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9cS-w8-1yT">
-                                                <rect key="frame" x="15" y="616.33333333333337" width="142.66666666666666" height="2"/>
+                                                <rect key="frame" x="15" y="616.33333333333337" width="134" height="2"/>
                                                 <color key="backgroundColor" systemColor="underPageBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="Lrs-Z7-nb1"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3AH-Np-1i1">
-                                                <rect key="frame" x="235.33333333333337" y="616.33333333333337" width="142.66666666666663" height="2"/>
+                                                <rect key="frame" x="244.33333333333337" y="616.33333333333337" width="133.66666666666663" height="2"/>
                                                 <color key="backgroundColor" systemColor="underPageBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="v9k-Ih-gMm"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="JgE-7W-nR4">
-                                                <rect key="frame" x="127" y="644.33333333333337" width="139" height="64.333333333333371"/>
+                                                <rect key="frame" x="127" y="640.33333333333337" width="139" height="64.666666666666629"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgR-tU-sDw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="56" height="64.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="56" height="64.666666666666671"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="fgR-tU-sDw" secondAttribute="height" multiplier="20:23" id="hy9-Te-qhQ"/>
                                                         </constraints>
@@ -229,7 +229,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAq-Ts-oMC">
-                                                        <rect key="frame" x="83" y="0.0" width="56" height="64.333333333333329"/>
+                                                        <rect key="frame" x="83" y="0.0" width="56" height="64.666666666666671"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="lAq-Ts-oMC" secondAttribute="height" multiplier="20:23" id="qx9-g2-I0e"/>
                                                         </constraints>
@@ -371,13 +371,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="373" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" اسم المرض" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxA-8z-v96">
-                                                <rect key="frame" x="0.0" y="0.0" width="272" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="267.33333333333331" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="33"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text=" المرض:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVa-Yp-sDk">
-                                                <rect key="frame" x="290" y="0.0" width="83" height="0.0"/>
+                                                <rect key="frame" x="285.33333333333331" y="0.0" width="87.666666666666686" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="33"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -388,13 +388,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="373" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم العلاج" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2r-pJ-Bj9">
-                                                <rect key="frame" x="0.0" y="0.0" width="262" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="253.33333333333334" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="33"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text=" العلاج:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYh-Ib-CxU">
-                                                <rect key="frame" x="295" y="0.0" width="78" height="0.0"/>
+                                                <rect key="frame" x="286.33333333333331" y="0.0" width="86.666666666666686" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="33"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -479,22 +479,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="340.66666666666669"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="07x-2c-XdW">
-                                        <rect key="frame" x="5" y="60" width="378" height="162"/>
+                                        <rect key="frame" x="5" y="60.000000000000014" width="378" height="230.33333333333337"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="739-BC-Sc8">
-                                                <rect key="frame" x="0.0" y="0.0" width="378" height="162"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="378" height="230.33333333333334"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VFb-8G-90Y">
-                                                        <rect key="frame" x="0.0" y="0.0" width="206.33333333333334" height="162"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="176" height="156.66666666666666"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" الحالة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fw8-ru-Khp">
-                                                                <rect key="frame" x="75" y="0.0" width="56.333333333333343" height="38"/>
+                                                                <rect key="frame" x="56.333333333333343" y="0.0" width="63.666666666666657" height="32.666666666666664"/>
                                                                 <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="28"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1sT-GD-1kL">
-                                                                <rect key="frame" x="43.333333333333343" y="42" width="120" height="120"/>
+                                                                <rect key="frame" x="28" y="36.666666666666671" width="120" height="120.00000000000001"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="spY-3j-LEA">
                                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -517,7 +517,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="9n0-4s-pjB">
-                                                        <rect key="frame" x="246.33333333333337" y="0.0" width="131.66666666666663" height="150"/>
+                                                        <rect key="frame" x="216" y="0.0" width="162" height="150"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Cd-Z7-fbd">
                                                                 <rect key="frame" x="0.0" y="0.0" width="1" height="150"/>
@@ -528,19 +528,19 @@
                                                                 </constraints>
                                                             </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="CcN-ge-OHR">
-                                                                <rect key="frame" x="21.999999999999979" y="0.0" width="109.66666666666669" height="150"/>
+                                                                <rect key="frame" x="22" y="0.0" width="140" height="150"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-11" translatesAutoresizingMaskIntoConstraints="NO" id="RmT-Dk-pKG">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="52.666666666666664" height="88.666666666666671"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="46" height="88.666666666666671"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المدينة" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPb-Wv-HNb">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="52.666666666666664" height="39.333333333333336"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="46" height="27"/>
                                                                                 <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="23"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="اليوم" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgI-be-vwc">
-                                                                                <rect key="frame" x="0.0" y="28.333333333333332" width="52.666666666666664" height="60.333333333333343"/>
+                                                                                <rect key="frame" x="0.0" y="16" width="46" height="72.666666666666671"/>
                                                                                 <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="23"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
@@ -548,10 +548,10 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="HPg-0Q-ov6">
-                                                                        <rect key="frame" x="0.0" y="105.66666666666666" width="107.66666666666667" height="44.333333333333343"/>
+                                                                        <rect key="frame" x="0.0" y="105.66666666666666" width="138" height="44.333333333333343"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="258" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text=" 00.0°C " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIC-Ko-H7Q">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="107.66666666666667" height="44.333333333333336"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="44.333333333333336"/>
                                                                                 <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="38"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
@@ -571,14 +571,17 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="حافظ على ري نباتاتك جيدًا ووفر لها الظل إذا لزم الأمر لمنع ارتفاع درجة حرارتها" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqP-Lq-Jij">
-                                        <rect key="frame" x="7" y="264.33333333333331" width="378" height="68.333333333333314"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="حافظ على ري نباتاتك جيدًا ووفر لها الظل إذا لزم الأمر لمنع ارتفاع درجة حرارتها" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqP-Lq-Jij" userLabel="advice label">
+                                        <rect key="frame" x="7" y="332.66666666666669" width="378" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="MsG-wQ-QDJ"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="758" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9T8-af-k4y">
-                                        <rect key="frame" x="286" y="230" width="97" height="32"/>
+                                        <rect key="frame" x="286" y="298.33333333333331" width="97" height="32"/>
                                         <color key="backgroundColor" name="PlantieGreen"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title=" حالة الطقس" buttonSize="small">
@@ -624,6 +627,8 @@
                     <navigationItem key="navigationItem" id="CBX-EF-Qem"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="adviceWeatherState" destination="EqP-Lq-Jij" id="9X8-Oe-sUR"/>
+                        <outlet property="adviceWeatherStateHightConstrain" destination="MsG-wQ-QDJ" id="Ep4-zy-wAY"/>
                         <outlet property="currentCityLabel" destination="UPb-Wv-HNb" id="pB9-fq-8Gv"/>
                         <outlet property="currentDateLabel" destination="jgI-be-vwc" id="pAP-WH-5gG"/>
                         <outlet property="goToWeatherControllerButton" destination="9T8-af-k4y" id="FOk-Nu-NlM"/>
@@ -691,7 +696,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJ2-w1-h77" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="716"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="659"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCn-av-yME" userLabel="Circle View">
                                                 <rect key="frame" x="94.666666666666686" y="40" width="204" height="204"/>
@@ -727,67 +732,67 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LRv-dm-LTN">
-                                                <rect key="frame" x="20" y="294" width="353" height="315.33333333333326"/>
+                                                <rect key="frame" x="20" y="294" width="353" height="271.33333333333326"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ayD-YI-3h0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="71.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="60.333333333333336"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الإسم :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZW-FT-ocE">
-                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="34.333333333333336"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="23.333333333333332"/>
                                                                 <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rdC-eM-mK2">
-                                                                <rect key="frame" x="0.0" y="37.333333333333314" width="353" height="34"/>
+                                                                <rect key="frame" x="0.0" y="26.333333333333314" width="353" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="p8x-rc-beW">
-                                                        <rect key="frame" x="0.0" y="81.333333333333314" width="353" height="71.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="70.333333333333314" width="353" height="60.333333333333343"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="251" horizontalCompressionResistancePriority="800" text="البريد الإلكتروني :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxQ-CU-OUd">
-                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="34.333333333333336"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="23.333333333333332"/>
                                                                 <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vQL-ca-vn1">
-                                                                <rect key="frame" x="0.0" y="37.333333333333314" width="353" height="34"/>
+                                                                <rect key="frame" x="0.0" y="26.333333333333371" width="353" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="TLv-Ja-zaF">
-                                                        <rect key="frame" x="0.0" y="162.66666666666663" width="353" height="71.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="140.66666666666663" width="353" height="60.333333333333343"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نبذة قصيرة :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5K-Nf-lhS">
-                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="34.333333333333336"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="23.333333333333332"/>
                                                                 <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wnb-uy-3LN">
-                                                                <rect key="frame" x="0.0" y="37.333333333333371" width="353" height="34"/>
+                                                                <rect key="frame" x="0.0" y="26.333333333333371" width="353" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="cvb-AY-FfS">
-                                                        <rect key="frame" x="0.0" y="244.00000000000003" width="353" height="71.333333333333343"/>
+                                                        <rect key="frame" x="0.0" y="211" width="353" height="60.333333333333314"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المدينة :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MF-A5-L6V">
-                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="34.333333333333336"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="23.333333333333332"/>
                                                                 <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wXM-QU-wcQ">
-                                                                <rect key="frame" x="0.0" y="37.333333333333371" width="353" height="34"/>
+                                                                <rect key="frame" x="0.0" y="26.333333333333371" width="353" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                             </textField>
@@ -806,7 +811,7 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFH-iC-d2U">
-                                                <rect key="frame" x="141.33333333333334" y="649.33333333333337" width="110.33333333333334" height="56.666666666666629"/>
+                                                <rect key="frame" x="141.33333333333334" y="605.33333333333337" width="110.33333333333334" height="43.666666666666629"/>
                                                 <color key="backgroundColor" name="PlantieLightGreen"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <bool key="isElement" value="NO"/>
@@ -881,10 +886,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZeT-mA-pG1">
-                                <rect key="frame" x="0.0" y="75.000000000000014" width="393" height="743"/>
+                                <rect key="frame" x="0.0" y="75" width="393" height="743"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lk5-0z-aR9">
-                                        <rect key="frame" x="0.0" y="-70" width="393" height="661.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="-70" width="393" height="615.33333333333337"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FirstViewImage" translatesAutoresizingMaskIntoConstraints="NO" id="ICK-0B-mpp">
                                                 <rect key="frame" x="71.666666666666686" y="40" width="250" height="250"/>
@@ -894,19 +899,19 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plantie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Al4-0y-7NU">
-                                                <rect key="frame" x="0.0" y="298" width="393" height="59.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="298" width="393" height="41"/>
                                                 <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="35"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get more crops with Planty's help!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOd-bT-vuP">
-                                                <rect key="frame" x="0.0" y="387.66666666666669" width="393" height="29"/>
+                                                <rect key="frame" x="0.0" y="369" width="393" height="20"/>
                                                 <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="JM8-3q-htZ">
-                                                <rect key="frame" x="39.333333333333343" y="441.66666666666669" width="314.33333333333326" height="101.66666666666669"/>
+                                                <rect key="frame" x="39.333333333333343" y="414" width="314.33333333333326" height="101.66666666666663"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eZ-Kg-Mej">
                                                         <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="38.333333333333336"/>
@@ -931,7 +936,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By logging in or registering, you agree to our Terms of Service and Privacy Policy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8t1-Wk-3rf">
-                                                <rect key="frame" x="16" y="583.33333333333337" width="361" height="58"/>
+                                                <rect key="frame" x="16" y="555.66666666666663" width="361" height="39.666666666666629"/>
                                                 <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -999,7 +1004,7 @@
                                 <rect key="frame" x="0.0" y="155" width="393" height="663"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0L-m3-JoC">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="548"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="544.33333333333337"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="JZe-BK-W1R">
                                                 <rect key="frame" x="20" y="30" width="353" height="307.33333333333331"/>
@@ -1120,30 +1125,30 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or login by" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gX-xr-HhW">
-                                                <rect key="frame" x="170" y="409.66666666666663" width="53" height="24"/>
+                                                <rect key="frame" x="162.33333333333334" y="413.33333333333337" width="68.666666666666657" height="16.333333333333314"/>
                                                 <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxS-6V-tf0">
-                                                <rect key="frame" x="15" y="420.66666666666663" width="150" height="2"/>
+                                                <rect key="frame" x="15" y="420.66666666666663" width="142.33333333333334" height="2"/>
                                                 <color key="backgroundColor" systemColor="underPageBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="bjw-Px-AJe"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s32-h9-cMP">
-                                                <rect key="frame" x="228" y="420.66666666666663" width="150" height="2"/>
+                                                <rect key="frame" x="236" y="420.66666666666663" width="142" height="2"/>
                                                 <color key="backgroundColor" systemColor="underPageBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="PZl-Ag-pjb"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="qJt-Bu-9yi">
-                                                <rect key="frame" x="134" y="463.66666666666663" width="125" height="64.333333333333371"/>
+                                                <rect key="frame" x="134" y="459.66666666666663" width="125" height="64.666666666666629"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgT-ST-M37">
-                                                        <rect key="frame" x="0.0" y="0.0" width="56" height="64.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="56" height="64.666666666666671"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="TgT-ST-M37" secondAttribute="height" multiplier="20:23" id="Fxb-40-Cdb"/>
                                                         </constraints>
@@ -1154,7 +1159,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGt-DL-xbi">
-                                                        <rect key="frame" x="69" y="0.0" width="56" height="64.333333333333329"/>
+                                                        <rect key="frame" x="69" y="0.0" width="56" height="64.666666666666671"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="gGt-DL-xbi" secondAttribute="height" multiplier="20:23" id="HEo-km-bqD"/>
                                                         </constraints>
@@ -1251,8 +1256,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Nz-HO-x20" customClass="ShadowView" customModule="Plantie" customModuleProvider="target">
                                 <rect key="frame" x="20" y="103.00000000000001" width="353" height="170.33333333333337"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROF.MOHAMMAD AWAD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehy-BM-mZL">
-                                        <rect key="frame" x="10" y="15" width="333" height="58"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehy-BM-mZL">
+                                        <rect key="frame" x="10" y="15" width="333" height="0.0"/>
                                         <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1291,10 +1296,10 @@
                                 <rect key="frame" x="20" y="410.33333333333326" width="353" height="264.66666666666674"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="bGJ-eT-oyF">
-                                        <rect key="frame" x="15" y="54.000000000000014" width="323" height="156.33333333333337"/>
+                                        <rect key="frame" x="15" y="66.000000000000014" width="323" height="132.33333333333337"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZu-J0-G4C">
-                                                <rect key="frame" x="0.0" y="0.0" width="323" height="51.666666666666664"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="39.666666666666664"/>
                                                 <color key="backgroundColor" name="PlantieGreen"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
@@ -1306,7 +1311,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yra-Em-uvj">
-                                                <rect key="frame" x="0.0" y="104.6666666666667" width="323" height="51.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="92.666666666666686" width="323" height="39.666666666666657"/>
                                                 <color key="backgroundColor" name="PlantieGreen"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
@@ -1366,7 +1371,7 @@
                     <tabBarItem key="tabBarItem" title="Community" image="message.circle.fill" catalog="system" id="Awt-qq-4Nt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="AJF-Fl-Fnb">
-                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="101.66666666666666"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1530,7 +1535,7 @@
                                 <rect key="frame" x="10" y="59" width="373" height="51.333333333333343"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="999" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsa-s5-ehY">
-                                        <rect key="frame" x="0.0" y="0.0" width="43.666666666666664" height="51.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="51.333333333333336"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
@@ -1539,13 +1544,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="999" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="إنشاء منشور" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYK-45-gRr">
-                                        <rect key="frame" x="108.66666666666669" y="0.0" width="121" height="51.333333333333336"/>
+                                        <rect key="frame" x="107.00000000000001" y="0.0" width="134.33333333333337" height="51.333333333333336"/>
                                         <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oP-Yg-7V7">
-                                        <rect key="frame" x="294.66666666666669" y="0.0" width="78.333333333333314" height="51.333333333333336"/>
+                                        <rect key="frame" x="306.33333333333331" y="0.0" width="66.666666666666686" height="51.333333333333336"/>
                                         <color key="backgroundColor" name="PlantieLightGreen"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -1575,7 +1580,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5e-qi-mrd">
-                                <rect key="frame" x="94" y="147" width="283" height="46"/>
+                                <rect key="frame" x="94" y="154.33333333333334" width="283" height="31.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2118,7 +2123,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9yc-oP-2Vn">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="699.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="610.33333333333337"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPN-05-IWA">
                                                 <rect key="frame" x="94.666666666666686" y="20" width="204" height="204"/>
@@ -2143,25 +2148,25 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRW-rd-zZf">
-                                                <rect key="frame" x="20" y="231.99999999999997" width="353" height="54.666666666666657"/>
+                                                <rect key="frame" x="20" y="232" width="353" height="37.333333333333314"/>
                                                 <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="32"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="cR1-Ew-KnA" userLabel="description">
-                                                <rect key="frame" x="10" y="288.66666666666669" width="373" height="75.333333333333314"/>
+                                                <rect key="frame" x="10" y="271.33333333333331" width="373" height="51.333333333333314"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wrR-lj-rtj" userLabel="category">
-                                                        <rect key="frame" x="244.33333333333337" y="0.0" width="128.66666666666663" height="37.666666666666664"/>
+                                                        <rect key="frame" x="224" y="0.0" width="149" height="25.666666666666668"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التصنيف" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSJ-rX-OOh">
-                                                                <rect key="frame" x="0.0" y="0.0" width="57.333333333333336" height="37.666666666666664"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="69" height="25.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="22"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="251" text="التصنيف:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWH-Cd-eFN">
-                                                                <rect key="frame" x="62.333333333333336" y="0.0" width="66.333333333333314" height="37.666666666666664"/>
+                                                                <rect key="frame" x="74" y="0.0" width="75" height="25.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="22"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -2169,7 +2174,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الوصف" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e15-FG-cd7">
-                                                        <rect key="frame" x="326.33333333333331" y="37.666666666666629" width="46.666666666666686" height="37.666666666666657"/>
+                                                        <rect key="frame" x="316.66666666666669" y="25.666666666666686" width="56.333333333333314" height="25.666666666666671"/>
                                                         <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -2177,23 +2182,23 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4v-5k-K8U" userLabel="line">
-                                                <rect key="frame" x="10" y="366" width="373" height="5"/>
+                                                <rect key="frame" x="10" y="324.66666666666669" width="373" height="5"/>
                                                 <color key="backgroundColor" name="PlantieGreen"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="5" id="2IK-yX-IMV"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Aiw-VX-CuP" userLabel="time of plant">
-                                                <rect key="frame" x="10" y="373" width="373" height="37.666666666666686"/>
+                                                <rect key="frame" x="10" y="331.66666666666669" width="373" height="25.666666666666686"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="وقت الزراعه" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXA-V4-xJm">
-                                                        <rect key="frame" x="0.0" y="0.0" width="271.33333333333331" height="37.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="275.33333333333331" height="25.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="251" text="وقت الزراعة:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryE-Ez-4Fn">
-                                                        <rect key="frame" x="276.33333333333331" y="0.0" width="96.666666666666686" height="37.666666666666664"/>
+                                                        <rect key="frame" x="280.33333333333331" y="0.0" width="92.666666666666686" height="25.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -2201,26 +2206,26 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tDb-dt-vit" userLabel="line2">
-                                                <rect key="frame" x="10" y="412.66666666666669" width="373" height="5"/>
+                                                <rect key="frame" x="10" y="359.33333333333331" width="373" height="5"/>
                                                 <color key="backgroundColor" name="PlantieGreen"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="5" id="tI1-aY-tgl"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="C1i-h6-KLe" userLabel="fertalizer">
-                                                <rect key="frame" x="10" y="419.66666666666669" width="373" height="80.666666666666686"/>
+                                                <rect key="frame" x="10" y="366.33333333333331" width="373" height="68.666666666666686"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="CQP-Nd-IoG" userLabel="السماد">
-                                                        <rect key="frame" x="0.0" y="0.0" width="373" height="37.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="373" height="25.666666666666668"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سماد" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wck-Hl-luo">
-                                                                <rect key="frame" x="0.0" y="0.0" width="314" height="37.666666666666664"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="309" height="25.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="22"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="251" text="السماد:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLR-8L-W4y">
-                                                                <rect key="frame" x="319" y="0.0" width="54" height="37.666666666666664"/>
+                                                                <rect key="frame" x="314" y="0.0" width="59" height="25.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="22"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -2228,7 +2233,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Tx-4A-RiE">
-                                                        <rect key="frame" x="0.0" y="40.666666666666629" width="373" height="40"/>
+                                                        <rect key="frame" x="0.0" y="28.666666666666686" width="373" height="40"/>
                                                         <color key="backgroundColor" name="PlantieGreen"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="kgv-l5-nye"/>
@@ -2240,21 +2245,22 @@
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <action selector="fertalizerButtonTapped:" destination="Xbh-qC-QgT" eventType="touchUpInside" id="3P0-Tv-mXO"/>
+                                                            <segue destination="QPy-iU-7nb" kind="show" id="73j-9f-Dos"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zzq-uA-sRZ">
-                                                <rect key="frame" x="10" y="504.33333333333331" width="373" height="75.333333333333314"/>
+                                                <rect key="frame" x="10" y="439" width="373" height="51.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="التخزين والأمراض الشائعة:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvc-YA-c10">
-                                                        <rect key="frame" x="0.0" y="0.0" width="373" height="37.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="373" height="25.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التخزين" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UiE-hV-nMc">
-                                                        <rect key="frame" x="0.0" y="37.666666666666686" width="373" height="37.666666666666657"/>
+                                                        <rect key="frame" x="0.0" y="25.666666666666686" width="373" height="25.666666666666671"/>
                                                         <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -2262,7 +2268,7 @@
                                                 </subviews>
                                             </stackView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pa8-AD-Uke">
-                                                <rect key="frame" x="10" y="589.66666666666663" width="383" height="100"/>
+                                                <rect key="frame" x="10" y="500.33333333333326" width="383" height="100"/>
                                                 <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="zr0-PL-h4L"/>
@@ -2348,6 +2354,132 @@
             </objects>
             <point key="canvasLocation" x="5247" y="2148"/>
         </scene>
+        <!--Fertlizer Calculator View Controller-->
+        <scene sceneID="GdY-TZ-dRA">
+            <objects>
+                <viewController id="QPy-iU-7nb" customClass="FertlizerCalculatorViewController" customModule="Plantie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1oo-5N-KG5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nmae of plant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYb-9y-DHu">
+                                <rect key="frame" x="119.66666666666669" y="69" width="154" height="51.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="30"/>
+                                <color key="textColor" name="PlantieGreen"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vlN-1i-nvT">
+                                <rect key="frame" x="134.66666666666666" y="139" width="123.99999999999997" height="124"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VO2-Pa-IM3">
+                                        <rect key="frame" x="2" y="2" width="120" height="120"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="cBV-ID-pr1"/>
+                                            <constraint firstAttribute="height" constant="120" id="hhY-aN-JLc"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="VO2-Pa-IM3" firstAttribute="top" secondItem="vlN-1i-nvT" secondAttribute="top" constant="2" id="J4h-E3-dDh"/>
+                                    <constraint firstItem="VO2-Pa-IM3" firstAttribute="leading" secondItem="vlN-1i-nvT" secondAttribute="leading" constant="2" id="KXD-tP-1Xv"/>
+                                    <constraint firstAttribute="width" constant="124" id="apy-dk-xbJ"/>
+                                    <constraint firstAttribute="height" constant="124" id="uaz-FH-dJo"/>
+                                    <constraint firstAttribute="bottom" secondItem="VO2-Pa-IM3" secondAttribute="bottom" constant="2" id="wCr-wd-VG4"/>
+                                    <constraint firstAttribute="trailing" secondItem="VO2-Pa-IM3" secondAttribute="trailing" constant="2" id="yHn-A8-yAX"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N - P - K" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgh-xd-QJt">
+                                <rect key="frame" x="145.33333333333334" y="288" width="102.33333333333334" height="56.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="Zev-jJ-2Mf">
+                                <rect key="frame" x="52.666666666666657" y="438" width="288" height="78"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5T-Dq-GYN">
+                                        <rect key="frame" x="0.0" y="0.0" width="88" height="78"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="substract"/>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3yc-p8-0ir">
+                                        <rect key="frame" x="119" y="0.0" width="50" height="50.333333333333336"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ES-ja-Vdi">
+                                                <rect key="frame" x="-0.33333333333331439" y="14.999999999999998" width="50.333333333333336" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <constraints>
+                                            <constraint firstItem="0ES-ja-Vdi" firstAttribute="centerY" secondItem="3yc-p8-0ir" secondAttribute="centerY" id="CqE-zR-oND"/>
+                                            <constraint firstItem="0ES-ja-Vdi" firstAttribute="centerX" secondItem="3yc-p8-0ir" secondAttribute="centerX" id="aTf-SY-pvU"/>
+                                            <constraint firstItem="0ES-ja-Vdi" firstAttribute="width" secondItem="3yc-p8-0ir" secondAttribute="width" multiplier="1.00813" id="d8N-9d-SUz"/>
+                                            <constraint firstItem="0ES-ja-Vdi" firstAttribute="height" secondItem="3yc-p8-0ir" secondAttribute="height" multiplier="0.403974" id="keq-l8-8mz"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p34-fa-UzZ">
+                                        <rect key="frame" x="200" y="0.0" width="88" height="78"/>
+                                        <color key="tintColor" systemColor="systemGray5Color"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="add"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76c-Ub-DBl">
+                                <rect key="frame" x="120.00000000000001" y="344.33333333333331" width="153.33333333333337" height="66.333333333333314"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 - 10 - 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beb-zh-1tl">
+                                        <rect key="frame" x="7" y="5.0000000000000036" width="139.33333333333334" height="56.333333333333343"/>
+                                        <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="33"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="beb-zh-1tl" secondAttribute="trailing" constant="7" id="Bdf-Ca-qxh"/>
+                                    <constraint firstItem="beb-zh-1tl" firstAttribute="top" secondItem="76c-Ub-DBl" secondAttribute="top" constant="5" id="TQj-SH-i8B"/>
+                                    <constraint firstItem="beb-zh-1tl" firstAttribute="leading" secondItem="76c-Ub-DBl" secondAttribute="leading" constant="7" id="Y5f-wk-toD"/>
+                                    <constraint firstAttribute="bottom" secondItem="beb-zh-1tl" secondAttribute="bottom" constant="5" id="u3n-hd-Q9I"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9CR-oI-2rw">
+                                <rect key="frame" x="98.333333333333329" y="524" width="196.33333333333337" height="38.333333333333371"/>
+                                <color key="backgroundColor" name="PlantieGreen"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Calculate"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tfz-cp-dqv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vlN-1i-nvT" firstAttribute="centerX" secondItem="jYb-9y-DHu" secondAttribute="centerX" id="8d1-le-TDx"/>
+                            <constraint firstItem="lgh-xd-QJt" firstAttribute="centerX" secondItem="tfz-cp-dqv" secondAttribute="centerX" id="D7E-y1-Hrk"/>
+                            <constraint firstItem="jYb-9y-DHu" firstAttribute="centerX" secondItem="tfz-cp-dqv" secondAttribute="centerX" id="Jfm-7K-ega"/>
+                            <constraint firstItem="9CR-oI-2rw" firstAttribute="width" secondItem="1oo-5N-KG5" secondAttribute="width" multiplier="0.5" id="RDy-hR-U52"/>
+                            <constraint firstItem="lgh-xd-QJt" firstAttribute="top" secondItem="vlN-1i-nvT" secondAttribute="bottom" constant="25" id="Ty2-gA-y8q"/>
+                            <constraint firstItem="9CR-oI-2rw" firstAttribute="top" secondItem="Zev-jJ-2Mf" secondAttribute="bottom" constant="8" symbolic="YES" id="WmE-kZ-SZC"/>
+                            <constraint firstItem="vlN-1i-nvT" firstAttribute="top" secondItem="jYb-9y-DHu" secondAttribute="bottom" constant="18.666666666666657" id="cOB-la-5bf"/>
+                            <constraint firstItem="9CR-oI-2rw" firstAttribute="centerX" secondItem="tfz-cp-dqv" secondAttribute="centerX" id="dX6-n2-16X"/>
+                            <constraint firstItem="Zev-jJ-2Mf" firstAttribute="centerX" secondItem="lgh-xd-QJt" secondAttribute="centerX" id="kB3-RP-wd4"/>
+                            <constraint firstItem="76c-Ub-DBl" firstAttribute="top" secondItem="lgh-xd-QJt" secondAttribute="bottom" id="mtM-gb-bzw"/>
+                            <constraint firstItem="76c-Ub-DBl" firstAttribute="centerX" secondItem="tfz-cp-dqv" secondAttribute="centerX" id="pDB-eI-Fqb"/>
+                            <constraint firstItem="Zev-jJ-2Mf" firstAttribute="top" secondItem="76c-Ub-DBl" secondAttribute="bottom" constant="27.329999999999998" id="qjb-dN-dd4"/>
+                            <constraint firstItem="jYb-9y-DHu" firstAttribute="top" secondItem="tfz-cp-dqv" secondAttribute="top" constant="10" id="sW9-Ui-mbw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sTn-dY-MRG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z75-4J-Neq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5246.5648854961828" y="2819.7183098591549"/>
+        </scene>
         <!--Plants-->
         <scene sceneID="ExZ-M3-CIN">
             <objects>
@@ -2370,6 +2502,7 @@
     </scenes>
     <resources>
         <image name="FirstViewImage" width="358" height="298"/>
+        <image name="add" width="64" height="64"/>
         <image name="arrow.right.circle.fill" catalog="system" width="128" height="123"/>
         <image name="camera.circle.fill" catalog="system" width="128" height="123"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
@@ -2386,6 +2519,7 @@
         <image name="rectangle.portrait.and.arrow.right.fill" catalog="system" width="128" height="108"/>
         <image name="sendIcon" width="32" height="32"/>
         <image name="square.and.pencil" catalog="system" width="128" height="121"/>
+        <image name="substract" width="64" height="64"/>
         <image name="sun" width="94" height="94"/>
         <image name="sunrise" width="100" height="100"/>
         <image name="sunset" width="100" height="100"/>
@@ -2415,6 +2549,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
