@@ -166,7 +166,7 @@ extension CommunityViewController : UITableViewDataSource , UITableViewDelegate 
 // MARK: UISearchResultsUpdating
 //
 //extension CommunityViewController: UISearchResultsUpdating{
-//    
+//
 //    func updateSearchResults(for searchController: UISearchController) {
 //        guard let searchText = searchController.searchBar.text, !searchText.isEmpty else {
 //            // If the search text is empty, show all posts
@@ -177,16 +177,16 @@ extension CommunityViewController : UITableViewDataSource , UITableViewDelegate 
 //        // Call the method to fetch posts matching the search query
 //        RealtimeDatabaseManager.shared.getPostsMatchingSearchQuery(searchText) { [weak self] matchingPosts in
 //            guard let self = self else { return }
-//            
+//
 //            // Update the filtered posts array with the matching posts
 //            self.filteredPosts = matchingPosts
-//            
+//
 //            // Reload the table view with the filtered posts
 //            self.tableView.reloadData()
 //        }
 //    }
 //
-//    
+//
 //}
 
 // MARK: Private Methods

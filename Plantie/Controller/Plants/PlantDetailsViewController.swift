@@ -38,9 +38,14 @@ class PlantDetailsViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func fertalizerButtonTapped(_ sender: UIButton) {
+        
+         let fertilizerVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FertlizerCalculatorViewController") as? FertlizerCalculatorViewController
+
+             fertilizerVC!.plant = self.plant!
+        navigationController?.pushViewController(fertilizerVC!, animated: true)
+         
     }
     
-   
 
 }
 
