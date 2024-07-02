@@ -4,6 +4,7 @@ struct Plant: Codable {
     let name: String
     let id: Int
     let category: String
+    let npk : String
     let description: String
     let plantingTime: String
     let fertilizer: String
