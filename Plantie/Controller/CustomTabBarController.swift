@@ -55,16 +55,19 @@ class CustomTabBarController : UITabBarController , UIImagePickerControllerDeleg
           self.present(imagePickerController, animated: true, completion: nil)
       }
       
-      func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-          if let image = info[.originalImage] as? UIImage {
-              picker.dismiss(animated: true) {
-                  if let DetectionVC = self.viewControllers?[3] as? DetectionViewController {
-                      DetectionVC.selectedImage = image
-                      self.selectedIndex = 3
-                  }
-              }
-          }
-      }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            picker.dismiss(animated: true) {
+              
+                if let navigationController = self.viewControllers?[3] as? UINavigationController,
+                   let detectionVC = navigationController.viewControllers.first as? DetectionViewController {
+                    detectionVC.selectedImage = image
+                    self.selectedIndex = 3
+                }
+            }
+        }
+    }
+
 
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

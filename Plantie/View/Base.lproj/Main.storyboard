@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -356,7 +357,7 @@
             </objects>
             <point key="canvasLocation" x="6389" y="1418"/>
         </scene>
-        <!--Detection-->
+        <!--Detection View Controller-->
         <scene sceneID="tYr-Lu-uYt">
             <objects>
                 <viewController id="mUM-EZ-HN9" customClass="DetectionViewController" customModule="Plantie" customModuleProvider="target" sceneMemberID="viewController">
@@ -412,35 +413,36 @@
                                     <constraint firstAttribute="height" id="gfk-j9-Bcn"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOa-i2-cEO">
-                                <rect key="frame" x="30" y="58" width="333" height="38.333333333333343"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDk-mP-Vwr">
+                                <rect key="frame" x="40" y="112.99999999999999" width="313" height="38.333333333333329"/>
                                 <color key="backgroundColor" name="PlantieGreen"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title=" احصل على اقرب متجر منك !"/>
                                 <connections>
-                                    <action selector="getPlantStoreButtonTapped:" destination="mUM-EZ-HN9" eventType="touchUpInside" id="iEh-P4-f4F"/>
+                                    <action selector="getPlantStoreButtonTapped:" destination="mUM-EZ-HN9" eventType="touchUpInside" id="oK2-TM-sO7"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Sew-ds-Ulp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Sew-ds-Ulp" firstAttribute="trailing" secondItem="cOa-i2-cEO" secondAttribute="trailing" constant="30" id="026-u0-j2H"/>
-                            <constraint firstItem="cOa-i2-cEO" firstAttribute="top" secondItem="Od7-Nk-jYk" secondAttribute="bottom" constant="50" id="3AF-iG-TB6"/>
+                            <constraint firstItem="TDk-mP-Vwr" firstAttribute="leading" secondItem="Sew-ds-Ulp" secondAttribute="leading" constant="40" id="7pL-TA-UFM"/>
                             <constraint firstItem="Sew-ds-Ulp" firstAttribute="trailing" secondItem="Od7-Nk-jYk" secondAttribute="trailing" constant="10" id="ELm-pX-8pg"/>
                             <constraint firstItem="L9E-j2-JUP" firstAttribute="trailing" secondItem="Sew-ds-Ulp" secondAttribute="trailing" id="G8G-Hu-6xZ"/>
                             <constraint firstItem="L9E-j2-JUP" firstAttribute="top" secondItem="1Ss-3Y-Gu1" secondAttribute="top" id="LpD-dP-7S1"/>
                             <constraint firstItem="L9E-j2-JUP" firstAttribute="leading" secondItem="Sew-ds-Ulp" secondAttribute="leading" id="NWT-Zd-cdO"/>
-                            <constraint firstItem="cOa-i2-cEO" firstAttribute="leading" secondItem="Sew-ds-Ulp" secondAttribute="leading" constant="30" id="fDm-DC-3Bq"/>
+                            <constraint firstItem="TDk-mP-Vwr" firstAttribute="top" secondItem="Sew-ds-Ulp" secondAttribute="top" constant="10" id="P13-vQ-e7B"/>
+                            <constraint firstItem="Sew-ds-Ulp" firstAttribute="trailing" secondItem="TDk-mP-Vwr" secondAttribute="trailing" constant="40" id="W2x-i4-EE8"/>
                             <constraint firstItem="Od7-Nk-jYk" firstAttribute="leading" secondItem="Sew-ds-Ulp" secondAttribute="leading" constant="10" id="pnS-wi-zrr"/>
                             <constraint firstItem="Od7-Nk-jYk" firstAttribute="top" secondItem="L9E-j2-JUP" secondAttribute="bottom" constant="8" symbolic="YES" id="qlm-nw-Xd8"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Detection" image="magnifyingglass.circle.fill" catalog="system" id="QaF-5b-QsB"/>
+                    <navigationItem key="navigationItem" id="hJA-74-qRm"/>
                     <connections>
                         <outlet property="diseaseNameLabel" destination="mxA-8z-v96" id="way-4a-RdJ"/>
-                        <outlet property="getPlantStoreButton" destination="cOa-i2-cEO" id="9bq-0l-ZzL"/>
+                        <outlet property="getPlantStoreButton" destination="TDk-mP-Vwr" id="yrq-uP-GdS"/>
+                        <outlet property="getPlantStoreButtonTopConstrain" destination="P13-vQ-e7B" id="btC-Cc-jIH"/>
                         <outlet property="plantImageView" destination="L9E-j2-JUP" id="Nb0-MI-FZb"/>
                         <outlet property="plantImageViewHeightConstrain" destination="gfk-j9-Bcn" id="QQg-GA-Oeo"/>
                         <outlet property="resultsStackLabelsConstrain" destination="6L1-nc-7SO" id="m2w-zY-yK9"/>
@@ -449,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0OP-MG-0BT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8243.5114503816785" y="650.70422535211276"/>
+            <point key="canvasLocation" x="8244" y="1418"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kq2-Xp-Ah7">
@@ -657,7 +659,7 @@
                         <segue destination="hRd-xc-7TP" kind="relationship" relationship="viewControllers" id="G6U-5m-x3D"/>
                         <segue destination="LTD-WY-W46" kind="relationship" relationship="viewControllers" id="YnM-hh-BDi"/>
                         <segue destination="lOx-fG-fNv" kind="relationship" relationship="viewControllers" id="deH-wj-lrm"/>
-                        <segue destination="mUM-EZ-HN9" kind="relationship" relationship="viewControllers" id="KWG-aX-rB4"/>
+                        <segue destination="27T-oj-Ea5" kind="relationship" relationship="viewControllers" id="KWG-aX-rB4"/>
                         <segue destination="Ia1-ph-Qku" kind="relationship" relationship="viewControllers" id="x9i-6h-cJr"/>
                     </connections>
                 </tabBarController>
@@ -682,7 +684,37 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBk-ev-ZDo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9318" y="651"/>
+            <point key="canvasLocation" x="9317" y="651"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="uUT-ff-hRk">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="yHJ-nG-hlP" customClass="MapViewController" customModule="Plantie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s3e-Mj-npS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8V-HQ-d5e">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8Lt-43-WIX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="H8V-HQ-d5e" firstAttribute="bottom" secondItem="8Lt-43-WIX" secondAttribute="bottom" id="BWh-3I-1Vn"/>
+                            <constraint firstItem="H8V-HQ-d5e" firstAttribute="leading" secondItem="8Lt-43-WIX" secondAttribute="leading" id="MgV-db-aUn"/>
+                            <constraint firstItem="H8V-HQ-d5e" firstAttribute="trailing" secondItem="8Lt-43-WIX" secondAttribute="trailing" id="maX-5B-eWP"/>
+                            <constraint firstItem="H8V-HQ-d5e" firstAttribute="top" secondItem="8Lt-43-WIX" secondAttribute="top" id="xnc-eM-WtH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="H8V-HQ-d5e" id="SmA-Ls-sbi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sMz-T0-X4Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8243.5114503816785" y="2147.8873239436621"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="zrX-Ur-HDj">
@@ -1232,7 +1264,7 @@
                 <navigationController storyboardIdentifier="SplashView" automaticallyAdjustsScrollViewInsets="NO" id="1op-i8-mnh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="CGU-ga-pB8">
-                        <rect key="frame" x="0.0" y="59" width="393" height="101.66666666666666"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="PlantieGreen"/>
                     </navigationBar>
@@ -1701,13 +1733,13 @@
                                                     <color key="backgroundColor" red="0.22492784260000001" green="0.19114357230000001" blue="0.36472290750000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e56-bV-BcF">
-                                                    <rect key="frame" x="0.0" y="40" width="76" height="24.666666666666671"/>
+                                                    <rect key="frame" x="0.0" y="40" width="76" height="36"/>
                                                     <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="21"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 °F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osf-on-TCQ">
-                                                    <rect key="frame" x="0.0" y="84.333333333333329" width="76" height="24.666666666666671"/>
+                                                    <rect key="frame" x="0.0" y="73" width="76" height="36"/>
                                                     <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="21"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1764,25 +1796,25 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ymR-n2-qZL">
-                                                    <rect key="frame" x="5" y="4.9999999999999982" width="119" height="23.333333333333329"/>
+                                                    <rect key="frame" x="5" y="5" width="119" height="34.333333333333336"/>
                                                     <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partly Cloudy" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="eQJ-7g-Omv">
-                                                    <rect key="frame" x="5" y="30.333333333333329" width="119" height="20"/>
+                                                    <rect key="frame" x="5" y="41.333333333333336" width="119" height="29.000000000000007"/>
                                                     <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 °F ↑" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ufK-il-XHm">
-                                                    <rect key="frame" x="5" y="144" width="119" height="20"/>
+                                                    <rect key="frame" x="5" y="135" width="119" height="29"/>
                                                     <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 °F ↓" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="qr3-Z1-tyK">
-                                                    <rect key="frame" x="5" y="122" width="119" height="20"/>
+                                                    <rect key="frame" x="5" y="104" width="119" height="29"/>
                                                     <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1818,13 +1850,13 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country/City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="5rj-O8-fv3">
-                                <rect key="frame" x="0.0" y="69" width="393" height="41"/>
+                                <rect key="frame" x="0.0" y="69" width="393" height="59.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Harmattan-Bold" family="Harmattan" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" اخر تحديث: 03/10/2021 09:29 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMQ-A4-Sp0">
-                                <rect key="frame" x="10" y="115" width="373" height="20"/>
+                                <rect key="frame" x="10" y="133.66666666666666" width="373" height="29"/>
                                 <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1845,13 +1877,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الشروق" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJM-s5-LPq">
-                                                        <rect key="frame" x="5" y="53.333333333333314" width="114.33333333333333" height="20"/>
+                                                        <rect key="frame" x="5" y="44.333333333333314" width="114.33333333333333" height="29"/>
                                                         <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="sunrise" translatesAutoresizingMaskIntoConstraints="NO" id="8hQ-a2-xa8">
-                                                        <rect key="frame" x="2" y="2" width="120.33333333333333" height="49.333333333333336"/>
+                                                        <rect key="frame" x="2" y="2" width="120.33333333333333" height="40.333333333333336"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="0.34693877550000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1879,13 +1911,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الغروب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IV0-71-sSQ">
-                                                        <rect key="frame" x="5" y="53.333333333333314" width="114.33333333333333" height="20"/>
+                                                        <rect key="frame" x="5" y="44.333333333333314" width="114.33333333333333" height="29"/>
                                                         <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="sunset" translatesAutoresizingMaskIntoConstraints="NO" id="SDt-xd-r90">
-                                                        <rect key="frame" x="2" y="2" width="120.33333333333333" height="49.333333333333336"/>
+                                                        <rect key="frame" x="2" y="2" width="120.33333333333333" height="40.333333333333336"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="0.34693877550000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1913,13 +1945,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الرياح" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhx-RW-QzJ">
-                                                        <rect key="frame" x="5" y="53.333333333333314" width="114.33333333333333" height="20"/>
+                                                        <rect key="frame" x="5" y="44.333333333333314" width="114.33333333333333" height="29"/>
                                                         <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="wind" translatesAutoresizingMaskIntoConstraints="NO" id="Ei5-Rc-iix">
-                                                        <rect key="frame" x="2" y="2" width="120.33333333333333" height="49.333333333333336"/>
+                                                        <rect key="frame" x="2" y="2" width="120.33333333333333" height="40.333333333333336"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="0.34693877550000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1952,13 +1984,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الضغط" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzz-Ft-Txj">
-                                                        <rect key="frame" x="5" y="53" width="179" height="20"/>
+                                                        <rect key="frame" x="5" y="44" width="179" height="29"/>
                                                         <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="pressure" translatesAutoresizingMaskIntoConstraints="NO" id="gFX-co-m4c">
-                                                        <rect key="frame" x="2" y="2" width="185" height="49"/>
+                                                        <rect key="frame" x="2" y="2" width="185" height="40"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="0.34693877550000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1986,13 +2018,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الرطوبة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bng-md-ELt">
-                                                        <rect key="frame" x="5" y="53" width="179" height="20"/>
+                                                        <rect key="frame" x="5" y="44" width="179" height="29"/>
                                                         <fontDescription key="fontDescription" name="Harmattan-Regular" family="Harmattan" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="humidity" translatesAutoresizingMaskIntoConstraints="NO" id="Gy7-nP-6mX">
-                                                        <rect key="frame" x="2" y="2" width="185" height="49"/>
+                                                        <rect key="frame" x="2" y="2" width="185" height="40"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="0.34693877550000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2018,22 +2050,22 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szI-pg-9zS">
-                                <rect key="frame" x="10" y="145" width="373" height="138"/>
+                                <rect key="frame" x="10" y="172.66666666666666" width="373" height="110.33333333333334"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scattered clouds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQd-uh-vMH">
-                                        <rect key="frame" x="10" y="18.666666666666657" width="353" height="20.333333333333329"/>
+                                        <rect key="frame" x="10" y="5" width="353" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.50 °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eo8-AA-MmI">
-                                        <rect key="frame" x="85.666666666666686" y="39" width="202" height="60"/>
+                                        <rect key="frame" x="85.666666666666686" y="25.333333333333343" width="202" height="60"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PkL-LB-zdy">
-                                        <rect key="frame" x="10" y="99" width="353" height="20.333333333333329"/>
+                                        <rect key="frame" x="10" y="85.333333333333343" width="353" height="20.333333333333329"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السفلى: 10.50 °F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkw-9g-Jmi">
                                                 <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="20.333333333333332"/>
@@ -2578,6 +2610,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GWA-Bc-0DQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5248" y="652"/>
+        </scene>
+        <!--Detection-->
+        <scene sceneID="T7H-2d-N4K">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="27T-oj-Ea5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Detection" image="magnifyingglass.circle.fill" catalog="system" id="QaF-5b-QsB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cNm-sH-2BS">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mUM-EZ-HN9" kind="relationship" relationship="rootViewController" id="5fa-vA-6M9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yFj-b8-zrc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8243.5114503816785" y="650.70422535211276"/>
         </scene>
     </scenes>
     <resources>

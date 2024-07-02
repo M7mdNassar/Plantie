@@ -59,6 +59,7 @@
 		044B14AC2B8E38AC0087C094 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B14AB2B8E38AC0087C094 /* EditProfile.swift */; };
 		044D9F3C2BEEB40B008EA71A /* PlantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D9F3A2BEEB40B008EA71A /* PlantCollectionViewCell.swift */; };
 		044D9F3D2BEEB40B008EA71A /* PlantCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044D9F3B2BEEB40B008EA71A /* PlantCollectionViewCell.xib */; };
+		04508B6E2C347981005BDAB1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04508B6D2C347981005BDAB1 /* MapViewController.swift */; };
 		04519DAB2B9679E900D190AE /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04519DAA2B9679E900D190AE /* AddPostViewController.swift */; };
 		045439562C07B93000C55542 /* PlantieML.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 045439552C07B93000C55542 /* PlantieML.mlpackage */; };
 		0454395A2C07D54000C55542 /* DetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045439592C07D54000C55542 /* DetectionViewController.swift */; };
@@ -143,6 +144,7 @@
 		044B14AB2B8E38AC0087C094 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
 		044D9F3A2BEEB40B008EA71A /* PlantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCollectionViewCell.swift; sourceTree = "<group>"; };
 		044D9F3B2BEEB40B008EA71A /* PlantCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlantCollectionViewCell.xib; sourceTree = "<group>"; };
+		04508B6D2C347981005BDAB1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		04519DAA2B9679E900D190AE /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		045439552C07B93000C55542 /* PlantieML.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = PlantieML.mlpackage; sourceTree = "<group>"; };
 		045439592C07D54000C55542 /* DetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionViewController.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				045439592C07D54000C55542 /* DetectionViewController.swift */,
+				04508B6D2C347981005BDAB1 /* MapViewController.swift */,
 			);
 			path = Detection;
 			sourceTree = "<group>";
@@ -845,6 +848,7 @@
 				04B14CDF2BD2B7D200440034 /* WeatherAPI.swift in Sources */,
 				043EF02C2B8F5252007F8E6C /* RegisterViewController.swift in Sources */,
 				046D818A2B9B21920063EDB3 /* CommentTableViewCell.swift in Sources */,
+				04508B6E2C347981005BDAB1 /* MapViewController.swift in Sources */,
 				044B14AC2B8E38AC0087C094 /* EditProfile.swift in Sources */,
 				044B148F2B8E25FF0087C094 /* ProfileViewController.swift in Sources */,
 				04B14CE42BD2BE8F00440034 /* DailyCollectionViewCell.swift in Sources */,

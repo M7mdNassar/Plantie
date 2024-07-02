@@ -12,7 +12,7 @@ class DetectionViewController: UIViewController {
     @IBOutlet weak var getPlantStoreButton: UIButton!
     @IBOutlet weak var plantImageViewHeightConstrain: NSLayoutConstraint!
     @IBOutlet weak var resultsStackLabelsConstrain: NSLayoutConstraint!
-    
+    @IBOutlet weak var getPlantStoreButtonTopConstrain: NSLayoutConstraint!
     
     // MARK: Variables
     let model = try! VNCoreMLModel(for: PlantieML().model)
@@ -33,6 +33,11 @@ class DetectionViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func getPlantStoreButtonTapped(_ sender: UIButton) {
+
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapViewController") as? MapViewController
+        
+        self.navigationController?.pushViewController(vc!, animated: true)
+        
     }
     
     
@@ -50,6 +55,7 @@ class DetectionViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.plantImageViewHeightConstrain.constant = 250
                     self.resultsStackLabelsConstrain.constant = 120
+                    self.getPlantStoreButtonTopConstrain.constant = 300
                     
                     self.plantImageView.image = self.selectedImage
                     self.diseaseNameLabel.text = firstResult.identifier
