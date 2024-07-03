@@ -8,6 +8,7 @@ class DetectionViewController: UIViewController {
     @IBOutlet weak var plantImageView: UIImageView!
     @IBOutlet weak var diseaseNameLabel: UILabel!
     @IBOutlet weak var treatmentNameLabel: UILabel!
+    @IBOutlet weak var tipsLabel: UILabel!
     @IBOutlet weak var getPlantStoreButton: UIButton!
     @IBOutlet weak var plantImageViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var resultsStackLabelsConstraint: NSLayoutConstraint!
@@ -41,8 +42,8 @@ class DetectionViewController: UIViewController {
                guard let self = self else { return }
                DispatchQueue.main.async {
                    self.plantImageViewHeightConstraint.constant = 250
-                   self.resultsStackLabelsConstraint.constant = 120
-                   self.getPlantStoreButtonTopConstraint.constant = 300
+                   self.resultsStackLabelsConstraint.constant = 180
+                   self.getPlantStoreButtonTopConstraint.constant = 10
 
                    self.plantImageView.image = self.selectedImage
                    self.updateLabels(disease: identifier!)
@@ -53,10 +54,12 @@ class DetectionViewController: UIViewController {
     private func updateLabels(disease: String) {
         if let info = DiseaseInfo.data[disease] {
             self.diseaseNameLabel.text = info.name
-            self.treatmentNameLabel.text = info.treatment
+            self.treatmentNameLabel.text = info.treatment == "" ? "لا تحتاج الى مبيدات":info.treatment
+            self.tipsLabel.text = info.tips
         } else {
-            self.diseaseNameLabel.text = "Unknown"
-            self.treatmentNameLabel.text = "No treatment available."
+            self.diseaseNameLabel.text = "غير معروف"
+            self.treatmentNameLabel.text = "غير معروف"
+            self.tipsLabel.text = "غير معروف"
         }
     }
 }
