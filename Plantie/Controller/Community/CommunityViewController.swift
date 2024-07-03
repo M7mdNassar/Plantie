@@ -1,4 +1,3 @@
-
 import UIKit
 import NVActivityIndicatorView
 
@@ -7,120 +6,108 @@ class CommunityViewController: UIViewController {
     // MARK: Variables
     var posts: [Post] = []
     var filteredPosts: [Post] = []
-//    let searchController = UISearchController(searchResultsController: nil)
+    let searchController = UISearchController(searchResultsController: nil)
     let realtimeDatabaseManager = RealtimeDatabaseManager()
 
+    var isSearchActive: Bool {
+        return searchController.isActive && !(searchController.searchBar.text?.isEmpty ?? true)
+    }
     
     // MARK: Outlets
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicatorView: NVActivityIndicatorView!
     
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupSearchBar()
+        setupSearchBar()
         setUpTable()
         getPosts()
-        NotificationCenter.default.addObserver(self, selector: #selector(commentButtonPresed), name: Notification.Name(rawValue: "commentButtonTapped"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(commentButtonPressed), name: Notification.Name(rawValue: "commentButtonTapped"), object: nil)
     }
     
     func getPosts(){
+        // Clear the current posts to avoid duplicates
+        self.posts.removeAll()
+        self.tableView.reloadData()
+        
         RealtimeDatabaseManager.shared.getAllPosts { posts in
             self.posts = posts
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     
-    @objc func commentButtonPresed(notification : Notification){
-    
+    @objc func commentButtonPressed(notification : Notification){
         if let cell = notification.userInfo?["cell"] as? UITableViewCell {
             if let indexPath = tableView.indexPath(for: cell){
-                
-                var post:Post
-//                if isSearchActive() {
-//                    post = filteredPosts[indexPath.row]
-//                } else {
-//                    post = posts[indexPath.row]
-//                }
-                post = posts[indexPath.row]
+                let post: Post
+                if isSearchActive {
+                    post = filteredPosts[indexPath.row]
+                } else {
+                    post = posts[indexPath.row]
+                }
                 let vc = storyboard?.instantiateViewController(withIdentifier: "showPostView") as! ShowPostViewController
                 vc.post = post
                 vc.modalPresentationStyle = .fullScreen
                 present(vc, animated: true, completion: nil)
-
             }
-            
         }
-        
-        
     }
+    
     // MARK: Actions
     @IBAction func composeBarButton(_ sender: UIBarButtonItem) {
-        
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddPostView") as! AddPostViewController
-
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
-    
-    
-    
 }
 
 // MARK: Table View Data Source
-extension CommunityViewController : UITableViewDataSource , UITableViewDelegate {
+extension CommunityViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//            if isSearchActive() {
-//                return filteredPosts.count
-//            } else {
-//                return posts.count
-//            }
-        return posts.count
+        return isSearchActive ? filteredPosts.count : posts.count
+    }
+        
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let post: Post
+        if isSearchActive {
+            post = filteredPosts[indexPath.row]
+        } else {
+            post = posts[indexPath.row]
         }
         
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let post: Post
-//            if isSearchActive() {
-//                post = filteredPosts[indexPath.row]
-//            } else {
-//                post = posts[indexPath.row]
-//            }
-            post = posts[indexPath.row]
-            
-            if post.images.isEmpty {
-                let cell = tableView.dequeue() as TextTableViewCell
-                cell.contentPostLabel.isExpaded = false
-                cell.configure(post: post)
-                return cell
-            } else {
-                let cell = tableView.dequeue() as TextWithImagesTableViewCell
-                cell.contentPostLabel.isExpaded = false
-                cell.configure(post: post)
-                return cell
-            }
+        if post.images.isEmpty {
+            let cell = tableView.dequeue() as TextTableViewCell
+            cell.contentPostLabel.isExpaded = false
+            cell.configure(post: post)
+            return cell
+        } else {
+            let cell = tableView.dequeue() as TextWithImagesTableViewCell
+            cell.contentPostLabel.isExpaded = false
+            cell.configure(post: post)
+            return cell
         }
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let post: Post
-//        if isSearchActive() {
-//            post = filteredPosts[indexPath.row]
-//        } else {
-//            post = posts[indexPath.row]
-//        }
-        post = posts[indexPath.row]
+        if isSearchActive {
+            post = filteredPosts[indexPath.row]
+        } else {
+            post = posts[indexPath.row]
+        }
 
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "showPostView") as! ShowPostViewController
         vc.post = post
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
-
     
     // MARK: Pagination
-     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
         let contentHeight = tableView.contentSize.height
@@ -148,7 +135,11 @@ extension CommunityViewController : UITableViewDataSource , UITableViewDelegate 
                 }
 
                 // Append the additional posts to the existing array
-                self.posts.append(contentsOf: additionalPosts)
+                for post in additionalPosts {
+                    if !self.posts.contains(where: { $0.id == post.id }) {
+                        self.posts.append(post)
+                    }
+                }
 
                 DispatchQueue.main.async {
                     self.activityIndicatorView.stopAnimating()
@@ -159,47 +150,37 @@ extension CommunityViewController : UITableViewDataSource , UITableViewDelegate 
             }
         }
     }
-
-    
 }
 
 // MARK: UISearchResultsUpdating
-//
-//extension CommunityViewController: UISearchResultsUpdating{
-//
-//    func updateSearchResults(for searchController: UISearchController) {
-//        guard let searchText = searchController.searchBar.text, !searchText.isEmpty else {
-//            // If the search text is empty, show all posts
-//            tableView.reloadData()
-//            return
-//        }
-//
-//        // Call the method to fetch posts matching the search query
-//        RealtimeDatabaseManager.shared.getPostsMatchingSearchQuery(searchText) { [weak self] matchingPosts in
-//            guard let self = self else { return }
-//
-//            // Update the filtered posts array with the matching posts
-//            self.filteredPosts = matchingPosts
-//
-//            // Reload the table view with the filtered posts
-//            self.tableView.reloadData()
-//        }
-//    }
-//
-//
-//}
+extension CommunityViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text, !searchText.isEmpty else {
+            filteredPosts.removeAll()
+            tableView.reloadData()
+            return
+        }
+
+        RealtimeDatabaseManager.shared.getPostsMatchingSearchQuery(searchText) { [weak self] matchingPosts in
+            guard let self = self else { return }
+            self.filteredPosts = matchingPosts
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+}
 
 // MARK: Private Methods
-private extension CommunityViewController{
-    
-//    func setupSearchBar(){
-//        navigationItem.searchController = searchController
-//        navigationItem.hidesSearchBarWhenScrolling = true
-//        searchController.obscuresBackgroundDuringPresentation = false
-//        searchController.searchBar.placeholder = "Search Posts"
-//        definesPresentationContext = true
-//        searchController.searchResultsUpdater = self
-//    }
+private extension CommunityViewController {
+    func setupSearchBar(){
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = true
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Posts"
+        definesPresentationContext = true
+        searchController.searchResultsUpdater = self
+    }
     
     func setUpTable() {
         tableView.delegate = self
@@ -211,11 +192,4 @@ private extension CommunityViewController{
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44
     }
-    
-//     func isSearchActive() -> Bool {
-//          return searchController.isActive && !searchController.searchBar.text!.isEmpty
-//      }
-    
-   
 }
-

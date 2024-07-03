@@ -1421,7 +1421,7 @@
                     <tabBarItem key="tabBarItem" title="Community" image="message.circle.fill" catalog="system" id="Awt-qq-4Nt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="AJF-Fl-Fnb">
-                        <rect key="frame" x="0.0" y="59" width="393" height="101.66666666666666"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
