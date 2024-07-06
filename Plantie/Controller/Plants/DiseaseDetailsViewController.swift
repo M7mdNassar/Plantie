@@ -24,8 +24,8 @@ class DiseaseDetailsViewController: UIViewController {
     // MARK: Methods
     func configureView() {
         diseaseNameLabel.text = diseaseName
-        diseaseDescriptionLabel.text = diseaseDescription
-        diseasePreventionLabel.text = diseasePrevention
+        diseaseDescriptionLabel.text = "الوصف: \(diseaseDescription ?? "")"
+        diseasePreventionLabel.text = "ارشادات : \(diseasePrevention ?? "")"
         if let imageURL = diseaseImageURL, let url = URL(string: imageURL) {
                   diseaseImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder"))
               }

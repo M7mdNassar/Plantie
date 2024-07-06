@@ -7,6 +7,7 @@ class PlantDetailsViewController: UIViewController {
     // MARK: Variables
     
     var plant:Plant!
+    let backButton = UIBarButtonItem()
     
     // MARK: Outlets
     
@@ -54,6 +55,9 @@ extension PlantDetailsViewController{
     func setupNavigationBar(){
         //Show the Navigation Bar
         self.navigationController?.navigationBar.isHidden = false
+        backButton.title = "رجوع"
+        self.navigationItem.backBarButtonItem = backButton
+        
         self.navigationController?.navigationBar.tintColor = UIColor.plantieGreen
         
     }
