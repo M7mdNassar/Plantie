@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0420A1212C3974C200604080 /* DiseaseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0420A1202C3974C200604080 /* DiseaseDetailsViewController.swift */; };
 		0429105F2BB7484D0002B465 /* PlantsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0429105E2BB7484D0002B465 /* PlantsData.json */; };
 		042910612BB748B10002B465 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042910602BB748B10002B465 /* Plant.swift */; };
 		042910632BB753140002B465 /* PlantLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042910622BB753140002B465 /* PlantLoader.swift */; };
@@ -121,6 +122,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0420A1202C3974C200604080 /* DiseaseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseDetailsViewController.swift; sourceTree = "<group>"; };
 		0429105E2BB7484D0002B465 /* PlantsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PlantsData.json; sourceTree = "<group>"; };
 		042910602BB748B10002B465 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		042910622BB753140002B465 /* PlantLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantLoader.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 				04B6C1F02BC314C400C022CF /* WeatherViewController.swift */,
 				04A28D1D2BEA3214000B46BD /* PlantDetailsViewController.swift */,
 				049904DB2C32FB17008B2334 /* FertlizerCalculatorViewController.swift */,
+				0420A1202C3974C200604080 /* DiseaseDetailsViewController.swift */,
 			);
 			path = Plants;
 			sourceTree = "<group>";
@@ -873,6 +876,7 @@
 				044B14A02B8E30650087C094 /* FCollectionReference.swift in Sources */,
 				04774DF32C349AB900AC7D70 /* MLImageClassifier.swift in Sources */,
 				043989CE2B972C0500FA0FF7 /* ExpandableLabel.swift in Sources */,
+				0420A1212C3974C200604080 /* DiseaseDetailsViewController.swift in Sources */,
 				044B14972B8E2B770087C094 /* StringExtension.swift in Sources */,
 				044B14932B8E2B3E0087C094 /* UITableViewExtension.swift in Sources */,
 				043989D62B975A4800FA0FF7 /* ShadowView.swift in Sources */,

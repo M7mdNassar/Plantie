@@ -24,16 +24,19 @@
             "commonDiseases": [
                 {
                     "name": "العفن الرمادي",
+                    "imageURL" : "https://www.canr.msu.edu/contentAsset/image/52db0934-9cac-4889-8697-2962aae11bc4/fileAsset/filter/Resize/resize_w/500",
                     "description": "مرض فطري يؤثر على الثمار والأوراق، ويتسبب في تلف الفاكهة وتحللها.",
                     "prevention": "تجنب زراعة الأشجار في المناطق المظلمة والرطبة، وتوفير التهوية الجيدة حول الأشجار."
                 },
                 {
                     "name": "الصدأ",
+                    "imageURL" : "https://www.canr.msu.edu/uploads/images/Plant%20Ag/CArust_apple.jpg",
                     "description": "مرض فطري يصيب الأوراق والأزهار، ويتسبب في ظهور بقع صفراء على الأوراق.",
                     "prevention": "رش الأشجار بمبيد فطري مناسب قبل بداية موسم الأمطار والرطوبة."
                 },
                 {
                     "name": "العث",
+                    "imageURL" : "https://www.canr.msu.edu/contentAsset/image/a3193d71-12da-48fc-9a71-50acf561e9b0/fileAsset/filter/Resize/resize_w/500",
                     "description": "حشرة صغيرة تصيب الأوراق والثمار، وتتسبب في تلف النباتات.",
                     "prevention": "استخدام المبيدات الحشرية المناسبة بشكل دوري للحد من انتشار العث."
                 }
@@ -66,11 +69,13 @@
             "commonDiseases": [
                 {
                     "name": "البياض الزغبي",
+                    "imageURL" : "https://s3-us-west-1.amazonaws.com/sg-production-public/data/images/825/files/side_downeymildew.jpg",
                     "description": "مرض فطري يصيب الأوراق والسيقان، ويتسبب في تلف النبات وضعف نموه.",
                     "prevention": "تجنب الرطوبة الزائدة وزراعة الأصناف المقاومة للمرض."
                 },
                 {
                     "name": "التبقع البني",
+                    "imageURL" : "https://content.peat-cloud.com/w400/brown-spot-of-soybean-soybean-1668094858.jpg",
                     "description": "مرض فطري يؤثر على الأوراق ويتسبب في ظهور بقع بنية عليها.",
                     "prevention": "رش النباتات بمبيد فطري مناسب قبل بداية موسم الأمطار والرطوبة."
                 }
@@ -103,11 +108,13 @@
             "commonDiseases": [
                 {
                     "name": "العفن الأسود",
+                    "imageURL" : "https://downloads.hindawi.org/books/html/64181913/Images/figure3.png",
                     "description": "مرض فطري يصيب السنابل ويتسبب في تلف الحبوب.",
                     "prevention": "تجنب الزراعة في التربة الرطبة ورش النباتات بمبيد فطري مناسب."
                 },
                 {
                     "name": "البياض الزغبي",
+                    "imageURL": "https://www.al-hakem.com/wp-content/uploads/2019/01/16LARGEcrndwny018-copy.jpg",
                     "description": "مرض فطري يؤثر على الأوراق والسيقان، ويتسبب في تلف النبات وضعف نموه.",
                     "prevention": "تجنب الرطوبة الزائدة وزراعة الأصناف المقاومة للمرض."
                 }
@@ -140,21 +147,25 @@
             "commonDiseases": [
                 {
                     "name": "الصدأ",
+                    "imageURL" : "https://plantura.garden/uk/wp-content/uploads/sites/2/2022/12/cucumber-diseased-1024x683.jpeg?x63657",
                     "description": "مرض فطري يصيب الأوراق والسيقان، ويتسبب في تلف النبات وضعف نموه.",
                     "prevention": "تجنب الرطوبة الزائدة وزراعة الأصناف المقاومة للمرض."
                 },
                 {
                     "name": "الفيروسات النباتية",
+                    "imageURL":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbnmuDNlWmpqqL9EDHsAW6Fte5ALDJNXEtqg&s",
                     "description": "مرض فيروسي يصيب الأوراق والثمار، ويتسبب في تلف النبات وضعف نموه.",
                     "prevention": "تجنب الاختلاط بين النباتات المصابة والسليمة واستخدام البذور الصحية."
                 },
                 {
                     "name": "المن",
+                    "imageURL":"https://www.shutterstock.com/image-photo/aphids-on-cucumber-leaves-agricultural-600nw-2127651218.jpg",
                     "description": "حشرة تصيب الأوراق والثمار، وتتسبب في تلف النباتات.",
                     "prevention": "استخدام المبيدات الحشرية المناسبة بشكل دوري للحد من انتشار المن."
                 },
                 {
                     "name": "اليرقات الدقيقية",
+                    "imageURL":"https://www.shutterstock.com/image-photo/scale-insect-citrus-mealybug-planococcus-600nw-1696195282.jpg",
                     "description": "يرقات صغيرة تتغذى على الأوراق والثمار، وتتسبب في تلف النباتات.",
                     "prevention": "استخدام المبيدات الحشرية المناسبة والتفتيش الدوري للحد من انتشار اليرقات الدقيقية."
                 }
@@ -187,16 +198,19 @@
             "commonDiseases": [
                 {
                     "name": "العفن الرمادي",
+                    "imageURL": "https://png.pngtree.com/thumb_back/fh260/background/20220403/pngtree-gray-mold-infects-white-grapes-on-vine-grow-cluster-plant-photo-image_30001450.jpg" ,
                     "description": "مرض فطري يؤثر على الثمار والأوراق، ويتسبب في تلف الفاكهة وتحللها.",
                     "prevention": "تجنب زراعة الأشجار في المناطق المظلمة والرطبة، وتوفير التهوية الجيدة حول الأشجار."
                 },
                 {
                     "name": "العفن الأسود",
+                    "imageURL": "https://content.peat-cloud.com/w400/black-rot-of-grape-grape-1575457334.jpg" ,
                     "description": "مرض فطري يصيب الثمار ويتسبب في تلفها وتحللها.",
                     "prevention": "تجنب الرطوبة الزائدة وزراعة الأصناف المقاومة للمرض."
                 },
                 {
                     "name": "العث",
+                    "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeex7JFSj7lych_2O8wV63kcBqfF-KxEWZtA&s" ,
                     "description": "حشرة صغيرة تصيب الثمار والأوراق، وتتسبب في تلف النباتات.",
                     "prevention": "استخدام المبيدات الحشرية المناسبة بشكل دوري للحد من انتشار العث."
                 }
@@ -231,21 +245,25 @@
             "commonDiseases": [
                 {
                     "name": "تساقط الثمار",
+                    "imageURL" : "https://agriculturemono.net/wp-content/uploads/2019/12/-لمحاربة-تساقط-الثمار-e1576268940535.jpg",
                     "description": "مشكلة تحدث نتيجة لعوامل بيئية أو نقص التسميد، تتسبب في تساقط الثمار قبل النضج.",
                     "prevention": "ضمان توفير الري المنتظم والتسميد الكافي للحفاظ على نمو الثمار."
                 },
                 {
                     "name": "التشققات في الثمار",
+                    "imageURL" : "https://cdn.alweb.com/thumbs/daleelalnabatat/article/fit710x532/ما-أسباب-جفاف-شجرة-الزيتون.jpg",
                     "description": "تحدث نتيجة للتقلبات الجوية أو التسميد الزائد، وتؤثر على جودة الثمار.",
                     "prevention": "ضبط التسميد والري وتوفير الظروف المناخية المناسبة للزيتون."
                 },
                 {
                     "name": "الذبابة الزيتونية",
+                    "imageURL" : "https://rooriz.com/wp-content/uploads/2023/11/294176995_772517100831135_3974283904364573349_n.jpg",
                     "description": "حشرة تصيب الثمار وتتسبب في تلفها وتحللها.",
                     "prevention": "استخدام المبيدات الحشرية المناسبة بشكل دوري للحد من انتشار الذبابة الزيتونية."
                 },
                 {
                     "name": "الدودة الزيتونية",
+                    "imageURL" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtBLRCBLjhgXw43kI8K429YdYSp4N7mGNNsg&s",
                     "description": "يرقة تتغذى على الثمار وتتسبب في تلفها وفقدانها.",
                     "prevention": "استخدام المبيدات الحشرية المناسبة والتفتيش الدوري للحد من انتشار الدودة الزيتونية."
                 }
@@ -278,21 +296,25 @@
             "commonDiseases": [
                 {
                     "name": "البياض الزغبي",
+                    "imageURL" : "https://worldofplants.ai/wp-content/uploads/2024/03/powdery-mildew-on-peppers.jpeg" ,
                     "description": "مرض فطري يؤثر على الأوراق والسيقان، ويتسبب في تلف النبات وضعف نموه.",
                     "prevention": "تجنب الرطوبة الزائدة وزراعة الأصناف المقاومة للمرض."
                 },
                 {
                     "name": "البياض الدقيقي",
+                    "imageURL" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6w1PrDwphz_xNgoT0RDJr36u4Dou81gpRVg&s" ,
                     "description": "مرض فطري يؤثر على الأوراق والثمار، ويتسبب في تلفها وتحللها.",
                     "prevention": "تجنب الرطوبة الزائدة وزراعة الأصناف المقاومة للمرض."
                 },
                 {
                     "name": "المن",
+                    "imageURL" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9_SqQ9zW7tbEKDvuSexT6EdIexW6T0X97zA&s" ,
                     "description": "حشرة تصيب الأوراق والثمار، وتتسبب في تلف النباتات.",
                     "prevention": "استخدام المبيدات الحشرية المناسبة بشكل دوري للحد من انتشار المن."
                 },
                 {
                     "name": "اليرقات الدقيقية",
+                    "imageURL" : "https://peppergeek.com/wp-content/uploads/2022/03/Adult-thrip-closeup-on-pepper-stem.jpeg" ,
                     "description": "يرقات صغيرة تتغذى على الأوراق والثمار، وتتسبب في تلف النباتات.",
                     "prevention": "استخدام المبيدات الحشرية المناسبة والتفتيش الدوري للحد من انتشار اليرقات الدقيقية."
                 }
@@ -327,21 +349,25 @@
             "commonDiseases": [
                 {
                     "name": "ذبول البطاطا",
+                    "imageURL" : "https://us-central1-plantix-8e0ce.cloudfunctions.net/v1/image/w400/0885d7d8-3a97-4a3e-afce-d58b2c087102" ,
                     "description": "مرض يصيب الجذور ويتسبب في تلفها وضعف نمو النبات.",
                     "prevention": "اختيار البذور الصحية وممارسة دورة زراعية مناسبة للحد من انتشار المرض."
                 },
                 {
                     "name": "الصدأ البطاطي",
+                    "imageURL" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBjZJFgqY1NrBDPeYDNgnufDToxt9qfan3NQ&s" ,
                     "description": "مرض فطري يصيب الأوراق ويتسبب في تلفها وتقزم النبات.",
                     "prevention": "الحفاظ على النباتات الجيدة وتجنب الرطوبة الزائدة للوقاية من المرض."
                 },
                 {
                     "name": "سوسة البطاطا",
+                    "imageURL" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4bU7v5KVNGIBwm-SvpgdzlAMCJhXeMORFSg&s" ,
                     "description": "حشرة تصيب الجذور وتتسبب في تلفها وضعف نمو النبات.",
                     "prevention": "استخدام المبيدات الحشرية المناسبة بشكل دوري للحد من انتشار السوسة."
                 },
                 {
                     "name": "الحرشف الأسود",
+                    "imageURL" : "https://content.peat-cloud.com/thumbnails/blackleg-1.jpg" ,
                     "description": "حشرة تصيب الأوراق وتتسبب في تلفها وضعف نمو النبات.",
                     "prevention": "التخلص من الأوراق المصابة واستخدام المبيدات الحشرية المناسبة للوقاية من الحرشف."
                 }
@@ -374,23 +400,21 @@
             "commonDiseases": [
                 {
                     "name": "البياض الدقيقي",
+                    "imageURL" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT38PfO7Bb-wjsDQvf00WOjruAY-KOoJXEc6w&s" ,
                     "description": "مرض فطري يؤثر على الأوراق والثمار، ويتسبب في تلفها وتحللها.",
                     "prevention": "تجنب الرطوبة الزائدة والتسميد الزائد للحد من انتشار المرض."
                 },
                 {
                     "name": "الإصابة بالرطوبة",
+                    "imageURL" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKQqui9sEdTqD1wwOx0OW-v_0CNZor8thfpw&s" ,
                     "description": "مشكلة تحدث نتيجة للرطوبة الزائدة في الجو أو الأرض، وتسبب تلف الثمار.",
                     "prevention": "ضبط التسميد والري وتوفير التهوية الجيدة حول النباتات للحد من الرطوبة الزائدة."
                 },
                 {
                     "name": "الحفار الدقيق",
+                    "imageURL" : "https://modernagritec.com/wp-content/uploads/2023/06/Strawberry-diseases-1.webp" ,
                     "description": "حشرة تصيب الثمار وتتسبب في تلفها وضعف نمو النباتات.",
                     "prevention": "استخدام المبيدات الحشرية المناسبة بشكل دوري للحد من انتشار الحفار الدقيق."
-                },
-                {
-                    "name": "الذبابة الفاكهية",
-                    "description": "حشرة تصيب الثمار وتتسبب في تلفها وفقدانها.",
-                    "prevention": "استخدام الفخاخ اللاصقة والمبيدات الحشرية المناسبة للحد من انتشار الذبابة الفاكهية."
                 }
             ]
         
@@ -422,21 +446,25 @@
             "commonDiseases": [
                 {
                     "name": "المتعفن البندي",
+                    "imageURL" : "https://modernagritec.com/wp-content/uploads/2023/04/3-2.webp" ,
                     "description": "مرض فطري يصيب الثمار ويتسبب في تلفها وفقدانها.",
                     "prevention": "تجنب الرطوبة الزائدة وتوفير التهوية الجيدة للنباتات للوقاية من المرض."
                 },
                 {
                     "name": "البكتيريا البندورية",
+                    "imageURL" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFvwOYzAIBdBYIybF41i1eh-n7Y3xk3wdzhw&s" ,
                     "description": "مرض بكتيري يصيب الأوراق والثمار، ويتسبب في تلفها وتحللها.",
                     "prevention": "الحفاظ على نظافة الحقول والتخلص من النباتات المصابة للوقاية من الإصابة بالمرض."
                 },
                 {
                     "name": "الدودة القارضة",
+                    "imageURL" : "https://worldofplants.ai/wp-content/uploads/2024/04/cutworm-vegetables-or-university-of-maryland-exte.jpeg.webp" ,
                     "description": "حشرة تصيب الثمار وتتسبب في تلفها وفقدانها.",
                     "prevention": "استخدام المبيدات الحشرية المناسبة بشكل دوري للحد من انتشار الدودة القارضة."
                 },
                 {
                     "name": "الذبابة البيضاء",
+                    "imageURL" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8Eblj32Jft9BqBTe6VtKr5fzwbxk2qeGRyA&s" ,
                     "description": "حشرة تصيب الأوراق وتتسبب في تلفها وفقدانها.",
                     "prevention": "التخلص من الأوراق المصابة واستخدام المبيدات الحشرية المناسبة للوقاية من الذبابة البيضاء."
                 }

@@ -32,6 +32,7 @@ struct DiseaseAndPestControl: Codable {
 
 struct CommonDisease: Codable {
     let name: String
+    let imageURL : String
     let description: String
     let prevention: String
 }

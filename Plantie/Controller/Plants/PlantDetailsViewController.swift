@@ -114,6 +114,18 @@ extension PlantDetailsViewController: UICollectionViewDelegate , UICollectionVie
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let plant = plant.diseaseAndPestControl.commonDiseases[indexPath.row]
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "DiseaseDetailsViewController") as DiseaseDetailsViewController
+        vc.diseaseImageURL = plant.imageURL
+        vc.diseaseName = plant.name
+        vc.diseaseDescription = plant.description
+        vc.diseasePrevention = plant.prevention
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 80, height: 100)
     }
