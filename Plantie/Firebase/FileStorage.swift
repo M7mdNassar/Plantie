@@ -11,45 +11,45 @@ class FileStorage{
     
     // MARK: Images
     
-    // Uplaod Image
-    class func uploadImage (_ image: UIImage , directory: String , completion: @escaping (_ documentLink: String?) -> Void){
-        
-        // 1. create folder on firestore
-        let storageRef = storage.reference(forURL: kSTORAGEFILE).child(directory)
-        
-        //2. convert image to data
-        let imageData = image.jpegData(compressionQuality: 0.5)
-        
-        //3. put the data into firebase and retrive the link
-        var task:StorageUploadTask!
-        
-        task = storageRef.putData(imageData!, metadata: nil, completion: { metaData, error in
-            task.removeAllObservers()
-            ProgressHUD.dismiss()
-            
-            if error != nil{
-                print("Error uploading image \(error!.localizedDescription)")
-                return
-            }
-            
-            storageRef.downloadURL { (url, error) in
-                guard let downloadUrl = url else {
-                    completion(nil)
-                    return
-                }
-                
-                completion(downloadUrl.absoluteString)
-            }
-            
-        })
-        //4. observe the persentage upload
-        task.observe(StorageTaskStatus.progress) { snapshot in
-            let progress = snapshot.progress!.completedUnitCount / snapshot.progress!.totalUnitCount
-            
-            ProgressHUD.progress(CGFloat(progress))
-        }
-        
-    }
+    // Upload Image
+       class func uploadImage(_ image: UIImage, directory: String, completion: @escaping (_ documentLink: String?) -> Void) {
+           // 1. create folder on firestore
+           let storageRef = storage.reference(forURL: kSTORAGEFILE).child(directory).child(UUID().uuidString)
+           
+           // 2. convert image to data
+           guard let imageData = image.jpegData(compressionQuality: 0.5) else {
+               completion(nil)
+               return
+           }
+           
+           // 3. put the data into firebase and retrieve the link
+           var task: StorageUploadTask!
+           
+           task = storageRef.putData(imageData, metadata: nil) { metadata, error in
+               task.removeAllObservers()
+               ProgressHUD.dismiss()
+               
+               if let error = error {
+                   print("Error uploading image \(error.localizedDescription)")
+                   completion(nil)
+                   return
+               }
+               
+               storageRef.downloadURL { url, error in
+                   guard let downloadUrl = url else {
+                       completion(nil)
+                       return
+                   }
+                   completion(downloadUrl.absoluteString)
+               }
+           }
+           
+           // 4. observe the percentage upload
+           task.observe(.progress) { snapshot in
+               let progress = CGFloat(snapshot.progress!.completedUnitCount) / CGFloat(snapshot.progress!.totalUnitCount)
+               ProgressHUD.progress(progress)
+           }
+       }
     
     
     class func downloadImage(imageUrl: String, completion: @escaping (_ image: UIImage?) -> Void) {

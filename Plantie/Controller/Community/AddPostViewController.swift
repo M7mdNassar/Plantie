@@ -47,9 +47,7 @@ class AddPostViewController: UIViewController {
     }
     
     @IBAction func postButton(_ sender: UIButton) {
-        // Check if the post content is equal to the placeholder text
         guard let content = postContent.text, content != "اكتب منشورك هنا..." else {
-            // Handle case where post content is empty or contains only the placeholder text
             ProgressHUD.error("الرجاء إدخال محتوى")
             return
         }
@@ -59,22 +57,18 @@ class AddPostViewController: UIViewController {
         
         for image in images {
             dispatchGroup.enter()
-            
             FileStorage.uploadImage(image, directory: "PostImages") { imageUrl in
                 if let imageUrl = imageUrl {
                     imageUrls.append(imageUrl)
                 } else {
                     ProgressHUD.error("فشل في التحميل")
                 }
-                
                 dispatchGroup.leave()
             }
         }
         
         dispatchGroup.notify(queue: .main) {
             let currentUser = User.currentUser!
-
-            // Convert currentUser to dictionary format
             let ownerDict: [String: Any] = [
                 "id": currentUser.id,
                 "userName": currentUser.userName,
@@ -84,8 +78,7 @@ class AddPostViewController: UIViewController {
                 "bio": currentUser.bio,
                 "country": currentUser.country
             ]
-
-            // Create the Post instance with the owner dictionary
+            
             let post = Post(
                 id: UUID().uuidString,
                 text: content,
@@ -95,12 +88,10 @@ class AddPostViewController: UIViewController {
                 dislikes: 0,
                 countOfComments: 0
             )
-
-            // Add the post to the Realtime Database
+            
             RealtimeDatabaseManager.shared.addPost(post: post)
             self.dismiss(animated: true)
             ProgressHUD.success("تم النشر ")
-
         }
     }
 
@@ -141,20 +132,19 @@ private extension AddPostViewController {
 // MARK: Gallery
 
 extension AddPostViewController : GalleryControllerDelegate{
+    
     func galleryController(_ controller: Gallery.GalleryController, didSelectImages images: [Gallery.Image]) {
-        
-        self.collectionViewHeightConstrain.constant = 100
-        for image in images{
-            image.resolve { image in
-                if let image = image{
-                    self.images.append(image)
-                    self.collectionView.reloadData()
-                }
-            }
-        }
-        controller.dismiss(animated: true, completion: nil)
-
-    }
+         self.collectionViewHeightConstrain.constant = 100
+         for image in images {
+             image.resolve { resolvedImage in
+                 if let resolvedImage = resolvedImage {
+                     self.images.append(resolvedImage)
+                     self.collectionView.reloadData()
+                 }
+             }
+         }
+         controller.dismiss(animated: true, completion: nil)
+     }
 
     // this methods i dont need , so dismiss it
     

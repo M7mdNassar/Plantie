@@ -13,6 +13,7 @@ class DetectionViewController: UIViewController {
     @IBOutlet weak var plantImageViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var resultsStackLabelsConstraint: NSLayoutConstraint!
     @IBOutlet weak var tipsStackTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var descriptionStackConstrain: UIStackView!
     
     // MARK: Variables
     var imageClassifier: ImageClassifier = MLImageClassifier(model: try! VNCoreMLModel(for: PlantieML().model))
@@ -44,6 +45,7 @@ class DetectionViewController: UIViewController {
            imageClassifier.classify(image: image) { [weak self] identifier in
                guard let self = self else { return }
                DispatchQueue.main.async {
+//                   self.descriptionStackConstrain.isHidden = false
                    self.plantImageViewHeightConstraint.constant = 250
                    self.resultsStackLabelsConstraint.constant = 110
                    
