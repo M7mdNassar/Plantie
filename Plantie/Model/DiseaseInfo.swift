@@ -1,10 +1,12 @@
 
 import Foundation
+import UIKit
 
 
 struct DiseaseInfo {
     let arabicName: String
     let treatment: String
+    let imageData : Data?
     
     
     static let data: [String: (name: String, tips: String , treatment: String)] = [

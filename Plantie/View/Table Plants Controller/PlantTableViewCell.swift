@@ -13,6 +13,11 @@ class PlantTableViewCell: UITableViewCell {
         super.awakeFromNib()
     
     }
+    override func prepareForReuse() {
+         super.prepareForReuse()
+        self.plantNameLabel.text = nil
+        self.plantImageView.image = nil
+     }
 
     
     func configure(plant:Plant){
