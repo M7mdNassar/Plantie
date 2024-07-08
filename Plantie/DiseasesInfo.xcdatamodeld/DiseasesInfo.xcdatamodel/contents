@@ -3,6 +3,7 @@
     <entity name="DiseasesInfo" representedClassName="DiseasesInfo" syncable="YES" codeGenerationType="class">
         <attribute name="arabicName" optional="YES" attributeType="String"/>
         <attribute name="imageData" optional="YES" attributeType="Binary"/>
+        <attribute name="tips" optional="YES" attributeType="String"/>
         <attribute name="treatment" optional="YES" attributeType="String"/>
     </entity>
 </model>

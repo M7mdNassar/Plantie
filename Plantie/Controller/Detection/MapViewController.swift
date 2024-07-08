@@ -84,7 +84,7 @@ class MapViewController: UIViewController {
         annotation.subtitle = travelTimeString
         mapView.addAnnotation(annotation)
         
-        if let userCoordinate = userCoordinate {
+        if userCoordinate != nil {
             mapView.selectAnnotation(annotation, animated: true)
         }
     }

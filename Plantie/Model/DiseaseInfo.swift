@@ -6,6 +6,7 @@ import UIKit
 struct DiseaseInfo {
     let arabicName: String
     let treatment: String
+    let tips: String
     let imageData : Data?
     
     

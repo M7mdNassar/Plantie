@@ -25,10 +25,12 @@ class DetectionViewController: UIViewController {
             }
         }
     }
-    
     var diseasesInfo: [DiseaseInfo] = []
     let backButton = UIBarButtonItem()
-
+    
+    let lightGreen = UIColor(red: 0.88, green: 1.0, blue: 0.88, alpha: 1.0) // Light green
+    let darkGreen = UIColor(red: 0.76, green: 0.88, blue: 0.76, alpha: 1.0) // Dark green
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,20 +52,16 @@ class DetectionViewController: UIViewController {
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.updateUIForClassification()
-                self.updateLabels(disease: identifier ?? "unknown")
+                self.updateDetectionUI(disease: identifier ?? "unknown")
             }
         }
     }
     
-    private func updateUIForClassification() {
-        self.tipsLabel.isHidden = false
-        self.plantImageViewHeightConstraint.constant = 250
-        self.resultsStackLabelsConstraint.constant = 110
-        self.tipsStackTopConstraint.constant = 10
-        self.plantImageView.image = self.selectedImage
-    }
+  
 
-    private func updateLabels(disease: String) {
+    private func updateDetectionUI(disease: String) {
+        self.plantImageView.image = self.selectedImage
+
         if let info = DiseaseInfo.data[disease] {
             diseaseNameLabel.text = info.name
             treatmentNameLabel.text = info.treatment.isEmpty ? "لا تحتاج الى مبيدات" : info.treatment
@@ -75,9 +73,10 @@ class DetectionViewController: UIViewController {
         }
         
         let imageData = selectedImage?.jpegData(compressionQuality: 1.0)
-        let disease = DiseaseInfo(arabicName: diseaseNameLabel.text ?? "", treatment: treatmentNameLabel.text ?? "", imageData: imageData)
+        let disease = DiseaseInfo(arabicName: diseaseNameLabel.text ?? "", treatment: treatmentNameLabel.text ?? "", tips: tipsLabel.text ?? "", imageData: imageData)
         addDiseaseInfoToArray(disease: disease)
     }
+    
 }
 
 // MARK: - UI Setup
@@ -90,6 +89,13 @@ private extension DetectionViewController {
         backButton.title = "رجوع"
         backButton.tintColor = .plantieGreen
         navigationItem.backBarButtonItem = backButton
+    }
+    
+    private func updateUIForClassification() {
+        self.tipsLabel.isHidden = false
+        self.plantImageViewHeightConstraint.constant = 250
+        self.resultsStackLabelsConstraint.constant = 110
+        self.tipsStackTopConstraint.constant = 10
     }
 }
 
@@ -109,6 +115,7 @@ extension DetectionViewController {
         let diseaseInfo = NSManagedObject(entity: diseaseInfoEntity, insertInto: managedContext)
         diseaseInfo.setValue(disease.arabicName, forKey: "arabicName")
         diseaseInfo.setValue(disease.treatment, forKey: "treatment")
+        diseaseInfo.setValue(disease.tips, forKey: "tips")
         diseaseInfo.setValue(disease.imageData, forKey: "imageData")
         
         do {
@@ -129,8 +136,9 @@ extension DetectionViewController {
             for data in result {
                 let diseaseName = data.value(forKey: "arabicName") as! String
                 let treatment = data.value(forKey: "treatment") as! String
+                let tips = data.value(forKey: "tips") as! String
                 let imageData = data.value(forKey: "imageData") as? Data
-                let disease = DiseaseInfo(arabicName: diseaseName, treatment: treatment, imageData: imageData)
+                let disease = DiseaseInfo(arabicName: diseaseName, treatment: treatment, tips: tips, imageData: imageData)
                 diseasesInfo.append(disease)
             }
         } catch let error as NSError {
@@ -179,7 +187,20 @@ extension DetectionViewController: UITableViewDelegate, UITableViewDataSource {
         if let imageData = disease.imageData {
             cell.plantImageView.image = UIImage(data: imageData)
         }
+        
+        cell.backgroundColor = indexPath.row % 2 == 0 ? lightGreen : darkGreen
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.historyTableView.deselectRow(at: indexPath, animated: true)
+        self.updateUIForClassification()
+        let diseaseInfo = diseasesInfo[indexPath.row]
+        self.plantImageView.image = UIImage(data: diseaseInfo.imageData!)
+        self.treatmentNameLabel.text = diseaseInfo.treatment
+        self.diseaseNameLabel.text = diseaseInfo.arabicName
+        self.tipsLabel.text = diseaseInfo.tips
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
