@@ -32,9 +32,6 @@ class DetectionViewController: UIViewController {
     }
     let backButton = UIBarButtonItem()
     
-    let lightGreen = UIColor(red: 0.88, green: 1.0, blue: 0.88, alpha: 1.0) // Light green
-    let darkGreen = UIColor(red: 0.76, green: 0.88, blue: 0.76, alpha: 1.0) // Dark green
-    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -195,7 +192,7 @@ extension DetectionViewController: UITableViewDelegate, UITableViewDataSource {
             cell.plantImageView.image = UIImage(data: imageData)
         }
         
-        cell.backgroundColor = indexPath.row % 2 == 0 ? lightGreen : darkGreen
+        cell.backgroundColor = indexPath.row % 2 == 0 ? .plantieLightGreen : .plantieDarkGreen
         
         return cell
     }
