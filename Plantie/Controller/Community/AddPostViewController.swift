@@ -47,11 +47,10 @@ class AddPostViewController: UIViewController {
     }
     
     @IBAction func postButton(_ sender: UIButton) {
-        guard let content = postContent.text, content != "اكتب منشورك هنا..." else {
-            ProgressHUD.error("الرجاء إدخال محتوى")
-            return
-        }
-        
+        guard let content = postContent.text, content != "اكتب منشورك هنا..." || !images.isEmpty else {
+              ProgressHUD.error("الرجاء إدخال محتوى أو إضافة صورة واحدة على الأقل")
+              return
+          }
         var imageUrls: [String] = []
         let dispatchGroup = DispatchGroup()
         
@@ -81,7 +80,7 @@ class AddPostViewController: UIViewController {
             
             let post = Post(
                 id: UUID().uuidString,
-                text: content,
+                text: content == "اكتب منشورك هنا..." ? "": content,
                 images: imageUrls,
                 owner: ownerDict,
                 likes: 0,

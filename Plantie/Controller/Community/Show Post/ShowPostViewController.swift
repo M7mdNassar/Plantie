@@ -84,7 +84,7 @@ class ShowPostViewController: UIViewController {
                     cell.commentsCountLabel.text = "\(self?.comments.count ?? 0)"
                 }
 
-                ProgressHUD.success("Comment added successfully!")
+                ProgressHUD.success("تم التعليق")
 
                 // Update comment count in Firebase
                 if let postId = self?.post.id {

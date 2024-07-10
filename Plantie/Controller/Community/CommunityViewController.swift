@@ -177,7 +177,7 @@ private extension CommunityViewController {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = true
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Posts"
+        searchController.searchBar.placeholder = "ابحث عن منشور"
         definesPresentationContext = true
         searchController.searchResultsUpdater = self
     }

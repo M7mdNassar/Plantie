@@ -25,7 +25,11 @@ class DetectionViewController: UIViewController {
             }
         }
     }
-    var diseasesInfo: [DiseaseInfo] = []
+    var diseasesInfo: [DiseaseInfo] = [] {
+        didSet {
+            updateTableViewVisibility()
+        }
+    }
     let backButton = UIBarButtonItem()
     
     let lightGreen = UIColor(red: 0.88, green: 1.0, blue: 0.88, alpha: 1.0) // Light green
@@ -56,8 +60,6 @@ class DetectionViewController: UIViewController {
             }
         }
     }
-    
-  
 
     private func updateDetectionUI(disease: String) {
         self.plantImageView.image = self.selectedImage
@@ -96,6 +98,10 @@ private extension DetectionViewController {
         self.plantImageViewHeightConstraint.constant = 250
         self.resultsStackLabelsConstraint.constant = 110
         self.tipsStackTopConstraint.constant = 10
+    }
+    
+    func updateTableViewVisibility() {
+        historyTableView.isHidden = diseasesInfo.isEmpty
     }
 }
 
@@ -174,6 +180,7 @@ extension DetectionViewController: UITableViewDelegate, UITableViewDataSource {
         historyTableView.rowHeight = UITableView.automaticDimension
         historyTableView.estimatedRowHeight = 100
         historyTableView.register(UINib(nibName: "PlantTableViewCell", bundle: nil), forCellReuseIdentifier: "PlantTableViewCell")
+        updateTableViewVisibility()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -221,5 +228,30 @@ extension DetectionViewController: UITableViewDelegate, UITableViewDataSource {
         diseasesInfo.remove(at: indexPath.row)
         historyTableView.deleteRows(at: [indexPath], with: .fade)
         deleteFromCoreData(disease: diseaseToRemove)
+    }
+    
+    // Add header to the table view
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .plantieGreen
+        
+        let headerLabel = UILabel()
+        headerLabel.text = "History Detections"
+        headerLabel.textColor = .white
+        headerLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        headerLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        headerView.addSubview(headerLabel)
+        
+        NSLayoutConstraint.activate([
+            headerLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
+            headerLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
+        ])
+        
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44 // Set the height for the header
     }
 }
