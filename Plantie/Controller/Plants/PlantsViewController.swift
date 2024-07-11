@@ -1,32 +1,33 @@
 import UIKit
-import NVActivityIndicatorViewExtended
 import SwiftLocation
 import CoreLocation
 import ProgressHUD
 import NVActivityIndicatorView
 
-class PlantsViewController: UIViewController , NVActivityIndicatorViewable {
-    
+class PlantsViewController: UIViewController {
+
     // MARK: Outlets
-    
+
     @IBOutlet weak var weatherBackgroundView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var currentDateLabel: UILabel!
     @IBOutlet weak var currentCityLabel: UILabel!
     @IBOutlet weak var tempretureLabel: UILabel!
-    @IBOutlet weak var weatherDescription: UILabel!
+    @IBOutlet weak var weatherStateLabel: UILabel!
+    @IBOutlet weak var weatherStateImageView: UIImageView!
     @IBOutlet weak var adviceWeatherState: UILabel!
     @IBOutlet weak var goToWeatherControllerButton: UIButton!
     @IBOutlet weak var adviceWeatherStateHightConstrain: NSLayoutConstraint!
-    
+
     // MARK: Variables
-    var plants:[Plant] = []
+    var plants: [Plant] = []
     var locationManager = CLLocationManager()
     var data: Plant?
-    
+
     var weatherData: WeatherData?
-    
+
     let backButton = UIBarButtonItem()
+    var activityIndicator: NVActivityIndicatorView?
 
     let weatherAdvice: [String: String] = [
         "veryCold": "الجو متجمد! احمِ نباتاتك من الصقيع. قد تحتاج إلى نقل النباتات إلى الداخل.",
@@ -37,53 +38,48 @@ class PlantsViewController: UIViewController , NVActivityIndicatorViewable {
         "hot": "الجو حار. حافظ على رطوبة نباتاتك وقدم بعض الظل. تأكد من الري في الصباح الباكر أو المساء لتجنب التبخر السريع."
     ]
 
-
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         setupViews()
         configureLocationAccess()
+        setupActivityIndicator()
         setupTableView()
         getPlants()
         getWeatherData()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
     }
     // MARK: Actions
-    
+
     @IBAction func goToWeatherController(_ sender: UIButton) {
-    
+
         if locationManager.authorizationStatus == .authorizedWhenInUse {
-              // If location access is granted, navigate to weather controller
-              navigateToWeatherViewController()
-          } else {
-              // If location access is not granted, print a message
-              ProgressHUD.banner("لا يوجد صلاحية للوصول إلى موقعك", "يرجى السماح بالوصول إلى الموقع للحصول على معلومات الطقس.", delay: 2.0)
-          }
-        
+            // If location access is granted, navigate to weather controller
+            navigateToWeatherViewController()
+        } else {
+            // If location access is not granted, print a message
+            ProgressHUD.banner("لا يوجد صلاحية للوصول إلى موقعك", "يرجى السماح بالوصول إلى الموقع للحصول على معلومات الطقس.", delay: 2.0)
+        }
     }
-    
+
     // MARK: Methods
-    
-    
+
     func navigateToWeatherViewController() {
         guard let weatherViewController = storyboard?.instantiateViewController(withIdentifier: "weatherController") as? WeatherViewController
-                
         else {
             return
         }
-        
+
         weatherViewController.weatherData = self.weatherData
 
         present(weatherViewController, animated: true, completion: nil)
-        
     }
-    
-    
+
     func getWeatherAdvice(for temperature: Double) -> String {
         switch temperature {
         case ..<0:
@@ -102,53 +98,63 @@ class PlantsViewController: UIViewController , NVActivityIndicatorViewable {
             return "No advice available."
         }
     }
+    
+    func updateWeatherImage(for description: String) {
+        switch description.lowercased() {
+        case "clear sky", "sunny":
+            weatherStateImageView.image = UIImage(named: "sun")
+        case "few clouds", "cloudy":
+            weatherStateImageView.image = UIImage(named: "cloudy")
+        case "rain":
+            weatherStateImageView.image = UIImage(named: "rain")
+        default:
+            weatherStateImageView.image = UIImage(named: "clouds")
+        }
+    }
 }
 
 // MARK: Table Datasource
 
-extension PlantsViewController: UITableViewDelegate , UITableViewDataSource{
+extension PlantsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         plants.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue() as PlantTableViewCell
-        cell.configure(plant:plants[indexPath.row])
+        cell.configure(plant: plants[indexPath.row])
         return cell
     }
-    
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "plantDetails" {
-               let vc = segue.destination as! PlantDetailsViewController
-               vc.plant = self.data
-           }
+            let vc = segue.destination as! PlantDetailsViewController
+            vc.plant = self.data
+        }
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Hide the Selection Highlight
         tableView.deselectRow(at: indexPath, animated: true)
-        
 
         self.data = plants[indexPath.row]
 
         self.performSegue(withIdentifier: "plantDetails", sender: self)
-        
     }
 }
 
 // MARK: Private Methods
-private extension PlantsViewController{
-    func setupTableView(){
+private extension PlantsViewController {
+    func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
-        
+
         tableView.register(Cell: PlantTableViewCell.self)
     }
-    
-    func getPlants(){
+
+    func getPlants() {
         if let plants = PlantLoader.loadPlants(fromJSONFile: "PlantsData") {
             // Use the plants array here
             self.plants = plants
@@ -156,110 +162,126 @@ private extension PlantsViewController{
             print("Failed to load plants")
         }
     }
-    
+
     func formatDate(_ date: Date) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, d MMMM"
         currentDateLabel.text = dateFormatter.string(from: date)
     }
-    
-     func setupGradient() {
-      
-        let rightColor = UIColor(red: 241/255, green: 221/255, blue: 83/255, alpha: 1.0).cgColor // Adjusted yellow
-              let leftColor = UIColor(red: 219/255, green: 186/255, blue: 116/255, alpha: 1.0).cgColor // DBBA74 DBBA74
-        weatherBackgroundView.applyGradient(colors: [rightColor, leftColor])
-      }
-    func setupViews(){
+
+
+    func updateBackgroundColor(for temperature: Double) {
+        let leftColor: CGColor
+        let rightColor: CGColor
+
+        if temperature >= 30 {
+            // color for temperatures 30 and above
+             rightColor = UIColor(red: 241/255, green: 221/255, blue: 83/255, alpha: 1.0).cgColor // Adjusted yellow
+             leftColor = UIColor(red: 219/255, green: 186/255, blue: 116/255, alpha: 1.0).cgColor //  DBBA74
+        } else {
+            // color for temperatures below 30
+            leftColor = UIColor(red: 100/255, green: 118/255, blue: 195/255, alpha: 1.0).cgColor
+            rightColor = UIColor(red: 117/255, green: 184/255, blue: 242/255, alpha: 1.0).cgColor
+        }
         
-        setupGradient()
+        weatherBackgroundView.applyGradient(colors: [leftColor, rightColor])
+    }
+
+    func setupViews() {
         goToWeatherControllerButton.corener(by: 15)
         formatDate(Date())
     }
-    
-    func configureLocationAccess(){
+
+    func configureLocationAccess() {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
-
     }
     
+    func setupActivityIndicator(){
+        let frame = CGRect(x: (self.view.frame.width / 2) - 25, y: (self.view.frame.height / 2), width: 50, height: 50)
+        activityIndicator = NVActivityIndicatorView(frame: frame, type: .ballPulseSync, color: .plantieGreen, padding: 0)
+        self.view.addSubview(activityIndicator!)
+    }
+    
+    func showActivityIndicator(){
+        activityIndicator?.startAnimating()
+    }
+    func hideActivityIndicator(){
+        activityIndicator?.stopAnimating()
+    }
 }
 
 // MARK: Core Location
 
-extension PlantsViewController: CLLocationManagerDelegate{
-    
-    
+extension PlantsViewController: CLLocationManagerDelegate {
+
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
             getWeatherData() // Call getWeatherData when location access is granted
         }
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         getWeatherData()
     }
-   
+
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription)
         ProgressHUD.error("يرجى السماح بالوصول إلى الموقع للحصول على معلومات الطقس.")
-        
-     
     }
 }
 
+extension PlantsViewController {
 
-extension PlantsViewController{
-
-    func setupNavigationBar(){
+    func setupNavigationBar() {
         self.navigationController?.navigationBar.isHidden = true
         backButton.title = "رجوع"
         self.navigationItem.backBarButtonItem = backButton
     }
-    
+
     func getWeatherData() {
-      
         guard let location = locationManager.location else {
             return // Exit if location is not available
         }
-        
-        startAnimating(type: .ballPulseSync, color: .plantieGreen, backgroundColor: .clear)
 
-        
+        self.showActivityIndicator()
+
         WeatherAPI.getWeatherData(lat: location.coordinate.latitude, lon: location.coordinate.longitude) { [weak self] data, response, error in
-            
-            self!.stopAnimating()
-            
+
+
             guard let self = self else { return }
-            
+
             guard let data = data else {
                 return // Exit if weather data is not available
             }
-            
+
             let decoder = JSONDecoder()
             do {
                 let weatherData = try decoder.decode(WeatherData.self, from: data)
 
                 // Store weather data for later use
                 self.weatherData = weatherData
-                
-                DispatchQueue.main.async{
-                    
+
+                DispatchQueue.main.async {
                     let temperature = (weatherData.current.temp - 32) * 5 / 9
                     self.adviceWeatherState.text = self.getWeatherAdvice(for: temperature)
-
                     self.adviceWeatherStateHightConstrain.constant = 70
                     self.currentCityLabel.text = weatherData.timezone
                     self.tempretureLabel.text = "\(Int(temperature))°C"
-                    self.weatherDescription.text = weatherData.current.weather[0].weatherDescription
+                    self.weatherStateLabel.text = weatherData.current.weather[0].weatherDescription
+
+                    // Update the background color based on the temperature
+                    self.updateBackgroundColor(for: temperature)
+                    // Update the weather image based on the description
+                                       self.updateWeatherImage(for: weatherData.current.weather[0].weatherDescription)
+                    self.hideActivityIndicator()
+
                 }
-                
-               
+
             } catch {
                 print("Failed to decode weather data: \(error)")
             }
         }
     }
-
-    
 }

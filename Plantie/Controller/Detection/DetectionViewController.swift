@@ -1,4 +1,5 @@
 import UIKit
+import NVActivityIndicatorView
 import CoreData
 import Vision
 import CoreML
@@ -32,11 +33,17 @@ class DetectionViewController: UIViewController {
     }
     let backButton = UIBarButtonItem()
     
+    // Activity Indicator
+    var activityIndicator: NVActivityIndicatorView?
+    var darkBackgroundView: UIView?
+
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         setupNavigationBar()
+        setupActivityIndicator()
         setupTableView()
         retrieveDataFromCoreData()
     }
@@ -49,11 +56,14 @@ class DetectionViewController: UIViewController {
     
     // MARK: - Image Classification
     private func classifyImage(image: UIImage) {
+        showLoadingIndicator()
+        sleep(1)
         imageClassifier.classify(image: image) { [weak self] identifier in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.updateUIForClassification()
                 self.updateDetectionUI(disease: identifier ?? "unknown")
+                self.hideLoadingIndicator()
             }
         }
     }
@@ -100,6 +110,29 @@ private extension DetectionViewController {
     func updateTableViewVisibility() {
         historyTableView.isHidden = diseasesInfo.isEmpty
     }
+    
+    func setupActivityIndicator() {
+         // Setup dark background view
+         darkBackgroundView = UIView(frame: self.view.bounds)
+         darkBackgroundView?.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+         darkBackgroundView?.isHidden = true
+         self.view.addSubview(darkBackgroundView!)
+         
+         // Setup activity indicator
+         let frame = CGRect(x: (self.view.frame.width / 2) - 25, y: (self.view.frame.height / 2) - 25, width: 50, height: 50)
+         activityIndicator = NVActivityIndicatorView(frame: frame, type: .ballGridPulse, color: .plantieGreen, padding: 0)
+         self.view.addSubview(activityIndicator!)
+     }
+     
+     func showLoadingIndicator() {
+         darkBackgroundView?.isHidden = false
+         activityIndicator?.startAnimating()
+     }
+     
+     func hideLoadingIndicator() {
+         darkBackgroundView?.isHidden = true
+         activityIndicator?.stopAnimating()
+     }
 }
 
 // MARK: - Core Data Operations
@@ -233,7 +266,8 @@ extension DetectionViewController: UITableViewDelegate, UITableViewDataSource {
         headerView.backgroundColor = .plantieGreen
         
         let headerLabel = UILabel()
-        headerLabel.text = "History Detections"
+        headerLabel.text = "اكتشافات سابقة"
+        headerLabel.textAlignment = .right
         headerLabel.textColor = .white
         headerLabel.font = UIFont.boldSystemFont(ofSize: 18)
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
