@@ -275,8 +275,8 @@ extension DetectionViewController: UITableViewDelegate, UITableViewDataSource {
         headerView.addSubview(headerLabel)
         
         NSLayoutConstraint.activate([
-            headerLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
-            headerLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
+            headerLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
+                    headerLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
         ])
         
         return headerView

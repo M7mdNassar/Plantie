@@ -47,7 +47,7 @@ class PlantsViewController: UIViewController {
         setupActivityIndicator()
         setupTableView()
         getPlants()
-        getWeatherData()
+        getWeatherData { _ in }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -57,10 +57,26 @@ class PlantsViewController: UIViewController {
     // MARK: Actions
 
     @IBAction func goToWeatherController(_ sender: UIButton) {
+        if !Reachability.isConnectedToNetwork() {
+            // Display an alert if there's no internet connection
+            ProgressHUD.banner("لا يوجد اتصال بالإنترنت", "يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.", delay: 2.0)
+            return
+        }
 
         if locationManager.authorizationStatus == .authorizedWhenInUse {
-            // If location access is granted, navigate to weather controller
-            navigateToWeatherViewController()
+            if weatherData == nil {
+                // Fetch weather data if not already available
+                getWeatherData { success in
+                    if success {
+                        self.navigateToWeatherViewController()
+                    } else {
+                        ProgressHUD.banner("فشل في جلب بيانات الطقس", "يرجى المحاولة مرة أخرى.", delay: 2.0)
+                    }
+                }
+            } else {
+                // Navigate to weather controller if weather data is already available
+                navigateToWeatherViewController()
+            }
         } else {
             // If location access is not granted, print a message
             ProgressHUD.banner("لا يوجد صلاحية للوصول إلى موقعك", "يرجى السماح بالوصول إلى الموقع للحصول على معلومات الطقس.", delay: 2.0)
@@ -169,15 +185,14 @@ private extension PlantsViewController {
         currentDateLabel.text = dateFormatter.string(from: date)
     }
 
-
     func updateBackgroundColor(for temperature: Double) {
         let leftColor: CGColor
         let rightColor: CGColor
 
         if temperature >= 30 {
             // color for temperatures 30 and above
-             rightColor = UIColor(red: 241/255, green: 221/255, blue: 83/255, alpha: 1.0).cgColor // Adjusted yellow
-             leftColor = UIColor(red: 219/255, green: 186/255, blue: 116/255, alpha: 1.0).cgColor //  DBBA74
+            rightColor = UIColor(red: 241/255, green: 221/255, blue: 83/255, alpha: 1.0).cgColor // Adjusted yellow
+            leftColor = UIColor(red: 219/255, green: 186/255, blue: 116/255, alpha: 1.0).cgColor //  DBBA74
         } else {
             // color for temperatures below 30
             leftColor = UIColor(red: 100/255, green: 118/255, blue: 195/255, alpha: 1.0).cgColor
@@ -218,12 +233,12 @@ extension PlantsViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
-            getWeatherData() // Call getWeatherData when location access is granted
+            getWeatherData { _ in } // Call getWeatherData when location access is granted
         }
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        getWeatherData()
+        getWeatherData { _ in }
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -240,29 +255,39 @@ extension PlantsViewController {
         self.navigationItem.backBarButtonItem = backButton
     }
 
-    func getWeatherData() {
+    func getWeatherData(completion: @escaping (Bool) -> Void) {
+        
         guard let location = locationManager.location else {
+            completion(false)
             return // Exit if location is not available
         }
-
+        
+        if !Reachability.isConnectedToNetwork() {
+            // Display an alert if there's no internet connection
+            ProgressHUD.banner("لا يوجد اتصال بالإنترنت", "يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.", delay: 2.0)
+            return
+        }
+        
         self.showActivityIndicator()
-
+        
         WeatherAPI.getWeatherData(lat: location.coordinate.latitude, lon: location.coordinate.longitude) { [weak self] data, response, error in
-
-
             guard let self = self else { return }
-
+            
             guard let data = data else {
+                DispatchQueue.main.async {
+                    self.hideActivityIndicator()
+                    completion(false)
+                }
                 return // Exit if weather data is not available
             }
-
+            
             let decoder = JSONDecoder()
             do {
                 let weatherData = try decoder.decode(WeatherData.self, from: data)
-
+                
                 // Store weather data for later use
                 self.weatherData = weatherData
-
+                
                 DispatchQueue.main.async {
                     let temperature = (weatherData.current.temp - 32) * 5 / 9
                     self.adviceWeatherState.text = self.getWeatherAdvice(for: temperature)
@@ -270,17 +295,21 @@ extension PlantsViewController {
                     self.currentCityLabel.text = weatherData.timezone
                     self.tempretureLabel.text = "\(Int(temperature))°C"
                     self.weatherStateLabel.text = weatherData.current.weather[0].weatherDescription
-
+                    
                     // Update the background color based on the temperature
                     self.updateBackgroundColor(for: temperature)
                     // Update the weather image based on the description
-                                       self.updateWeatherImage(for: weatherData.current.weather[0].weatherDescription)
+                    self.updateWeatherImage(for: weatherData.current.weather[0].weatherDescription)
                     self.hideActivityIndicator()
-
+                    completion(true)
                 }
-
+                
             } catch {
                 print("Failed to decode weather data: \(error)")
+                DispatchQueue.main.async {
+                    self.hideActivityIndicator()
+                    completion(false)
+                }
             }
         }
     }

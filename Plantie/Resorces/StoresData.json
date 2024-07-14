@@ -1,0 +1,135 @@
+[
+    {
+        "name": "مشتل القدس",
+        "latitude": 31.7683,
+        "longitude": 35.2137,
+        "contact": "022345678",
+        "openingHours": "8:00 AM - 5:00 PM"
+    },
+    {
+        "name": "مركز رام الله الأخضر",
+        "latitude": 31.9038,
+        "longitude": 35.2034,
+        "contact": "022345679",
+        "openingHours": "9:00 AM - 6:00 PM"
+    },
+    {
+        "name": "نباتات بيت لحم",
+        "latitude": 31.7054,
+        "longitude": 35.2024,
+        "contact": "022345680",
+        "openingHours": "7:30 AM - 4:30 PM"
+    },
+    {
+        "name": "أزهار الخليل",
+        "latitude": 31.5326,
+        "longitude": 35.0998,
+        "contact": "022345681",
+        "openingHours": "8:30 AM - 5:30 PM"
+    },
+    {
+        "name": "حديقة نابلس",
+        "latitude": 32.2211,
+        "longitude": 35.2544,
+        "contact": "022345682",
+        "openingHours": "8:00 AM - 4:00 PM"
+    },
+    {
+        "name": "بيت زراعة غزة",
+        "latitude": 31.5017,
+        "longitude": 34.4668,
+        "contact": "022345683",
+        "openingHours": "9:00 AM - 6:00 PM"
+    },
+    {
+        "name": "إزهار جنين",
+        "latitude": 32.4637,
+        "longitude": 35.2958,
+        "contact": "022345684",
+        "openingHours": "7:00 AM - 3:00 PM"
+    },
+    {
+        "name": "مشتل الوادي الأخضر",
+        "latitude": 32.4640,
+        "longitude": 35.2921,
+        "contact": "022345685",
+        "openingHours": "8:00 AM - 5:00 PM"
+    },
+    {
+        "name": "نباتات جنين",
+        "latitude": 32.4651,
+        "longitude": 35.2900,
+        "contact": "022345686",
+        "openingHours": "9:00 AM - 4:00 PM"
+    },
+    {
+        "name": "البيت الأخضر الشمالي",
+        "latitude": 32.4662,
+        "longitude": 35.2879,
+        "contact": "022345687",
+        "openingHours": "8:00 AM - 6:00 PM"
+    },
+    {
+        "name": "مركز حديقة السلام",
+        "latitude": 32.4673,
+        "longitude": 35.2858,
+        "contact": "022345688",
+        "openingHours": "8:00 AM - 5:00 PM"
+    },
+    {
+        "name": "جمال الطبيعة للنباتات",
+        "latitude": 32.4684,
+        "longitude": 35.2837,
+        "contact": "022345689",
+        "openingHours": "9:00 AM - 6:00 PM"
+    },
+    {
+        "name": "عالم نباتات جنين",
+        "latitude": 32.4695,
+        "longitude": 35.2816,
+        "contact": "022345690",
+        "openingHours": "7:30 AM - 4:30 PM"
+    },
+    {
+        "name": "مواسم الإزهار",
+        "latitude": 32.4706,
+        "longitude": 35.2795,
+        "contact": "022345691",
+        "openingHours": "8:00 AM - 5:00 PM"
+    },
+    {
+        "name": "مشتل الإبهام الأخضر",
+        "latitude": 32.4717,
+        "longitude": 35.2774,
+        "contact": "022345692",
+        "openingHours": "8:30 AM - 5:30 PM"
+    },
+    {
+        "name": "حدائق جنين",
+        "latitude": 32.4728,
+        "longitude": 35.2753,
+        "contact": "022345693",
+        "openingHours": "8:00 AM - 4:00 PM"
+    },
+    {
+        "name": "واحة أريحا",
+        "latitude": 31.8569,
+        "longitude": 35.4427,
+        "contact": "022345694",
+        "openingHours": "9:00 AM - 6:00 PM"
+    },
+    {
+        "name": "أزهار طولكرم",
+        "latitude": 32.3104,
+        "longitude": 35.0283,
+        "contact": "022345695",
+        "openingHours": "7:00 AM - 3:00 PM"
+    },
+    {
+        "name": "خضرة قلقيلية",
+        "latitude": 32.1897,
+        "longitude": 34.9706,
+        "contact": "022345696",
+        "openingHours": "8:00 AM - 5:00 PM"
+    }
+]

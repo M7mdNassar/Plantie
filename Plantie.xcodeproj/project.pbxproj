@@ -45,6 +45,10 @@
 		043989CE2B972C0500FA0FF7 /* ExpandableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043989CD2B972C0500FA0FF7 /* ExpandableLabel.swift */; };
 		043989D62B975A4800FA0FF7 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043989D52B975A4800FA0FF7 /* ShadowView.swift */; };
 		043D25452C29810900AF6E75 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 043D25442C29810900AF6E75 /* GoogleService-Info.plist */; };
+		043E486F2C43C5D000AA562E /* PlantStoresLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E486E2C43C5D000AA562E /* PlantStoresLoader.swift */; };
+		043E48712C43C60500AA562E /* PlantStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E48702C43C60500AA562E /* PlantStore.swift */; };
+		043E48722C43CCD800AA562E /* StoresData.json in Resources */ = {isa = PBXBuildFile; fileRef = 043E486D2C43C59600AA562E /* StoresData.json */; };
+		043E48742C43E8A700AA562E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E48732C43E8A700AA562E /* Reachability.swift */; };
 		043ED8042B99D8E200832BB0 /* RealtimeDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043ED8032B99D8E200832BB0 /* RealtimeDatabaseManager.swift */; };
 		043EF02A2B8F523D007F8E6C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043EF0292B8F523D007F8E6C /* LoginViewController.swift */; };
 		043EF02C2B8F5252007F8E6C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043EF02B2B8F5252007F8E6C /* RegisterViewController.swift */; };
@@ -134,6 +138,10 @@
 		043989CD2B972C0500FA0FF7 /* ExpandableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableLabel.swift; sourceTree = "<group>"; };
 		043989D52B975A4800FA0FF7 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		043D25442C29810900AF6E75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		043E486D2C43C59600AA562E /* StoresData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StoresData.json; sourceTree = "<group>"; };
+		043E486E2C43C5D000AA562E /* PlantStoresLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantStoresLoader.swift; sourceTree = "<group>"; };
+		043E48702C43C60500AA562E /* PlantStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantStore.swift; sourceTree = "<group>"; };
+		043E48732C43E8A700AA562E /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		043ED8032B99D8E200832BB0 /* RealtimeDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeDatabaseManager.swift; sourceTree = "<group>"; };
 		043EF0292B8F523D007F8E6C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		043EF02B2B8F5252007F8E6C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -453,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				0429105E2BB7484D0002B465 /* PlantsData.json */,
+				043E486D2C43C59600AA562E /* StoresData.json */,
 				04F815E02B8DFFF9000D2DAD /* Animations Lottie */,
 				04F815DF2B8DFFEE000D2DAD /* Fonts */,
 			);
@@ -518,6 +527,9 @@
 				04B14CDE2BD2B7D200440034 /* WeatherAPI.swift */,
 				04774DF22C349AB900AC7D70 /* MLImageClassifier.swift */,
 				04774DF42C349EF000AC7D70 /* DiseaseInfo.swift */,
+				043E486E2C43C5D000AA562E /* PlantStoresLoader.swift */,
+				043E48702C43C60500AA562E /* PlantStore.swift */,
+				043E48732C43E8A700AA562E /* Reachability.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -711,6 +723,7 @@
 				043989CC2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.xib in Resources */,
 				04F815982B8DF0C8000D2DAD /* LaunchScreen.storyboard in Resources */,
 				046537882B9713AE001880C1 /* TextWithImagesTableViewCell.xib in Resources */,
+				043E48722C43CCD800AA562E /* StoresData.json in Resources */,
 				04F815E62B8E002E000D2DAD /* Harmattan-Regular.ttf in Resources */,
 				04F815E22B8E0011000D2DAD /* PlantLottieLoading.json in Resources */,
 				046D818B2B9B21920063EDB3 /* CommentTableViewCell.xib in Resources */,
@@ -870,6 +883,7 @@
 				044B14992B8E2B990087C094 /* Constents.swift in Sources */,
 				043989CB2B97244F00FA0FF7 /* ImagesPostCollectionViewCell.swift in Sources */,
 				044B149B2B8E2BDA0087C094 /* Global Functions.swift in Sources */,
+				043E48712C43C60500AA562E /* PlantStore.swift in Sources */,
 				04B14CDD2BD2B76900440034 /* WeatherData.swift in Sources */,
 				046537872B9713AE001880C1 /* TextWithImagesTableViewCell.swift in Sources */,
 				049F77BC2B97952C00D65123 /* ShowPostViewController.swift in Sources */,
@@ -885,8 +899,10 @@
 				044B14932B8E2B3E0087C094 /* UITableViewExtension.swift in Sources */,
 				043989D62B975A4800FA0FF7 /* ShadowView.swift in Sources */,
 				044B149E2B8E30180087C094 /* FUserListener.swift in Sources */,
+				043E486F2C43C5D000AA562E /* PlantStoresLoader.swift in Sources */,
 				04A28D1E2BEA3214000B46BD /* PlantDetailsViewController.swift in Sources */,
 				04F8158E2B8DF0C5000D2DAD /* SceneDelegate.swift in Sources */,
+				043E48742C43E8A700AA562E /* Reachability.swift in Sources */,
 				0478492C2B8F375900562F68 /* LaunchScreenController.swift in Sources */,
 				042E16962BE774820066C585 /* UIViewExtenstion.swift in Sources */,
 				04F815E82B8E006F000D2DAD /* SplashViewController.swift in Sources */,

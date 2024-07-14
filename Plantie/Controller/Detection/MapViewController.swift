@@ -3,18 +3,21 @@ import MapKit
 import CoreLocation
 
 class MapViewController: UIViewController {
-
+    
     // MARK: Outlets
     @IBOutlet weak var mapView: MKMapView!
     
     // MARK: Variables
     let locationManager = CLLocationManager()
-    let destinationCoordinate = CLLocationCoordinate2D(latitude: 32.4595, longitude: 35.3009) // Mock location in Jenin, Palestine
+    
+    var stores: [PlantStore] = []
+    
     var userCoordinate: CLLocationCoordinate2D?
-
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        getStores()
         setupLocationManager()
         setupMapView()
     }
@@ -30,17 +33,44 @@ class MapViewController: UIViewController {
     func setupMapView() {
         mapView.delegate = self
         mapView.showsUserLocation = true
-        addDestinationAnnotation()
     }
     
-    func addDestinationAnnotation() {
-        let destinationAnnotation = MKPointAnnotation()
-        destinationAnnotation.coordinate = destinationCoordinate
-        destinationAnnotation.title = "Plant Store"
-        mapView.addAnnotation(destinationAnnotation)
+    func getStores() {
+        if let stores = PlantStoresLoader.loadStores(fromJSONFile: "StoresData") {
+            self.stores = stores
+        } else {
+            print("Failed to load plant stores")
+        }
     }
     
     // MARK: Helper Methods
+    func showRoutesToClosestShops() {
+        guard let userCoordinate = userCoordinate else { return }
+        
+        let storeCoordinates = stores.map { CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude) }
+        
+        let sortedDestinations = storeCoordinates.sorted {
+            userCoordinate.distance(to: $0) < userCoordinate.distance(to: $1)
+        }
+        
+        let closestDestinations = sortedDestinations.prefix(2)
+        
+        for destinationCoordinate in closestDestinations {
+            addDestinationAnnotation(destinationCoordinate: destinationCoordinate)
+            showRouteOnMap(pickupCoordinate: userCoordinate, destinationCoordinate: destinationCoordinate)
+        }
+    }
+    
+    func addDestinationAnnotation(destinationCoordinate: CLLocationCoordinate2D) {
+        guard let store = store(at: destinationCoordinate) else { return }
+        
+        let destinationAnnotation = MKPointAnnotation()
+        destinationAnnotation.coordinate = destinationCoordinate
+        destinationAnnotation.title = store.name
+        destinationAnnotation.subtitle = "\(store.contact ?? "")\n\(store.openingHours ?? "")"
+        mapView.addAnnotation(destinationAnnotation)
+    }
+    
     func showRouteOnMap(pickupCoordinate: CLLocationCoordinate2D, destinationCoordinate: CLLocationCoordinate2D) {
         let sourcePlacemark = MKPlacemark(coordinate: pickupCoordinate)
         let destinationPlacemark = MKPlacemark(coordinate: destinationCoordinate)
@@ -88,6 +118,10 @@ class MapViewController: UIViewController {
             mapView.selectAnnotation(annotation, animated: true)
         }
     }
+    
+    func store(at coordinate: CLLocationCoordinate2D) -> PlantStore? {
+        return stores.first { $0.latitude == coordinate.latitude && $0.longitude == coordinate.longitude }
+    }
 }
 
 // MARK: CLLocationManagerDelegate
@@ -100,8 +134,8 @@ extension MapViewController: CLLocationManagerDelegate {
         // Stop updating location to save battery
         locationManager.stopUpdatingLocation()
         
-        // Show route on map
-        showRouteOnMap(pickupCoordinate: userCoordinate!, destinationCoordinate: destinationCoordinate)
+        // Show routes to the closest shops
+        showRoutesToClosestShops()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -134,10 +168,20 @@ extension MapViewController: MKMapViewDelegate {
         if annotationView == nil {
             annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView?.canShowCallout = true
+            let button = UIButton(type: .detailDisclosure)
+            annotationView?.rightCalloutAccessoryView = button
         } else {
             annotationView?.annotation = annotation
         }
         
         return annotationView
+    }
+}
+
+extension CLLocationCoordinate2D {
+    func distance(to coordinate: CLLocationCoordinate2D) -> CLLocationDistance {
+        let location1 = CLLocation(latitude: self.latitude, longitude: self.longitude)
+        let location2 = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        return location1.distance(from: location2)
     }
 }
