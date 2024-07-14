@@ -191,6 +191,15 @@ class RealtimeDatabaseManager {
             completion?(error)
         }
     }
+    
+    // MARK: Delete a post from Realtime Database
+       
+    func deletePost(_ postId: String, completion: @escaping (Error?) -> Void) {
+        databaseRef.child("posts").child(postId).removeValue { error, _ in
+            completion(error)
+        }
+    }
+
 
 }
 

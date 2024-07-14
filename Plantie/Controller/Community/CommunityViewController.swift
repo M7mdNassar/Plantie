@@ -39,7 +39,7 @@ class CommunityViewController: UIViewController {
         }
     }
     
-    @objc func commentButtonPressed(notification : Notification){
+    @objc func commentButtonPressed(notification: Notification) {
         if let cell = notification.userInfo?["cell"] as? UITableViewCell {
             if let indexPath = tableView.indexPath(for: cell){
                 let post: Post
@@ -65,7 +65,7 @@ class CommunityViewController: UIViewController {
 }
 
 // MARK: Table View Data Source
-extension CommunityViewController : UITableViewDataSource, UITableViewDelegate {
+extension CommunityViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return isSearchActive ? filteredPosts.count : posts.count
     }
@@ -107,6 +107,42 @@ extension CommunityViewController : UITableViewDataSource, UITableViewDelegate {
         present(vc, animated: true)
     }
     
+    // MARK: Swipe to Delete
+       func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+           let post: Post
+           if self.isSearchActive {
+               post = self.filteredPosts[indexPath.row]
+           } else {
+               post = self.posts[indexPath.row]
+           }
+           
+           // Check if the post belongs to the current user
+           if post.owner["id"] as? String == User.currentId {
+               let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
+                   self.realtimeDatabaseManager.deletePost(post.id) { error in
+                       if let error = error {
+                           print("Failed to delete post: \(error.localizedDescription)")
+                           completionHandler(false)
+                       } else {
+                           // Remove the post from the array and update the table view
+                           if self.isSearchActive {
+                               self.filteredPosts.remove(at: indexPath.row)
+                           } else {
+                               self.posts.remove(at: indexPath.row)
+                           }
+                           tableView.deleteRows(at: [indexPath], with: .automatic)
+                           completionHandler(true)
+                       }
+                   }
+               }
+               return UISwipeActionsConfiguration(actions: [deleteAction])
+           } else {
+               // No swipe actions for posts that do not belong to the current user
+               return nil
+           }
+       }
+
+
     // MARK: Pagination
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
