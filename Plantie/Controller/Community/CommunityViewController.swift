@@ -1,6 +1,6 @@
 import UIKit
 import NVActivityIndicatorView
-
+import ProgressHUD
 class CommunityViewController: UIViewController {
     
     // MARK: Variables
@@ -26,10 +26,12 @@ class CommunityViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(commentButtonPressed), name: Notification.Name(rawValue: "commentButtonTapped"), object: nil)
     }
     
+    
     func getPosts(){
         // Clear the current posts to avoid duplicates
         self.posts.removeAll()
         self.tableView.reloadData()
+        
         
         RealtimeDatabaseManager.shared.getAllPosts { posts in
             self.posts = posts
@@ -153,6 +155,12 @@ extension CommunityViewController: UITableViewDataSource, UITableViewDelegate {
         if position > (contentHeight - screenHeight) {
             guard !realtimeDatabaseManager.isPagination else {
                 // We are already fetching more data
+                return
+            }
+            
+            
+            if (!Reachability.isConnectedToNetwork()){
+                ProgressHUD.error("لا يوجد انترنت ، حاول مره اخرى عند التحقق من وجود انترنت")
                 return
             }
             activityIndicatorView.startAnimating()

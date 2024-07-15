@@ -51,6 +51,12 @@ class AddPostViewController: UIViewController {
               ProgressHUD.error("الرجاء إدخال محتوى أو إضافة صورة واحدة على الأقل")
               return
           }
+        if !Reachability.isConnectedToNetwork() {
+                  ProgressHUD.error("لا يوجد اتصال بالإنترنت. الرجاء التحقق من اتصالك والمحاولة مرة أخرى.")
+                  return
+              }
+              
+    
         var imageUrls: [String] = []
         let dispatchGroup = DispatchGroup()
         
