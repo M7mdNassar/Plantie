@@ -1,4 +1,3 @@
-
 import UIKit
 
 class FertlizerCalculatorViewController: UIViewController {
@@ -14,73 +13,95 @@ class FertlizerCalculatorViewController: UIViewController {
     @IBOutlet weak var sspLabel: UILabel!
     @IBOutlet weak var fertlizerCalculateButtonOutlet: UIButton!
     @IBOutlet weak var resultStackView: UIStackView!
+    @IBOutlet weak var areaOrNumberOfPlantsLabel: UILabel!
     
-    // MARK: Variabels
+    // MARK: Variables
     
-    var area = 0
     var plant: Plant!
+    var isFruit: Bool {
+        return plant.category == "فواكه"
+    }
+    var currentValue: Double = 0 {
+        didSet {
+            areaLabel.text = "\(Int(currentValue))"
+        }
+    }
     
     // MARK: Life Cycle Controller
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-
     }
     
     // MARK: Actions
     
     @IBAction func plusButtonTapped(_ sender: UIButton) {
-        self.area += 1
-        self.updateNumOfPlantsLabel()
+        currentValue += 1
     }
     
     @IBAction func minusButtonTapped(_ sender: UIButton) {
-        self.area -= 1
-        self.updateNumOfPlantsLabel()
+        if currentValue > 0 {
+            currentValue -= 1
+        }
     }
     
     @IBAction func calculateButtonTapped(_ sender: UIButton) {
-        calculateFertilizer()
-        self.resultStackView.isHidden = false
+        let npkComponents = plant.npk.split(separator: "-").compactMap { Double($0.trimmingCharacters(in: .whitespaces)) }
+        guard npkComponents.count == 3 else {
+            // Handle invalid NPK format
+            return
+        }
+        
+        let fertilizerAmounts: [String: Double]
+        
+        if isFruit {
+            fertilizerAmounts = calculateFertilizerUMS(npk: npkComponents, numberOfPlants: currentValue)
+        } else {
+            // Adjust the current value for area calculation for vegetables
+            let adjustedArea = currentValue * 10
+            fertilizerAmounts = calculateFertilizerUDM(npk: npkComponents, area: adjustedArea)
+        }
+        
+        updateUI(with: fertilizerAmounts)
+        resultStackView.isHidden = false
     }
     
     // MARK: Methods
     
-    func updateNumOfPlantsLabel(){
-        if self.area < 0 {
-            self.area = 0
-        }
-        self.areaLabel.text = String(area)
+    func setupUI() {
+        plantNameLabel.text = plant.name
+        NPKLabel.text = plant.npk
+        plantImageView.image = UIImage(named: plant.imageName)
+        fertlizerCalculateButtonOutlet.layer.cornerRadius = 15
+        areaOrNumberOfPlantsLabel.text = isFruit ? "عدد الأشجار لديك؟" : "كم المساحة بالمتر مربع؟"
+        areaLabel.text = "\(Int(currentValue))"
+        resultStackView.isHidden = true
     }
-
-    func setupUI(){
-        self.plantNameLabel.text = plant.name
-        self.NPKLabel.text = plant.npk
-        self.plantImageView.image = UIImage(named: plant.imageName)
-        self.fertlizerCalculateButtonOutlet.layer.cornerRadius = 15
+    
+    func updateUI(with fertilizerAmounts: [String: Double]) {
+        ureaLabel.text = "Urea: \(String(format: "%.2f", fertilizerAmounts["Urea"] ?? 0)) kg"
+        mopLabel.text = "MOP: \(String(format: "%.2f", fertilizerAmounts["MOP"] ?? 0)) kg"
+        sspLabel.text = isFruit ? "SSP: \(String(format: "%.2f", fertilizerAmounts["SSP"] ?? 0)) kg" : "DAP: \(String(format: "%.2f", fertilizerAmounts["DAP"] ?? 0)) kg"
     }
-
-    func calculateFertilizer() {
-           guard let npkString = plant?.npk else { return }
-           let npkValues = npkString.split(separator: "-").compactMap { Int($0.trimmingCharacters(in: .whitespaces)) }
-           if npkValues.count == 3 {
-               let fertilizerAmounts = calculateUMSFertilizer(N: npkValues[0], P: npkValues[1], K: npkValues[2])
-               let areaFactor = Double(area)
-               
-               self.ureaLabel.text = String(format: "%.2f kg", fertilizerAmounts["Urea"]! * areaFactor)
-               self.sspLabel.text = String(format: "%.2f kg", fertilizerAmounts["SSP"]! * areaFactor)
-               self.mopLabel.text = String(format: "%.2f kg", fertilizerAmounts["MOP"]! * areaFactor)
-           }
-       }
-       
-       func calculateUMSFertilizer(N: Int, P: Int, K: Int) -> [String: Double] {
-           let amountOfUrea = (100.0 * Double(N)) / 46.0
-           let amountOfSSP = (100.0 * Double(P)) / 16.0
-           let amountOfMOP = (100.0 * Double(K)) / 60.0
-           return [
-               "Urea": amountOfUrea,
-               "SSP": amountOfSSP,
-               "MOP": amountOfMOP
-           ]
-       }
+    
+    func calculateFertilizerUMS(npk: [Double], numberOfPlants: Double) -> [String: Double] {
+        let amountOfUrea = (100 * npk[0]) / 46 * numberOfPlants
+        let amountOfSSP = (100 * npk[1]) / 16 * numberOfPlants
+        let amountOfMOP = (100 * npk[2]) / 60 * numberOfPlants
+        return ["Urea": amountOfUrea, "SSP": amountOfSSP, "MOP": amountOfMOP]
+    }
+    
+    func calculateFertilizerUDM(npk: [Double], area: Double) -> [String: Double] {
+        let areaFactor = area / 100 // Adjusting for 100m² as the base area
+        
+        // Amount of DAP needed for phosphorus (P)
+        let amountOfDAP_P = (100 * npk[1]) / 46 * areaFactor
+        let amountOfDAP_N = (amountOfDAP_P * 18) / 46 // Correct DAP contains 18% N
+        let totalNitrogen = npk[0] * areaFactor // Total nitrogen required
+        let amountOfUrea_N = totalNitrogen - amountOfDAP_N // Remaining nitrogen needed from Urea
+        let amountOfUrea = (amountOfUrea_N > 0) ? (100 * amountOfUrea_N) / 46 : 0 // Ensure no negative value
+        
+        let amountOfMOP = (100 * npk[2]) / 60 * areaFactor
+        return ["Urea": amountOfUrea, "DAP": amountOfDAP_P, "MOP": amountOfMOP]
+    }
 }
