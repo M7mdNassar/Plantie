@@ -13,6 +13,7 @@ class MapViewController: UIViewController {
     var stores: [PlantStore] = []
     
     var userCoordinate: CLLocationCoordinate2D?
+    var userCity: String?
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -38,42 +39,51 @@ class MapViewController: UIViewController {
     func getStores() {
         if let stores = PlantStoresLoader.loadStores(fromJSONFile: "StoresData") {
             self.stores = stores
+            addStoreAnnotations()
         } else {
             print("Failed to load plant stores")
         }
     }
     
     // MARK: Helper Methods
-    func showRoutesToClosestShops() {
+    func addStoreAnnotations() {
+        for store in stores {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2D(latitude: store.latitude, longitude: store.longitude)
+            annotation.title = store.name
+            annotation.subtitle = "\(store.contact ?? "")\n\(store.openingHours ?? "")"
+            mapView.addAnnotation(annotation)
+        }
+    }
+    
+    func findClosestStore() -> CLLocationCoordinate2D? {
+        guard let userCoordinate = userCoordinate else { return nil }
+        
+        if let userCity = determineUserCity(coordinate: userCoordinate) {
+            let storesInUserCity = stores.filter { store in
+                let storeCoordinate = CLLocationCoordinate2D(latitude: store.latitude, longitude: store.longitude)
+                return determineUserCity(coordinate: storeCoordinate) == userCity
+            }
+            
+            let closestStore = storesInUserCity.min { (store1, store2) -> Bool in
+                let location1 = CLLocation(latitude: store1.latitude, longitude: store1.longitude)
+                let location2 = CLLocation(latitude: store2.latitude, longitude: store2.longitude)
+                let userLocation = CLLocation(latitude: userCoordinate.latitude, longitude: userCoordinate.longitude)
+                return userLocation.distance(from: location1) < userLocation.distance(from: location2)
+            }
+            
+            return closestStore.map { CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude) }
+        }
+        
+        return nil
+    }
+    
+    func showRouteToClosestStore() {
         guard let userCoordinate = userCoordinate else { return }
+        guard let closestStoreCoordinate = findClosestStore() else { return }
         
-        let storeCoordinates = stores.map { CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude) }
-        
-        let sortedDestinations = storeCoordinates.sorted {
-            userCoordinate.distance(to: $0) < userCoordinate.distance(to: $1)
-        }
-        
-        let closestDestinations = sortedDestinations.prefix(2)
-        
-        for destinationCoordinate in closestDestinations {
-            addDestinationAnnotation(destinationCoordinate: destinationCoordinate)
-            showRouteOnMap(pickupCoordinate: userCoordinate, destinationCoordinate: destinationCoordinate)
-        }
-    }
-    
-    func addDestinationAnnotation(destinationCoordinate: CLLocationCoordinate2D) {
-        guard let store = store(at: destinationCoordinate) else { return }
-        
-        let destinationAnnotation = MKPointAnnotation()
-        destinationAnnotation.coordinate = destinationCoordinate
-        destinationAnnotation.title = store.name
-        destinationAnnotation.subtitle = "\(store.contact ?? "")\n\(store.openingHours ?? "")"
-        mapView.addAnnotation(destinationAnnotation)
-    }
-    
-    func showRouteOnMap(pickupCoordinate: CLLocationCoordinate2D, destinationCoordinate: CLLocationCoordinate2D) {
-        let sourcePlacemark = MKPlacemark(coordinate: pickupCoordinate)
-        let destinationPlacemark = MKPlacemark(coordinate: destinationCoordinate)
+        let sourcePlacemark = MKPlacemark(coordinate: userCoordinate)
+        let destinationPlacemark = MKPlacemark(coordinate: closestStoreCoordinate)
         
         let directionRequest = MKDirections.Request()
         directionRequest.source = MKMapItem(placemark: sourcePlacemark)
@@ -95,32 +105,7 @@ class MapViewController: UIViewController {
             
             let rect = route.polyline.boundingMapRect
             self.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
-            
-            // Display distance and travel time
-            self.displayRouteInfo(route: route, pickupCoordinate: pickupCoordinate)
         }
-    }
-    
-    func displayRouteInfo(route: MKRoute, pickupCoordinate: CLLocationCoordinate2D) {
-        let distance = route.distance / 1000 // Convert to kilometers
-        let travelTime = route.expectedTravelTime / 60 // Convert to minutes
-        
-        let distanceString = String(format: "Distance: %.2f km", distance)
-        let travelTimeString = String(format: "Estimated Travel Time: %.0f mins", travelTime)
-        
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = pickupCoordinate
-        annotation.title = distanceString
-        annotation.subtitle = travelTimeString
-        mapView.addAnnotation(annotation)
-        
-        if userCoordinate != nil {
-            mapView.selectAnnotation(annotation, animated: true)
-        }
-    }
-    
-    func store(at coordinate: CLLocationCoordinate2D) -> PlantStore? {
-        return stores.first { $0.latitude == coordinate.latitude && $0.longitude == coordinate.longitude }
     }
 }
 
@@ -134,8 +119,19 @@ extension MapViewController: CLLocationManagerDelegate {
         // Stop updating location to save battery
         locationManager.stopUpdatingLocation()
         
-        // Show routes to the closest shops
-        showRoutesToClosestShops()
+        // Center map on user location
+        let region = MKCoordinateRegion(center: userCoordinate!, latitudinalMeters: 5000, longitudinalMeters: 5000)
+        mapView.setRegion(region, animated: true)
+        
+        // Add user location annotation
+        let userAnnotation = MKPointAnnotation()
+        userAnnotation.coordinate = userCoordinate!
+        userAnnotation.title = "Your Location"
+        mapView.addAnnotation(userAnnotation)
+        
+        // Determine user city and show route to the closest store
+        userCity = determineUserCity(coordinate: userCoordinate!)
+        showRouteToClosestStore()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -146,16 +142,6 @@ extension MapViewController: CLLocationManagerDelegate {
 // MARK: MKMapViewDelegate
 extension MapViewController: MKMapViewDelegate {
     
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        if overlay is MKPolyline {
-            let polylineRenderer = MKPolylineRenderer(overlay: overlay)
-            polylineRenderer.strokeColor = UIColor.blue
-            polylineRenderer.lineWidth = 5.0
-            return polylineRenderer
-        }
-        return MKOverlayRenderer(overlay: overlay)
-    }
-    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "Annotation"
         
@@ -163,7 +149,7 @@ extension MapViewController: MKMapViewDelegate {
             return nil
         }
         
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView
         
         if annotationView == nil {
             annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
@@ -174,7 +160,25 @@ extension MapViewController: MKMapViewDelegate {
             annotationView?.annotation = annotation
         }
         
+        // Customize the user location annotation
+        if let title = annotation.title, title == "Your Location" {
+            annotationView?.markerTintColor = UIColor.red // Custom color for user location
+            annotationView?.glyphText = "🏠" // Custom glyph for user location
+        } else {
+            annotationView?.markerTintColor = UIColor.green // Custom color for store locations
+        }
+        
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is MKPolyline {
+            let polylineRenderer = MKPolylineRenderer(overlay: overlay)
+            polylineRenderer.strokeColor = UIColor.blue
+            polylineRenderer.lineWidth = 5.0
+            return polylineRenderer
+        }
+        return MKOverlayRenderer(overlay: overlay)
     }
 }
 

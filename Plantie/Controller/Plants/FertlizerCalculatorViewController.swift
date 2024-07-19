@@ -73,7 +73,7 @@ class FertlizerCalculatorViewController: UIViewController {
         NPKLabel.text = plant.npk
         plantImageView.image = UIImage(named: plant.imageName)
         fertlizerCalculateButtonOutlet.layer.cornerRadius = 15
-        areaOrNumberOfPlantsLabel.text = isFruit ? "عدد الأشجار لديك؟" : "كم المساحة بالمتر مربع؟"
+        areaOrNumberOfPlantsLabel.text = isFruit ? "عدد الأشجار لديك؟" : "كم المساحة بالمتر مربع؟\nمثال: اذا ادخلت ١٠ ، تقصد ١٠٠ متر مربع"
         areaLabel.text = "\(Int(currentValue))"
         resultStackView.isHidden = true
     }

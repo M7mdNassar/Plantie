@@ -89,6 +89,7 @@
 		04B5A9A32BB63C4500E25710 /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5A9A12BB63C4500E25710 /* PlantTableViewCell.swift */; };
 		04B5A9A42BB63C4500E25710 /* PlantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B5A9A22BB63C4500E25710 /* PlantTableViewCell.xib */; };
 		04B6C1F12BC314C400C022CF /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6C1F02BC314C400C022CF /* WeatherViewController.swift */; };
+		04D557C42C4ADEA400AD3487 /* CityBoundary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D557C32C4ADEA400AD3487 /* CityBoundary.swift */; };
 		04F8158C2B8DF0C5000D2DAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8158B2B8DF0C5000D2DAD /* AppDelegate.swift */; };
 		04F8158E2B8DF0C5000D2DAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8158D2B8DF0C5000D2DAD /* SceneDelegate.swift */; };
 		04F815932B8DF0C5000D2DAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F815912B8DF0C5000D2DAD /* Main.storyboard */; };
@@ -185,6 +186,7 @@
 		04D531E72B9DE47C00889D7B /* GoogleSignIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D531EB2B9DE4AA00889D7B /* AppAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D531EE2B9DE4F100889D7B /* GTMAppAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMAppAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D557C32C4ADEA400AD3487 /* CityBoundary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBoundary.swift; sourceTree = "<group>"; };
 		04F815882B8DF0C5000D2DAD /* Plantie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plantie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F8158B2B8DF0C5000D2DAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F8158D2B8DF0C5000D2DAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -520,6 +522,7 @@
 			isa = PBXGroup;
 			children = (
 				044B14A32B8E320B0087C094 /* User.swift */,
+				04D557C32C4ADEA400AD3487 /* CityBoundary.swift */,
 				04FB2B372B966E2B00650C86 /* Post.swift */,
 				042910602BB748B10002B465 /* Plant.swift */,
 				042910622BB753140002B465 /* PlantLoader.swift */,
@@ -911,6 +914,7 @@
 				045439562C07B93000C55542 /* PlantieML.mlpackage in Sources */,
 				04519DAB2B9679E900D190AE /* AddPostViewController.swift in Sources */,
 				04FB2B3B2B9671EA00650C86 /* CommunityViewController.swift in Sources */,
+				04D557C42C4ADEA400AD3487 /* CityBoundary.swift in Sources */,
 				042910632BB753140002B465 /* PlantLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
