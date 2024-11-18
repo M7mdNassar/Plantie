@@ -256,23 +256,22 @@ extension PlantsViewController {
     }
 
     func getWeatherData(completion: @escaping (Bool) -> Void) {
-        
         guard let location = locationManager.location else {
             completion(false)
             return // Exit if location is not available
         }
-        
+
         if !Reachability.isConnectedToNetwork() {
             // Display an alert if there's no internet connection
             ProgressHUD.banner("لا يوجد اتصال بالإنترنت", "يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.", delay: 2.0)
             return
         }
-        
+
         self.showActivityIndicator()
-        
+
         WeatherAPI.getWeatherData(lat: location.coordinate.latitude, lon: location.coordinate.longitude) { [weak self] data, response, error in
             guard let self = self else { return }
-            
+
             guard let data = data else {
                 DispatchQueue.main.async {
                     self.hideActivityIndicator()
@@ -280,30 +279,39 @@ extension PlantsViewController {
                 }
                 return // Exit if weather data is not available
             }
-            
+
             let decoder = JSONDecoder()
             do {
                 let weatherData = try decoder.decode(WeatherData.self, from: data)
-                
+
                 // Store weather data for later use
                 self.weatherData = weatherData
-                
+
                 DispatchQueue.main.async {
-                    let temperature = (weatherData.current.temp - 32) * 5 / 9
+                    // Assuming the first item in the list is the current weather data
+                    guard let currentWeather = weatherData.list.first else {
+                        self.hideActivityIndicator()
+                        completion(false)
+                        return
+                    }
+
+                    // Convert temperature from Kelvin to Celsius
+                    let temperature = currentWeather.main.temp - 273.15
                     self.adviceWeatherState.text = self.getWeatherAdvice(for: temperature)
                     self.adviceWeatherStateHightConstrain.constant = 70
-                    self.currentCityLabel.text = weatherData.timezone
+                    self.currentCityLabel.text = weatherData.city.name
                     self.tempretureLabel.text = "\(Int(temperature))°C"
-                    self.weatherStateLabel.text = weatherData.current.weather[0].weatherDescription
-                    
+                    self.weatherStateLabel.text = currentWeather.weather.first?.description ?? "N/A"
+
                     // Update the background color based on the temperature
                     self.updateBackgroundColor(for: temperature)
                     // Update the weather image based on the description
-                    self.updateWeatherImage(for: weatherData.current.weather[0].weatherDescription)
+                    self.updateWeatherImage(for: currentWeather.weather.first?.description ?? "")
+
                     self.hideActivityIndicator()
                     completion(true)
                 }
-                
+
             } catch {
                 print("Failed to decode weather data: \(error)")
                 DispatchQueue.main.async {
@@ -313,4 +321,5 @@ extension PlantsViewController {
             }
         }
     }
+
 }
