@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		041ADAB52C3C21F900D261C6 /* DiseasesInfo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 041ADAB32C3C21F900D261C6 /* DiseasesInfo.xcdatamodeld */; };
+		04068D3E2D624164009D096B /* DiseasesInfo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04068D3C2D624164009D096B /* DiseasesInfo.xcdatamodeld */; };
 		0420A1212C3974C200604080 /* DiseaseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0420A1202C3974C200604080 /* DiseaseDetailsViewController.swift */; };
 		0429105F2BB7484D0002B465 /* PlantsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0429105E2BB7484D0002B465 /* PlantsData.json */; };
 		042910612BB748B10002B465 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042910602BB748B10002B465 /* Plant.swift */; };
@@ -128,7 +128,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		041ADAB42C3C21F900D261C6 /* DiseasesInfo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiseasesInfo.xcdatamodel; sourceTree = "<group>"; };
+		04068D3D2D624164009D096B /* DiseasesInfo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiseasesInfo.xcdatamodel; sourceTree = "<group>"; };
 		0420A1202C3974C200604080 /* DiseaseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseDetailsViewController.swift; sourceTree = "<group>"; };
 		0429105E2BB7484D0002B465 /* PlantsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PlantsData.json; sourceTree = "<group>"; };
 		042910602BB748B10002B465 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
@@ -437,7 +437,7 @@
 				04F815DE2B8DFFD3000D2DAD /* Resorces */,
 				04F815992B8DF0C8000D2DAD /* Info.plist */,
 				043D25442C29810900AF6E75 /* GoogleService-Info.plist */,
-				041ADAB32C3C21F900D261C6 /* DiseasesInfo.xcdatamodeld */,
+				04068D3C2D624164009D096B /* DiseasesInfo.xcdatamodeld */,
 			);
 			path = Plantie;
 			sourceTree = "<group>";
@@ -878,7 +878,6 @@
 				043EF02C2B8F5252007F8E6C /* RegisterViewController.swift in Sources */,
 				046D818A2B9B21920063EDB3 /* CommentTableViewCell.swift in Sources */,
 				04508B6E2C347981005BDAB1 /* MapViewController.swift in Sources */,
-				041ADAB52C3C21F900D261C6 /* DiseasesInfo.xcdatamodeld in Sources */,
 				044B14AC2B8E38AC0087C094 /* EditProfile.swift in Sources */,
 				044B148F2B8E25FF0087C094 /* ProfileViewController.swift in Sources */,
 				04B14CE42BD2BE8F00440034 /* DailyCollectionViewCell.swift in Sources */,
@@ -898,6 +897,7 @@
 				04774DF32C349AB900AC7D70 /* MLImageClassifier.swift in Sources */,
 				043989CE2B972C0500FA0FF7 /* ExpandableLabel.swift in Sources */,
 				0420A1212C3974C200604080 /* DiseaseDetailsViewController.swift in Sources */,
+				04068D3E2D624164009D096B /* DiseasesInfo.xcdatamodeld in Sources */,
 				044B14972B8E2B770087C094 /* StringExtension.swift in Sources */,
 				044B14932B8E2B3E0087C094 /* UITableViewExtension.swift in Sources */,
 				043989D62B975A4800FA0FF7 /* ShadowView.swift in Sources */,
@@ -1482,14 +1482,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		041ADAB32C3C21F900D261C6 /* DiseasesInfo.xcdatamodeld */ = {
+		04068D3C2D624164009D096B /* DiseasesInfo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				041ADAB42C3C21F900D261C6 /* DiseasesInfo.xcdatamodel */,
+				04068D3D2D624164009D096B /* DiseasesInfo.xcdatamodel */,
 			);
-			currentVersion = 041ADAB42C3C21F900D261C6 /* DiseasesInfo.xcdatamodel */;
-			name = DiseasesInfo.xcdatamodeld;
-			path = /Users/mac/Desktop/Plantie/Plantie/DiseasesInfo.xcdatamodeld;
+			currentVersion = 04068D3D2D624164009D096B /* DiseasesInfo.xcdatamodel */;
+			path = DiseasesInfo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
